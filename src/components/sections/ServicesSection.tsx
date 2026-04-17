@@ -1,0 +1,146 @@
+"use client";
+
+import Link from "next/link";
+import Image from "next/image";
+import { motion, type Variants, type Easing } from "framer-motion";
+
+const EASE_OUT_EXPO: Easing = [0.16, 1, 0.3, 1];
+
+const SERVICES = [
+  {
+    number: "01",
+    title: "Construction",
+    subtitle: "sur mesure",
+    description:
+      "Chaque maison est conçue depuis zéro, pensée pour votre terrain, votre exposition, votre vie. Pas de plans standard, pas de compromis.",
+    href: "/construire",
+    image: "/images/service-construction.jpg",
+    tag: "De l'esquisse à la remise des clés",
+  },
+  {
+    number: "02",
+    title: "Agrandissement",
+    subtitle: "& extension",
+    description:
+      "Vous aimez votre quartier, votre maison, vos voisins. Ajoutez l'espace qui manque sans changer ce que vous aimez déjà.",
+    href: "/agrandir",
+    image: "/images/service-agrandissement.jpg",
+    tag: "Extension, surélévation, combles",
+  },
+  {
+    number: "03",
+    title: "Rénovation",
+    subtitle: "& transformation",
+    description:
+      "Vous avez trouvé la localisation de vos rêves. On s'occupe du reste — de la mise aux normes aux finitions sur mesure.",
+    href: "/renover",
+    image: "/images/service-renovation.jpg",
+    tag: "Rénovation complète ou partielle",
+  },
+];
+
+const cardVariants: Variants = {
+  hidden: { opacity: 0, y: 32 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.7, delay: i * 0.12, ease: EASE_OUT_EXPO },
+  }),
+};
+
+export default function ServicesSection() {
+  return (
+    <section className="bg-[#F9F7F4] py-32 px-6 md:px-12">
+      <div className="max-w-7xl mx-auto">
+
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          className="mb-16 md:mb-20"
+        >
+          <span className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-black/4 px-3 py-1.5 text-[10px] uppercase tracking-[0.2em] font-medium text-black/40 mb-6">
+            <span className="w-1 h-1 rounded-full bg-[#C49A5A]" />
+            Nos expertises
+          </span>
+          <h2 className="font-display text-[#111111]" style={{ fontSize: "clamp(2.2rem, 4vw, 4rem)", lineHeight: 1.05, letterSpacing: "-0.03em" }}>
+            Ce que nous<br />
+            <em className="not-italic" style={{ color: "#C49A5A" }}>construisons</em> pour vous.
+          </h2>
+        </motion.div>
+
+        {/* Cards grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {SERVICES.map((service, i) => (
+            <motion.div
+              key={service.number}
+              custom={i}
+              variants={cardVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-60px" }}
+            >
+              {/* Double-bezel outer shell */}
+              <Link href={service.href} className="group block h-full">
+                <div className="h-full rounded-[1.75rem] bg-black/4 ring-1 ring-black/6 p-1.5">
+                  {/* Inner core */}
+                  <div className="h-full rounded-[1.25rem] bg-white shadow-[inset_0_1px_1px_rgba(255,255,255,0.8)] overflow-hidden flex flex-col">
+
+                    {/* Image */}
+                    <div className="relative h-56 overflow-hidden">
+                      <Image
+                        src={service.image}
+                        alt={`${service.title} par Oryzon`}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                        className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:scale-105"
+                      />
+                      {/* Number badge */}
+                      <span className="absolute top-4 left-4 font-display text-white/60 text-xs tracking-widest">
+                        {service.number}
+                      </span>
+                    </div>
+
+                    {/* Content */}
+                    <div className="flex flex-col flex-1 p-6">
+                      <span className="inline-block rounded-full border border-black/10 px-2.5 py-1 text-[10px] uppercase tracking-[0.15em] text-black/40 mb-4 self-start">
+                        {service.tag}
+                      </span>
+
+                      <h3 className="font-display text-[#111111] mb-1" style={{ fontSize: "1.6rem", lineHeight: 1.1, letterSpacing: "-0.02em" }}>
+                        {service.title}
+                      </h3>
+                      <p className="font-display text-[#C49A5A] mb-4" style={{ fontSize: "1.2rem", lineHeight: 1.1, letterSpacing: "-0.02em" }}>
+                        {service.subtitle}
+                      </p>
+
+                      <p className="text-sm text-[#6B6B6B] leading-relaxed flex-1">
+                        {service.description}
+                      </p>
+
+                      {/* Arrow CTA */}
+                      <div className="mt-6 flex items-center justify-between">
+                        <span className="text-xs font-semibold text-[#111111] tracking-wide group-hover:text-[#C49A5A] transition-colors duration-200">
+                          En savoir plus
+                        </span>
+                        <span className="w-8 h-8 rounded-full border border-black/10 flex items-center justify-center text-[#111111] group-hover:bg-[#C49A5A] group-hover:border-[#C49A5A] group-hover:text-white transition-all duration-300">
+                          <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
+                            <path d="M2 8L8 2M8 2H3M8 2V7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                        </span>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </Link>
+            </motion.div>
+          ))}
+        </div>
+
+      </div>
+    </section>
+  );
+}
