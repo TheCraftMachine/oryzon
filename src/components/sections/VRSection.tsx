@@ -17,6 +17,7 @@ export default function VRSection() {
       const { gsap } = await import("gsap");
       const { ScrollTrigger } = await import("gsap/ScrollTrigger");
       gsap.registerPlugin(ScrollTrigger);
+      ScrollTrigger.config({ limitCallbacks: true });
 
       const video = videoRef.current;
       if (!video) return;
@@ -32,8 +33,12 @@ export default function VRSection() {
             start: "top top",
             end: "+=300%",
             pin: true,
+            pinSpacing: true,
             anticipatePin: 1,
-            scrub: 2,
+            fastScrollEnd: true,
+            preventOverlaps: true,
+            invalidateOnRefresh: true,
+            scrub: 1.5,
             onUpdate: (self) => {
               if (video.duration) {
                 video.currentTime = video.duration * self.progress;
