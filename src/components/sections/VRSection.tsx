@@ -81,8 +81,8 @@ export default function VRSection() {
         />
       </div>
 
-      {/* Scroll hint — visible before scroll starts */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 pointer-events-none">
+      {/* Scroll hint — desktop only to avoid overlap with CTA on mobile */}
+      <div className="hidden md:flex absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex-col items-center gap-2 pointer-events-none">
         <p className="text-[10px] uppercase tracking-[0.25em] text-white/30">Scroll pour explorer</p>
         <div className="w-px h-8 bg-gradient-to-b from-white/20 to-transparent" />
       </div>
