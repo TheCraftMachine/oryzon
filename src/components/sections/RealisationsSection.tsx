@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import GoldButton from "@/components/ui/GoldButton";
 
 const PROJECTS = [
   {
@@ -10,6 +11,7 @@ const PROJECTS = [
     location: "Caen, Calvados",
     type: "Construction",
     surface: "180 m²",
+    year: "2024",
     image: "/images/realisation-1.jpg",
     href: "/realisations",
   },
@@ -18,6 +20,7 @@ const PROJECTS = [
     location: "Bayeux, Calvados",
     type: "Agrandissement",
     surface: "45 m²",
+    year: "2024",
     image: "/images/realisation-2.jpg",
     href: "/realisations",
   },
@@ -26,6 +29,16 @@ const PROJECTS = [
     location: "Hérouville-Saint-Clair",
     type: "Rénovation",
     surface: "130 m²",
+    year: "2023",
+    image: "/images/realisation-3.jpg",
+    href: "/realisations",
+  },
+  {
+    title: "Maison de plain-pied",
+    location: "Lisieux, Calvados",
+    type: "Construction",
+    surface: "155 m²",
+    year: "2023",
     image: "/images/realisation-3.jpg",
     href: "/realisations",
   },
@@ -66,62 +79,84 @@ export default function RealisationsSection() {
           </Link>
         </motion.div>
 
-        {/* Grid — asymmetric: 1 big + 2 small */}
+        {/* Grid — Z-pattern: 7-5 / 5-7 */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
-          {PROJECTS.map((project, i) => (
-            <motion.div
-              key={project.title}
-              initial={{ opacity: 0, y: 28 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.7, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className={i === 0 ? "md:col-span-7" : "md:col-span-5"}
-            >
-              <Link href={project.href} className="group block">
-                {/* Double-bezel */}
-                <div className="rounded-[1.75rem] bg-black/4 ring-1 ring-black/6 p-1.5">
-                  <div className="rounded-[1.25rem] overflow-hidden bg-[#111111]">
-                    {/* Image */}
-                    <div className={[
-                      "relative overflow-hidden",
-                      i === 0 ? "aspect-[4/3]" : "aspect-[4/3]",
-                    ].join(" ")}>
-                      <Image
-                        src={project.image}
-                        alt={project.title}
-                        fill
-                        sizes={i === 0 ? "(max-width: 768px) 100vw, 58vw" : "(max-width: 768px) 100vw, 42vw"}
-                        className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:scale-105"
-                      />
-                      {/* Type badge */}
-                      <span className="absolute top-4 left-4 rounded-full border border-white/20 bg-black/30 backdrop-blur-sm px-3 py-1 text-[10px] text-white/80 uppercase tracking-[0.15em]">
-                        {project.type}
-                      </span>
-                    </div>
+          {PROJECTS.map((project, i) => {
+            // Alternating: large (7) on left then right
+            const isLarge = i === 0 || i === 3;
+            return (
+              <motion.div
+                key={project.title}
+                initial={{ opacity: 0, y: 28 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.7, delay: (i % 2) * 0.12, ease: [0.16, 1, 0.3, 1] }}
+                className={isLarge ? "md:col-span-7" : "md:col-span-5"}
+              >
+                <Link href={project.href} className="group block h-full">
+                  <div className="rounded-[1.75rem] bg-black/4 ring-1 ring-black/6 p-1.5 h-full">
+                    <div className="rounded-[1.25rem] overflow-hidden bg-[#111111] h-full flex flex-col">
 
-                    {/* Info bar */}
-                    <div className="px-5 py-4 flex items-center justify-between bg-[#111111]">
-                      <div>
-                        <p className="font-display text-white text-base" style={{ letterSpacing: "-0.02em" }}>
-                          {project.title}
-                        </p>
-                        <p className="text-xs text-white/40 mt-0.5">{project.location}</p>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <span className="text-xs text-white/30">{project.surface}</span>
-                        <span className="w-7 h-7 rounded-full border border-white/15 flex items-center justify-center text-white/50 group-hover:bg-[#C49A5A] group-hover:border-[#C49A5A] group-hover:text-white transition-all duration-300">
-                          <svg width="9" height="9" viewBox="0 0 10 10" fill="none" aria-hidden="true">
-                            <path d="M2 8L8 2M8 2H3M8 2V7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                          </svg>
+                      {/* Image — aspect ratio calibré pour égaliser les hauteurs: 7cols→[7/5], 5cols→square */}
+                      <div className={`relative overflow-hidden ${isLarge ? "aspect-[7/5]" : "aspect-square"}`}>
+                        <Image
+                          src={project.image}
+                          alt={project.title}
+                          fill
+                          sizes={isLarge ? "(max-width: 768px) 100vw, 58vw" : "(max-width: 768px) 100vw, 42vw"}
+                          className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:scale-105"
+                        />
+                        {/* Type badge */}
+                        <span className="absolute top-4 left-4 rounded-full border border-white/20 bg-black/30 backdrop-blur-sm px-3 py-1 text-[10px] text-white/80 uppercase tracking-[0.15em]">
+                          {project.type}
+                        </span>
+                        {/* Year */}
+                        <span className="absolute top-4 right-4 text-[10px] text-white/40 tabular-nums">
+                          {project.year}
                         </span>
                       </div>
+
+                      {/* Info bar */}
+                      <div className="px-5 py-4 flex items-center justify-between">
+                        <div>
+                          <p className="font-display text-white text-base" style={{ letterSpacing: "-0.02em" }}>
+                            {project.title}
+                          </p>
+                          <p className="text-xs text-white/40 mt-0.5">{project.location}</p>
+                        </div>
+                        <div className="flex items-center gap-3">
+                          <span className="text-xs text-white/30">{project.surface}</span>
+                          <span className="w-7 h-7 rounded-full border border-white/15 flex items-center justify-center text-white/50 group-hover:bg-[#C49A5A] group-hover:border-[#C49A5A] group-hover:text-white transition-all duration-300">
+                            <svg width="9" height="9" viewBox="0 0 10 10" fill="none" aria-hidden>
+                              <path d="M2 8L8 2M8 2H3M8 2V7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                          </span>
+                        </div>
+                      </div>
+
                     </div>
                   </div>
-                </div>
-              </Link>
-            </motion.div>
-          ))}
+                </Link>
+              </motion.div>
+            );
+          })}
         </div>
+
+        {/* CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-40px" }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          className="mt-12 flex flex-col sm:flex-row items-center justify-between gap-6 pt-10 border-t border-black/6"
+        >
+          <p className="text-sm text-black/40">
+            Découvrez l'ensemble de nos projets — construction, rénovation, agrandissement.
+          </p>
+          <GoldButton href="/realisations" size="lg" className="shrink-0">
+            Voir toutes nos réalisations
+          </GoldButton>
+        </motion.div>
 
       </div>
     </section>

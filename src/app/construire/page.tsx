@@ -1,0 +1,156 @@
+import ServicePage, { type ServiceData } from "@/components/services/ServicePage";
+
+const data: ServiceData = {
+  tag: "Construction sur mesure",
+  hero: {
+    headline: "Votre maison,\nconstruite depuis\nzéro.",
+    goldWord: "zéro.",
+    subtitle:
+      "Pas de plans standard. Pas de catalogue. Votre terrain, votre exposition, votre vie — traduits en architecture.",
+    image: "/images/service-construction.jpg",
+    imageAlt: "Maison individuelle construite sur mesure par Oryzon en Calvados",
+  },
+  promise: {
+    eyebrow: "Notre engagement",
+    headline: "Un prix fixe. Des délais tenus. Une maison qui vous ressemble.",
+    goldPart: "qui vous ressemble.",
+    body: "Construire une maison est le projet d'une vie. Nous le traitons comme tel — avec une transparence totale sur les coûts, un calendrier contractuel et un interlocuteur unique du premier coup de crayon à la remise des clés.",
+    cards: [
+      {
+        icon: (
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#C49A5A" strokeWidth="1.5" strokeLinejoin="round" />
+          </svg>
+        ),
+        title: "Prix fixe garanti",
+        body: "Le devis signé est le prix final. Aucune révision en cours de chantier, aucune mauvaise surprise à la livraison.",
+      },
+      {
+        icon: (
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="10" stroke="#C49A5A" strokeWidth="1.5" />
+            <path d="M12 7v5l3 3" stroke="#C49A5A" strokeWidth="1.5" strokeLinecap="round" />
+          </svg>
+        ),
+        title: "Délais contractuels",
+        body: "Votre date de livraison est inscrite au contrat. Des rapports hebdomadaires vous tiennent informé à chaque étape.",
+      },
+      {
+        icon: (
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path d="M2 12h20M12 2l10 10-10 10" stroke="#C49A5A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        ),
+        title: "100 % sur mesure",
+        body: "Chaque plan est conçu pour votre terrain, votre orientation et votre façon de vivre. Aucun plan catalogue.",
+      },
+    ],
+  },
+  forWho: {
+    headline: "Vous reconnaissez-vous dans l'une de ces situations ?",
+    goldPart: "l'une de ces situations ?",
+    situations: [
+      {
+        title: "Vous avez un terrain et une vision",
+        body: "Vous savez ce que vous voulez mais pas encore comment le traduire en plans. On s'en charge.",
+      },
+      {
+        title: "Vous voulez du sur-mesure, pas du catalogue",
+        body: "Les constructeurs de maisons de série ne correspondent pas à votre projet. Vous cherchez quelqu'un qui part de zéro.",
+      },
+      {
+        title: "Vous avez peur des dérapages de coûts",
+        body: "Vous avez entendu des histoires de chantiers qui explosent le budget. Notre contrat à prix fixe vous protège.",
+      },
+      {
+        title: "Vous ne voulez pas gérer dix interlocuteurs",
+        body: "Architecte, maçon, électricien, plombier... Chez Oryzon, un seul chef de projet coordonne tout.",
+      },
+      {
+        title: "Vous voulez voir avant de construire",
+        body: "Grâce à notre technologie VR, vous visitez votre maison en 3D immersive avant le premier coup de pelle.",
+      },
+      {
+        title: "Vous visez le long terme",
+        body: "Matériaux durables, isolation performante, architecture intemporelle. Votre maison dans 30 ans.",
+      },
+    ],
+  },
+  process: {
+    headline: "De l'esquisse aux clés, en toute transparence.",
+    goldPart: "en toute transparence.",
+    steps: [
+      {
+        number: "01",
+        title: "Rendez-vous découverte",
+        body: "On écoute votre projet, votre terrain, vos envies. Pas de devis forcé — juste une conversation pour comprendre ce que vous voulez construire.",
+        duration: "30 min",
+      },
+      {
+        number: "02",
+        title: "Conception des plans",
+        body: "Votre maison prend forme. Plans d'architecte sur mesure, façades, coupes, notice descriptive — tout est adapté à votre terrain et à votre mode de vie.",
+        duration: "4–6 semaines",
+      },
+      {
+        number: "03",
+        title: "Visite en réalité virtuelle",
+        body: "Vous enfilez le casque et vous visitez votre future maison pièce par pièce, à l'échelle réelle. Vous ajustez, vous validez, puis vous signez.",
+        duration: "1 séance",
+      },
+      {
+        number: "04",
+        title: "Permis & démarches",
+        body: "Nous gérons le dépôt du permis de construire, les relations avec les administrations et les déclarations préalables.",
+        duration: "2–4 mois",
+      },
+      {
+        number: "05",
+        title: "Chantier & suivi",
+        body: "Un seul interlocuteur suit votre chantier du premier coup de pelle à la réception. Rapports hebdomadaires, accès au suivi en temps réel.",
+        duration: "10–14 mois",
+      },
+      {
+        number: "06",
+        title: "Remise des clés",
+        body: "Votre maison est livrée conforme aux plans, aux délais et au budget. Garanties décennale, biennale et parfait achèvement incluses.",
+        duration: "Jour J",
+      },
+    ],
+  },
+  faq: [
+    {
+      question: "Combien coûte la construction d'une maison individuelle ?",
+      answer:
+        "Le coût varie selon la superficie, les matériaux et les finitions. En Calvados, comptez entre 1 800 et 2 800 €/m² pour une construction sur mesure de qualité. Nous établissons un devis détaillé après le premier rendez-vous.",
+    },
+    {
+      question: "Faut-il déjà avoir un terrain ?",
+      answer:
+        "Non. Nous pouvons vous accompagner dans la recherche de terrain. Nous connaissons bien le marché du Calvados et pouvons vous orienter vers des zones adaptées à votre projet et votre budget.",
+    },
+    {
+      question: "Combien de temps prend la construction ?",
+      answer:
+        "De la signature du contrat à la remise des clés, comptez 12 à 18 mois selon la complexité du projet, incluant le dépôt du permis de construire (2 à 4 mois) et le chantier (10 à 14 mois).",
+    },
+    {
+      question: "Proposez-vous des maisons bioclimatiques ou à faible consommation ?",
+      answer:
+        "Oui. Tous nos projets intègrent les standards RT2020. Nous proposons également des options plus poussées : ossature bois, isolation renforcée, panneaux solaires, récupération d'eaux pluviales.",
+    },
+    {
+      question: "Que couvre la garantie décennale ?",
+      answer:
+        "La garantie décennale couvre pendant 10 ans tous les désordres affectant la solidité de l'ouvrage ou le rendant impropre à sa destination : fondations, murs porteurs, charpente, toiture, étanchéité.",
+    },
+  ],
+  others: [
+    { label: "Agrandissement & extension", href: "/agrandir", tag: "Extension" },
+    { label: "Rénovation & transformation", href: "/renover", tag: "Rénovation" },
+  ],
+};
+
+export default function ConstruirePage() {
+  return <ServicePage data={data} />;
+}

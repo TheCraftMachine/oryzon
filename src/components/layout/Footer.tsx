@@ -1,4 +1,5 @@
 import Link from "next/link";
+import GoldButton from "@/components/ui/GoldButton";
 
 const SERVICES = [
   { label: "Construction sur mesure", href: "/construire" },
@@ -20,49 +21,71 @@ const LEGAL = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[--color-bg-dark] text-[--color-text-on-dark]">
-      {/* Main */}
-      <div className="max-w-7xl mx-auto px-6 md:px-12 pt-20 pb-12">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8">
+    <footer className="relative bg-[#0D1117] overflow-hidden">
 
-          {/* Brand column */}
-          <div className="md:col-span-4">
-            <p className="font-display text-2xl text-white mb-4">Oryzon</p>
-            <p className="text-sm text-[--color-text-muted-on-dark] leading-relaxed max-w-xs">
-              Constructeur de maisons sur mesure en Calvados. Du plan à la
-              remise des clés, avec un interlocuteur unique.
+      {/* Blueprint grid — architectural texture */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 opacity-[0.022]"
+        style={{
+          backgroundImage: `
+            linear-gradient(rgba(196,154,90,1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(196,154,90,1) 1px, transparent 1px)
+          `,
+          backgroundSize: "80px 80px",
+        }}
+      />
+
+      {/* Radial glow — anchored bottom-left near the wordmark */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute bottom-0 left-0 w-[600px] h-[400px]"
+        style={{ background: "radial-gradient(ellipse at 0% 100%, rgba(196,154,90,0.05) 0%, transparent 60%)" }}
+      />
+
+      <div className="relative max-w-7xl mx-auto px-6 md:px-12">
+
+        {/* ── Brand row ───────────────────────────────────────── */}
+        <div className="pt-20 pb-14 flex flex-col md:flex-row md:items-end justify-between gap-10 border-b border-white/[0.07]">
+
+          {/* Wordmark + tagline */}
+          <div>
+            <p className="text-[10px] uppercase tracking-[0.35em] text-[#C49A5A]/60 mb-5">
+              Caen · Calvados · Normandie
             </p>
-            <div className="mt-8 space-y-1">
-              <p className="text-xs text-[--color-text-muted-on-dark]">
-                Caen & Calvados, Normandie
-              </p>
-              <a
-                href="tel:+33XXXXXXXXX"
-                className="text-sm text-white/80 hover:text-[#C49A5A] transition-colors duration-200 block"
-              >
-                +33 (0)X XX XX XX XX
-              </a>
-              <a
-                href="mailto:contact@oryzon.fr"
-                className="text-sm text-white/80 hover:text-[#C49A5A] transition-colors duration-200 block"
-              >
-                contact@oryzon.fr
-              </a>
-            </div>
+            <h2
+              className="font-display text-white"
+              style={{ fontSize: "clamp(3.5rem, 8vw, 6.5rem)", lineHeight: 0.95, letterSpacing: "-0.03em" }}
+            >
+              Oryzon
+            </h2>
+            <p className="text-white/30 text-sm mt-4 leading-relaxed">
+              Constructeur de maisons sur mesure.<br />
+              Du plan à la remise des clés.
+            </p>
           </div>
 
+          {/* CTA */}
+          <div className="flex flex-col items-start md:items-end gap-3 md:pb-2">
+            <GoldButton href="/contact" size="lg">Démarrer mon projet</GoldButton>
+            <p className="text-[11px] text-white/20">Premier RDV gratuit · Sans engagement</p>
+          </div>
+        </div>
+
+        {/* ── Links + Contact row ─────────────────────────────── */}
+        <div className="py-14 grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-8">
+
           {/* Services */}
-          <div className="md:col-span-3">
-            <p className="text-[10px] uppercase tracking-[0.2em] text-[--color-text-muted-on-dark] mb-5">
-              Nos services
-            </p>
-            <ul className="space-y-3">
+          <div>
+            <p className="text-[9px] uppercase tracking-[0.3em] text-white/20 mb-7">Services</p>
+            <ul className="space-y-4">
               {SERVICES.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-sm text-white/70 hover:text-white transition-colors duration-200"
+                    className="group flex items-center gap-0 text-sm text-white/45 hover:text-white transition-colors duration-200"
                   >
+                    <span className="w-0 shrink-0 h-px bg-[#C49A5A] group-hover:w-4 transition-all duration-300 ease-out mr-0 group-hover:mr-2" />
                     {item.label}
                   </Link>
                 </li>
@@ -71,17 +94,16 @@ export default function Footer() {
           </div>
 
           {/* Company */}
-          <div className="md:col-span-2">
-            <p className="text-[10px] uppercase tracking-[0.2em] text-[--color-text-muted-on-dark] mb-5">
-              Société
-            </p>
-            <ul className="space-y-3">
+          <div>
+            <p className="text-[9px] uppercase tracking-[0.3em] text-white/20 mb-7">Société</p>
+            <ul className="space-y-4">
               {COMPANY.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-sm text-white/70 hover:text-white transition-colors duration-200"
+                    className="group flex items-center gap-0 text-sm text-white/45 hover:text-white transition-colors duration-200"
                   >
+                    <span className="w-0 shrink-0 h-px bg-[#C49A5A] group-hover:w-4 transition-all duration-300 ease-out mr-0 group-hover:mr-2" />
                     {item.label}
                   </Link>
                 </li>
@@ -89,41 +111,62 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* CTA column */}
-          <div className="md:col-span-3 md:text-right">
-            <p className="text-[10px] uppercase tracking-[0.2em] text-[--color-text-muted-on-dark] mb-5">
-              Votre projet
-            </p>
-            <p className="text-sm text-white/60 mb-6 leading-relaxed">
-              Premier rendez-vous gratuit et sans engagement.
-            </p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 bg-[#C49A5A] text-white text-xs font-semibold tracking-wide rounded-full px-5 py-2.5 hover:bg-[#D4B07A] active:scale-[0.98] transition-all duration-200 group"
-            >
-              <span>Prendre RDV</span>
-              <span className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center group-hover:translate-x-0.5 group-hover:-translate-y-px transition-transform duration-200">
-                <svg width="9" height="9" viewBox="0 0 10 10" fill="none" aria-hidden="true">
-                  <path d="M2 8L8 2M8 2H3M8 2V7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </span>
-            </Link>
+          {/* Contact */}
+          <div className="col-span-2">
+            <p className="text-[9px] uppercase tracking-[0.3em] text-white/20 mb-7">Contact</p>
+            <div className="space-y-4">
+              <a
+                href="tel:+33XXXXXXXXX"
+                className="group flex items-center gap-3 text-sm text-white/45 hover:text-white transition-colors duration-200"
+              >
+                <span className="w-8 h-8 rounded-xl bg-white/[0.04] ring-1 ring-white/[0.07] flex items-center justify-center shrink-0 group-hover:ring-[#C49A5A]/30 group-hover:bg-[#C49A5A]/8 transition-all duration-200">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden>
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.84a16 16 0 0 0 6 6l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </span>
+                06 XX XX XX XX
+              </a>
+              <a
+                href="mailto:contact@oryzon.fr"
+                className="group flex items-center gap-3 text-sm text-white/45 hover:text-white transition-colors duration-200"
+              >
+                <span className="w-8 h-8 rounded-xl bg-white/[0.04] ring-1 ring-white/[0.07] flex items-center justify-center shrink-0 group-hover:ring-[#C49A5A]/30 group-hover:bg-[#C49A5A]/8 transition-all duration-200">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden>
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                    <polyline points="22,6 12,13 2,6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                  </svg>
+                </span>
+                contact@oryzon.fr
+              </a>
+              <div className="flex items-center gap-3 text-sm text-white/25">
+                <span className="w-8 h-8 rounded-xl bg-white/[0.04] ring-1 ring-white/[0.07] flex items-center justify-center shrink-0">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden>
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor" strokeWidth="1.5" />
+                    <circle cx="12" cy="10" r="3" stroke="currentColor" strokeWidth="1.5" />
+                  </svg>
+                </span>
+                Caen &amp; Calvados, Normandie
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Bottom bar */}
-      <div className="border-t border-[--color-border-on-dark]">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-white/30">
-            © {new Date().getFullYear()} Oryzon. Tous droits réservés.
-          </p>
+      {/* ── Bottom bar ───────────────────────────────────────── */}
+      <div className="border-t border-white/[0.06]">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <div className="flex items-center gap-3">
+            <span className="w-1 h-1 rounded-full bg-[#C49A5A]/50" />
+            <p className="text-[11px] text-white/20">
+              © {new Date().getFullYear()} Oryzon · Tous droits réservés
+            </p>
+          </div>
           <ul className="flex items-center gap-6">
             {LEGAL.map((item) => (
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className="text-xs text-white/30 hover:text-white/60 transition-colors duration-200"
+                  className="text-[11px] text-white/20 hover:text-white/50 transition-colors duration-200"
                 >
                   {item.label}
                 </Link>
@@ -132,6 +175,7 @@ export default function Footer() {
           </ul>
         </div>
       </div>
+
     </footer>
   );
 }

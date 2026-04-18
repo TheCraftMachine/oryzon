@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import GoldButton from "@/components/ui/GoldButton";
 
 // ── Fake calendar data ───────────────────────────────────────────────────────
 
@@ -199,17 +200,9 @@ function BookingCalendar() {
       {/* Confirm */}
       {selectedDay && selectedTime && (
         <div className="mt-6">
-          <button
-            onClick={() => setConfirmed(true)}
-            className="w-full group inline-flex items-center justify-center gap-2.5 bg-[#C49A5A] hover:bg-[#D4B07A] text-white text-sm font-semibold tracking-wide rounded-full px-6 py-3.5 transition-all duration-300 active:scale-[0.98] cursor-pointer"
-          >
+          <GoldButton onClick={() => setConfirmed(true)} size="lg" className="w-full justify-center">
             Confirmer le rendez-vous
-            <span className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-px">
-              <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
-                <path d="M2 8L8 2M8 2H3M8 2V7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </span>
-          </button>
+          </GoldButton>
           <p className="text-center text-[10px] text-[#111111]/30 mt-3">
             Sans engagement · Annulation libre 24h avant
           </p>

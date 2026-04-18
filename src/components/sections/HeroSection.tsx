@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import GoldButton from "@/components/ui/GoldButton";
 
 const STATS = [
   { value: "+30 ans", label: "de métier" },
@@ -107,15 +108,7 @@ export default function HeroSection() {
           className="flex flex-wrap items-center gap-4 mb-16 md:mb-20"
         >
           {/* Primary */}
-          <Link
-            href="/contact"
-            className="group inline-flex items-center gap-2.5 bg-[#C49A5A] hover:bg-[#D4B07A] text-white text-sm font-semibold tracking-wide rounded-full px-6 py-3.5 active:scale-[0.98] transition-all duration-300"
-          >
-            <span>Parlons de votre projet</span>
-            <span className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-px">
-              <ArrowIcon />
-            </span>
-          </Link>
+          <GoldButton href="/contact" size="lg">Parlons de votre projet</GoldButton>
 
           {/* Secondary */}
           <Link
@@ -172,16 +165,3 @@ export default function HeroSection() {
   );
 }
 
-function ArrowIcon() {
-  return (
-    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
-      <path
-        d="M2 8L8 2M8 2H3M8 2V7"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}

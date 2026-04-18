@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
+import GoldButton from "@/components/ui/GoldButton";
 
 const NAV_LINKS = [
   { label: "Construire", href: "/construire" },
@@ -57,15 +58,7 @@ export default function Navbar() {
           <span className="w-px h-4 bg-white/15" aria-hidden="true" />
 
           {/* CTA */}
-          <Link
-            href="/contact"
-            className="flex items-center gap-2 bg-[#C49A5A] hover:bg-[#D4B07A] text-white text-xs font-semibold tracking-wide rounded-full px-4 py-2 transition-all duration-200 active:scale-[0.98] group"
-          >
-            <span>Prendre RDV</span>
-            <span className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-px">
-              <ArrowIcon />
-            </span>
-          </Link>
+          <GoldButton href="/contact" size="sm">Prendre RDV</GoldButton>
 
           {/* Hamburger */}
           <button
@@ -139,16 +132,9 @@ export default function Navbar() {
                 transition={{ duration: 0.4, delay: 0.45 }}
                 className="mt-10"
               >
-                <Link
-                  href="/contact"
-                  onClick={() => setOpen(false)}
-                  className="inline-flex items-center gap-2.5 bg-[#C49A5A] hover:bg-[#D4B07A] text-white text-sm font-semibold tracking-wide rounded-full px-6 py-3.5 transition-all duration-200 group"
-                >
-                  <span>Parlons de votre projet</span>
-                  <span className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center group-hover:translate-x-0.5 group-hover:-translate-y-px transition-transform duration-200">
-                    <ArrowIcon />
-                  </span>
-                </Link>
+                <GoldButton href="/contact" onClick={() => setOpen(false)} size="lg">
+                  Parlons de votre projet
+                </GoldButton>
               </motion.div>
             </nav>
 

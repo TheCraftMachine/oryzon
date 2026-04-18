@@ -1,7 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import { motion } from "framer-motion";
+import GoldButton from "@/components/ui/GoldButton";
 
 export default function CTAFinalSection() {
   return (
@@ -54,17 +54,7 @@ export default function CTAFinalSection() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link
-              href="/contact"
-              className="group inline-flex items-center gap-2.5 bg-[#C49A5A] hover:bg-[#D4B07A] text-white text-sm font-semibold tracking-wide rounded-full px-8 py-4 transition-all duration-300 active:scale-[0.98]"
-            >
-              <span>Prendre rendez-vous</span>
-              <span className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-px">
-                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
-                  <path d="M2 8L8 2M8 2H3M8 2V7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </span>
-            </Link>
+            <GoldButton href="/contact" size="xl">Prendre rendez-vous</GoldButton>
 
             <div className="flex items-center gap-3 text-white/30 text-xs">
               <span className="w-px h-4 bg-white/15" />
