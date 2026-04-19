@@ -1,11 +1,48 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { PROJECTS } from "@/data/projects";
 import GoldButton from "@/components/ui/GoldButton";
 
+const BASE = "https://oryzon.fr";
+
 export function generateStaticParams() {
   return PROJECTS.map((p) => ({ slug: p.slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const project = PROJECTS.find((p) => p.slug === slug);
+  if (!project) return {};
+
+  const title = `${project.title} – ${project.type} ${project.surface} à ${project.location}`;
+  const description = project.description[0] ?? `Découvrez ce projet de ${project.type.toLowerCase()} réalisé par Oryzon à ${project.location}.`;
+
+  return {
+    title,
+    description,
+    alternates: { canonical: `${BASE}/realisations/${slug}` },
+    openGraph: {
+      title,
+      description,
+      type: "website",
+      url: `${BASE}/realisations/${slug}`,
+      locale: "fr_FR",
+      siteName: "Oryzon",
+      images: [{ url: `${BASE}${project.image}`, width: 1200, height: 800, alt: project.title }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [`${BASE}${project.image}`],
+    },
+  };
 }
 
 const TYPE_COLORS: Record<string, string> = {
@@ -59,18 +96,6 @@ export default async function ProjectPage({
           backgroundSize: "60px 60px",
         }} />
 
-        {/* Back button */}
-        <div className="absolute top-0 left-0 right-0 z-10 px-6 md:px-12 pt-8">
-          <Link
-            href="/realisations"
-            className="inline-flex items-center gap-2 text-white/40 text-xs hover:text-white/70 transition-colors group"
-          >
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="transition-transform duration-200 group-hover:-translate-x-0.5">
-              <path d="M9 2L4 7l5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-            Toutes les réalisations
-          </Link>
-        </div>
 
         {/* Bottom content */}
         <div className="absolute bottom-0 left-0 right-0 px-6 md:px-12 pb-12">

@@ -64,14 +64,6 @@ export default function RealisationsPage() {
 
         <div className="relative max-w-7xl mx-auto">
 
-          {/* Back */}
-          <Link href="/" className="inline-flex items-center gap-2 text-white/30 text-xs hover:text-white/60 transition-colors mb-12 group">
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="transition-transform duration-200 group-hover:-translate-x-0.5">
-              <path d="M9 2L4 7l5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-            Retour
-          </Link>
-
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-12">
             <div className="max-w-2xl">
               <span className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/6 px-3 py-1.5 text-[10px] uppercase tracking-[0.2em] font-medium text-white/40 mb-8">

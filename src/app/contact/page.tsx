@@ -221,16 +221,6 @@ export default function ContactPage() {
       {/* Top band */}
       <div className="bg-[#0D1117] px-6 md:px-12 pt-32 pb-20">
         <div className="max-w-7xl mx-auto">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 text-white/30 text-xs hover:text-white/60 transition-colors mb-10 group"
-          >
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="transition-transform duration-200 group-hover:-translate-x-0.5">
-              <path d="M9 2L4 7l5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-            Retour
-          </Link>
-
           <div className="max-w-2xl">
             <span className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/6 px-3 py-1.5 text-[10px] uppercase tracking-[0.2em] font-medium text-white/40 mb-6">
               <span className="w-1 h-1 rounded-full bg-[#C49A5A]" />

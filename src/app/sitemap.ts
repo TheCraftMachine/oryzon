@@ -1,0 +1,35 @@
+import type { MetadataRoute } from "next";
+import { getAllPosts } from "@/sanity/queries";
+import { PROJECTS } from "@/data/projects";
+
+const BASE = "https://oryzon.fr";
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const posts = await getAllPosts();
+
+  const staticRoutes: MetadataRoute.Sitemap = [
+    { url: BASE,                         changeFrequency: "weekly",  priority: 1.0 },
+    { url: `${BASE}/construire`,         changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/renover`,            changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/agrandir`,           changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/realisations`,       changeFrequency: "weekly",  priority: 0.9 },
+    { url: `${BASE}/notre-histoire`,     changeFrequency: "monthly", priority: 0.6 },
+    { url: `${BASE}/blog`,               changeFrequency: "daily",   priority: 0.9 },
+    { url: `${BASE}/contact`,            changeFrequency: "monthly", priority: 0.8 },
+  ];
+
+  const projectRoutes: MetadataRoute.Sitemap = PROJECTS.map((p) => ({
+    url: `${BASE}/realisations/${p.slug}`,
+    changeFrequency: "monthly",
+    priority: 0.7,
+  }));
+
+  const postRoutes: MetadataRoute.Sitemap = posts.map((p) => ({
+    url: `${BASE}/blog/${p.slug.current}`,
+    lastModified: new Date(p.publishedAt),
+    changeFrequency: "monthly",
+    priority: 0.75,
+  }));
+
+  return [...staticRoutes, ...projectRoutes, ...postRoutes];
+}
