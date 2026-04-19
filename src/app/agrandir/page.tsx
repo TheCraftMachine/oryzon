@@ -1,4 +1,29 @@
+import type { Metadata } from "next";
 import ServicePage, { type ServiceData } from "@/components/services/ServicePage";
+
+export const metadata: Metadata = {
+  title: "Extension & agrandissement de maison – Caen, Calvados (14) | Oryzon",
+  description:
+    "Agrandissez votre maison sans déménager. Oryzon réalise vos extensions, surélévations et agrandissements à Caen et dans le Calvados. Intégration parfaite, devis fixe, chantier en site occupé.",
+  alternates: { canonical: "https://oryzon.fr/agrandir" },
+  keywords: [
+    "extension maison Caen",
+    "agrandissement maison Calvados",
+    "extension maison Normandie",
+    "surélévation maison Caen",
+    "extension bois Calvados",
+    "agrandissement maison 14",
+  ],
+  openGraph: {
+    title: "Extension & agrandissement maison à Caen – Oryzon Calvados",
+    description:
+      "Ajoutez de l'espace sans quitter votre maison. Oryzon conçoit vos extensions sur mesure en Calvados : intégration architecturale parfaite, devis fixe garanti.",
+    type: "website",
+    url: "https://oryzon.fr/agrandir",
+    locale: "fr_FR",
+    siteName: "Oryzon",
+  },
+};
 
 const data: ServiceData = {
   tag: "Agrandissement & extension",

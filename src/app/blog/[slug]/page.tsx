@@ -27,7 +27,7 @@ export async function generateMetadata({
   const post = await getPostBySlug(slug);
   if (!post) return {};
 
-  const ogImage = post.mainImage
+  const ogImage = post.mainImage?.asset?._ref
     ? urlFor(post.mainImage).width(1200).height(630).fit("crop").url()
     : undefined;
 
@@ -139,7 +139,7 @@ const components: PortableTextComponents = {
 // ── Related card ──────────────────────────────────────────────────────────────
 
 function RelatedCard({ post }: { post: PostCard }) {
-  const img = post.mainImage
+  const img = post.mainImage?.asset?._ref
     ? urlFor(post.mainImage).width(600).height(400).fit("crop").url()
     : null;
   return (
@@ -181,11 +181,11 @@ export default async function BlogPostPage({
   const post = await getPostBySlug(slug);
   if (!post) notFound();
 
-  const heroImg = post.mainImage
+  const heroImg = post.mainImage?.asset?._ref
     ? urlFor(post.mainImage).width(1600).height(800).fit("crop").url()
     : null;
 
-  const ogImage = post.mainImage
+  const ogImage = post.mainImage?.asset?._ref
     ? urlFor(post.mainImage).width(1200).height(630).fit("crop").url()
     : null;
 

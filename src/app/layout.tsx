@@ -47,6 +47,37 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
+const localBusinessJsonLd = {
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness", "GeneralContractor"],
+  "@id": "https://oryzon.fr/#organization",
+  name: "Oryzon",
+  url: "https://oryzon.fr",
+  logo: "https://oryzon.fr/logo.png",
+  image: "https://oryzon.fr/images/hero.jpg",
+  description:
+    "Constructeur de maisons individuelles sur mesure à Caen depuis 1994. Construction, rénovation et agrandissement en Calvados et Normandie.",
+  foundingDate: "1994",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Caen",
+    addressRegion: "Calvados",
+    postalCode: "14000",
+    addressCountry: "FR",
+  },
+  areaServed: [
+    { "@type": "AdministrativeArea", name: "Calvados" },
+    { "@type": "AdministrativeArea", name: "Normandie" },
+    { "@type": "City", name: "Caen" },
+    { "@type": "City", name: "Bayeux" },
+    { "@type": "City", name: "Lisieux" },
+    { "@type": "City", name: "Hérouville-Saint-Clair" },
+    { "@type": "City", name: "Vire" },
+  ],
+  sameAs: [],
+  priceRange: "€€€",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
@@ -56,6 +87,12 @@ export default function RootLayout({
       className={`${cinzel.variable} ${jakarta.variable} h-full antialiased`}
       suppressHydrationWarning
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
+        />
+      </head>
       <body className="min-h-full flex flex-col bg-[--color-bg] text-[--color-text]">
         <Navbar />
         <main className="flex-1">{children}</main>

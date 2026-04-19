@@ -1,4 +1,29 @@
+import type { Metadata } from "next";
 import ServicePage, { type ServiceData } from "@/components/services/ServicePage";
+
+export const metadata: Metadata = {
+  title: "Rénovation maison – Caen, Calvados (14) | Oryzon",
+  description:
+    "Rénovation complète ou partielle de maison à Caen et en Calvados. Diagnostic gratuit, devis fixe garanti, chantier sans mauvaises surprises. Oryzon rénove votre bien depuis 1994.",
+  alternates: { canonical: "https://oryzon.fr/renover" },
+  keywords: [
+    "rénovation maison Caen",
+    "rénovation maison Calvados",
+    "entreprise rénovation Caen",
+    "rénovation complète maison Normandie",
+    "rénovation énergétique Calvados 14",
+    "artisan rénovation Caen",
+  ],
+  openGraph: {
+    title: "Rénovation maison à Caen et en Calvados – Oryzon",
+    description:
+      "Transformez votre bien avec Oryzon. Diagnostic complet, devis fixe, rénovation globale ou partielle en Calvados. Résultat validé en réalité virtuelle avant travaux.",
+    type: "website",
+    url: "https://oryzon.fr/renover",
+    locale: "fr_FR",
+    siteName: "Oryzon",
+  },
+};
 
 const data: ServiceData = {
   tag: "Rénovation & transformation",

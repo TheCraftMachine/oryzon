@@ -84,7 +84,7 @@ function BlogJsonLd({ posts }: { posts: PostCard[] }) {
       author: p.author
         ? { "@type": "Person", name: p.author.name }
         : { "@type": "Organization", name: "Oryzon" },
-      image: p.mainImage
+      image: p.mainImage?.asset?._ref
         ? urlFor(p.mainImage).width(1200).height(630).url()
         : undefined,
     })),
@@ -101,7 +101,7 @@ function BlogJsonLd({ posts }: { posts: PostCard[] }) {
 // ── Article à la une — image plein fond, texte superposé ──────────────────────
 
 function FeaturedCard({ post }: { post: PostCard }) {
-  const img = post.mainImage
+  const img = post.mainImage?.asset?._ref
     ? urlFor(post.mainImage).width(1600).height(900).fit("crop").url()
     : null;
 
@@ -189,7 +189,7 @@ function FeaturedCard({ post }: { post: PostCard }) {
 // ── Carte standard ────────────────────────────────────────────────────────────
 
 function PostCard({ post }: { post: PostCard }) {
-  const img = post.mainImage
+  const img = post.mainImage?.asset?._ref
     ? urlFor(post.mainImage).width(700).height(460).fit("crop").url()
     : null;
 
