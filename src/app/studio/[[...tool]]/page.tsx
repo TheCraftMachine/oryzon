@@ -6,5 +6,9 @@ import config from "../../../../sanity.config";
 export const dynamic = "force-dynamic";
 
 export default function StudioPage() {
-  return <NextStudio config={config} />;
+  return (
+    <div style={{ paddingTop: "68px", height: "100dvh", display: "flex", flexDirection: "column" }}>
+      <NextStudio config={config} />
+    </div>
+  );
 }

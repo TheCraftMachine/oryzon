@@ -267,7 +267,7 @@ export default function NotreHistoirePage() {
           {/* Timeline items */}
           <div className="relative">
             {/* Vertical line */}
-            <div className="absolute left-0 lg:left-[8.5rem] top-0 bottom-0 w-px bg-white/8 hidden lg:block" />
+            <div className="absolute left-0 lg:left-[9.25rem] top-0 bottom-0 w-px bg-white/8 hidden lg:block" />
 
             <div className="space-y-0">
               {TIMELINE.map((item, i) => (
