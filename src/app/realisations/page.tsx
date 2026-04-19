@@ -5,33 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import GoldButton from "@/components/ui/GoldButton";
-
-// ── Data ──────────────────────────────────────────────────────────────────────
-
-type Project = {
-  id: number;
-  title: string;
-  location: string;
-  type: "Construction" | "Rénovation" | "Agrandissement";
-  surface: string;
-  year: string;
-  image: string;
-};
-
-const PROJECTS: Project[] = [
-  { id: 1,  title: "Villa contemporaine",         location: "Caen, Calvados",              type: "Construction",    surface: "180 m²", year: "2024", image: "/images/realisation-1.jpg" },
-  { id: 2,  title: "Extension vitrée",             location: "Bayeux, Calvados",            type: "Agrandissement",  surface: "45 m²",  year: "2024", image: "/images/realisation-2.jpg" },
-  { id: 3,  title: "Rénovation complète",          location: "Hérouville-Saint-Clair",      type: "Rénovation",      surface: "130 m²", year: "2023", image: "/images/realisation-3.jpg" },
-  { id: 4,  title: "Maison de plain-pied",         location: "Lisieux, Calvados",           type: "Construction",    surface: "155 m²", year: "2023", image: "/images/realisation-1.jpg" },
-  { id: 5,  title: "Surélévation bois",            location: "Falaise, Calvados",           type: "Agrandissement",  surface: "60 m²",  year: "2023", image: "/images/realisation-2.jpg" },
-  { id: 6,  title: "Longère rénovée",              location: "Vire Normandie",              type: "Rénovation",      surface: "210 m²", year: "2022", image: "/images/realisation-3.jpg" },
-  { id: 7,  title: "Maison à ossature bois",       location: "Caen, Calvados",              type: "Construction",    surface: "140 m²", year: "2022", image: "/images/realisation-1.jpg" },
-  { id: 8,  title: "Restructuration intérieure",   location: "Deauville, Calvados",         type: "Rénovation",      surface: "95 m²",  year: "2022", image: "/images/realisation-2.jpg" },
-  { id: 9,  title: "Villa en L",                   location: "Mondeville, Calvados",        type: "Construction",    surface: "200 m²", year: "2021", image: "/images/realisation-3.jpg" },
-  { id: 10, title: "Extension cuisine-salon",      location: "Courseulles-sur-Mer",         type: "Agrandissement",  surface: "38 m²",  year: "2021", image: "/images/realisation-1.jpg" },
-  { id: 11, title: "Réhabilitation maison 1900",   location: "Caen, Calvados",              type: "Rénovation",      surface: "175 m²", year: "2021", image: "/images/realisation-2.jpg" },
-  { id: 12, title: "Maison contemporaine R+1",     location: "Clécy, Calvados",             type: "Construction",    surface: "220 m²", year: "2020", image: "/images/realisation-3.jpg" },
-];
+import { PROJECTS } from "@/data/projects";
 
 const FILTERS = ["Tous", "Construction", "Rénovation", "Agrandissement"] as const;
 type Filter = typeof FILTERS[number];
@@ -175,7 +149,7 @@ export default function RealisationsPage() {
                   transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
                   className={colSpan(i, filtered.length)}
                 >
-                  <Link href="#" className="group block h-full">
+                  <Link href={`/realisations/${project.slug}`} className="group block h-full">
                     <div className="rounded-[1.75rem] bg-black/4 ring-1 ring-black/6 p-1.5 h-full transition-shadow duration-300 hover:shadow-[0_8px_40px_rgba(0,0,0,0.1)]">
                       <div className="rounded-[1.25rem] overflow-hidden bg-[#111111] h-full flex flex-col">
 

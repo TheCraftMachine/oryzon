@@ -10,42 +10,42 @@ const STEPS: {
   video: string;
   duration: string;
 }[] = [
-  {
-    number: "01",
-    title: "Rendez-vous découverte",
-    description: "On écoute votre projet, votre terrain, vos envies. Aucun engagement — juste une conversation pour comprendre ce que vous voulez construire.",
-    video: "/videos/process-rdv.mp4",
-    duration: "30 min",
-  },
-  {
-    number: "02",
-    title: "Conception des plans",
-    description: "Votre maison prend forme sur papier. Plans, façades, volumes — tout est pensé sur mesure pour votre terrain et votre style de vie.",
-    video: "/videos/process-plans.mp4",
-    duration: "4–6 semaines",
-  },
-  {
-    number: "03",
-    title: "Visualisation en VR",
-    description: "Vous enfilez le casque et vous visitez votre future maison pièce par pièce. Vous ajustez en temps réel avant de valider définitivement.",
-    video: "/videos/process-vr.mp4",
-    duration: "1 séance",
-  },
-  {
-    number: "04",
-    title: "Chantier & suivi",
-    description: "Un seul interlocuteur vous accompagne du premier coup de pelle à la fin du chantier. Délais contractuels, rapports hebdomadaires.",
-    video: "/videos/process-chantier.mp4",
-    duration: "10–14 mois",
-  },
-  {
-    number: "05",
-    title: "Remise des clés",
-    description: "Votre maison est livrée conforme aux plans, aux délais et au budget convenu. Garanties décennale et parfait achèvement incluses.",
-    video: "/videos/process-cles.mp4",
-    duration: "Jour J",
-  },
-];
+    {
+      number: "01",
+      title: "Rendez-vous découverte",
+      description: "On écoute votre projet, votre terrain, vos envies. Aucun engagement — juste une conversation pour comprendre ce que vous voulez construire.",
+      video: "/videos/process-rdv.mp4",
+      duration: "30 min",
+    },
+    {
+      number: "02",
+      title: "Conception des plans",
+      description: "Votre maison prend forme sur papier. Plans, façades, volumes — tout est pensé sur mesure pour votre terrain et votre style de vie.",
+      video: "/videos/process-plans.mp4",
+      duration: "4–6 semaines",
+    },
+    {
+      number: "03",
+      title: "Visualisation en VR",
+      description: "Vous enfilez le casque et vous visitez votre future maison pièce par pièce. Vous ajustez en temps réel avant de valider définitivement.",
+      video: "/videos/process-vr.mp4",
+      duration: "1 séance",
+    },
+    {
+      number: "04",
+      title: "Chantier & suivi",
+      description: "Un seul interlocuteur vous accompagne du premier coup de pelle à la fin du chantier. Délais contractuels, rapports hebdomadaires.",
+      video: "/videos/process-chantier.mp4",
+      duration: "10–14 mois",
+    },
+    {
+      number: "05",
+      title: "Remise des clés",
+      description: "Votre maison est livrée conforme aux plans, aux délais et au budget convenu. Garanties décennale et parfait achèvement incluses.",
+      video: "/videos/process-cles.mp4",
+      duration: "Jour J",
+    },
+  ];
 
 // Each step gets 100vh of scroll distance
 const VH_PER_STEP = 100;
@@ -61,7 +61,7 @@ export default function ProcessSection() {
   useEffect(() => {
     videoRefs.current.forEach((video, i) => {
       if (!video) return;
-      if (i === activeStep) { video.currentTime = 0; video.play().catch(() => {}); }
+      if (i === activeStep) { video.currentTime = 0; video.play().catch(() => { }); }
       else video.pause();
     });
   }, [activeStep]);
@@ -87,8 +87,64 @@ export default function ProcessSection() {
   }, []);
 
   return (
-    // Wrapper creates the scroll space — sticky section stays inside
-    <div ref={wrapperRef} style={{ height: WRAPPER_HEIGHT }} className="bg-[#0D1117]">
+    <>
+    {/* ── Mobile: timeline verticale ─────────────────────────── */}
+    <section className="lg:hidden bg-[#0D1117] px-6 py-20">
+      <div className="max-w-lg mx-auto">
+        <span className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/6 px-3 py-1.5 text-[10px] uppercase tracking-[0.2em] font-medium text-white/40 mb-5">
+          <span className="w-1 h-1 rounded-full bg-[#C49A5A]" />
+          Le processus
+        </span>
+        <h2 className="font-display text-white mb-12"
+          style={{ fontSize: "clamp(1.9rem, 7vw, 2.8rem)", lineHeight: 1.05, letterSpacing: "-0.03em" }}>
+          Votre projet,{" "}
+          <em className="not-italic" style={{ color: "#C49A5A" }}>étape par étape.</em>
+        </h2>
+
+        <div className="relative">
+          {/* Ligne verticale */}
+          <div className="absolute left-[0.7rem] top-3 bottom-3 w-px bg-white/8" />
+
+          <div className="space-y-0">
+            {STEPS.map((step) => (
+              <div key={step.number} className="relative flex gap-6 pb-10 last:pb-0">
+                {/* Dot */}
+                <div className="relative z-10 flex flex-col items-center shrink-0">
+                  <div className="w-[1.4rem] h-[1.4rem] rounded-full bg-[#0D1117] ring-1 ring-[#C49A5A]/60 flex items-center justify-center mt-0.5">
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#C49A5A]" />
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="flex-1 min-w-0 pt-0.5">
+                  <div className="flex items-center justify-between gap-3 mb-2">
+                    <h3 className="font-display text-white" style={{ fontSize: "1.05rem", letterSpacing: "-0.02em" }}>
+                      {step.title}
+                    </h3>
+                    <span className="shrink-0 rounded-full border border-[#C49A5A]/30 text-[#C49A5A]/70 px-2.5 py-0.5 text-[10px]">
+                      {step.duration}
+                    </span>
+                  </div>
+                  <p className="text-sm text-white/45 leading-relaxed">
+                    {step.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-12 pt-8 border-t border-white/8 flex flex-col gap-4">
+          <p className="text-white/40 text-sm leading-relaxed">
+            Premier rendez-vous gratuit, sans engagement.
+          </p>
+          <GoldButton href="/contact" size="lg">Démarrer mon projet</GoldButton>
+        </div>
+      </div>
+    </section>
+
+    {/* ── Desktop: sticky scroll animation ───────────────────── */}
+    <div ref={wrapperRef} style={{ height: WRAPPER_HEIGHT }} className="hidden lg:block bg-[#0D1117]">
       <section className="sticky top-0 h-[100dvh] flex flex-col justify-center px-6 md:px-12 py-20">
         <div className="max-w-7xl mx-auto w-full">
 
@@ -212,5 +268,6 @@ export default function ProcessSection() {
         </div>
       </section>
     </div>
+    </>
   );
 }
