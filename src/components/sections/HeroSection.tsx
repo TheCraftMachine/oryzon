@@ -53,7 +53,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          className="mb-6"
+          className="mb-4 md:mb-6"
         >
           <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/14 px-3 py-1.5 text-[10px] uppercase tracking-[0.2em] font-medium text-white/90">
             <span className="w-1 h-1 rounded-full" style={{ backgroundColor: "#C49A5A" }} />
@@ -62,7 +62,7 @@ export default function HeroSection() {
         </motion.div>
 
         {/* Headline — clip reveal line by line */}
-        <h1 className="font-display text-white mb-8" aria-label={HEADLINE_LINES.join(" ")}>
+        <h1 className="font-display text-white mb-5 md:mb-8" aria-label={HEADLINE_LINES.join(" ")}>
           {HEADLINE_LINES.map((line, i) => (
             <span key={i} className="block overflow-hidden">
               <motion.span
@@ -94,7 +94,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.95, ease: [0.16, 1, 0.3, 1] }}
-          className="text-white/85 text-base md:text-lg max-w-md leading-relaxed mb-10"
+          className="text-white/85 text-base md:text-lg max-w-md leading-relaxed mb-6 md:mb-10"
         >
           De l'esquisse à la remise des clés — avec un seul interlocuteur
           et votre projet en réalité virtuelle avant le premier coup de pelle.
