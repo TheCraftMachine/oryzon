@@ -18,18 +18,19 @@ export default function VRSection() {
     else video.addEventListener("loadedmetadata", onReady, { once: true });
   }, []);
 
-  // Desktop: start loading video when section approaches (2 viewports away)
+  // Desktop: start loading video 1s after page load so critical resources go first
   useEffect(() => {
     if (window.matchMedia("(max-width: 1023px)").matches) return;
     const video = videoRef.current;
-    const wrapper = wrapperRef.current;
-    if (!video || !wrapper) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { video.preload = "auto"; video.load(); observer.disconnect(); } },
-      { rootMargin: "200% 0px" }
-    );
-    observer.observe(wrapper);
-    return () => observer.disconnect();
+    if (!video) return;
+    const startLoad = () => { video.preload = "auto"; video.load(); };
+    if (document.readyState === "complete") {
+      const t = setTimeout(startLoad, 800);
+      return () => clearTimeout(t);
+    }
+    const onLoad = () => setTimeout(startLoad, 800);
+    window.addEventListener("load", onLoad, { once: true });
+    return () => window.removeEventListener("load", onLoad);
   }, []);
 
   // Desktop: GSAP scrubs video.currentTime — CSS sticky handles pinning
