@@ -6,17 +6,64 @@ import GoldButton from "@/components/ui/GoldButton";
 export const metadata: Metadata = {
   title: "Notre histoire – Oryzon, constructeur de maisons en Calvados depuis 1994",
   description:
-    "30 ans de métier, des centaines de maisons construites en Normandie. Découvrez l'histoire d'Oryzon, notre équipe et nos valeurs : engagement, précision, proximité.",
+    "30 ans de métier, 800+ maisons construites en Normandie. Découvrez l'histoire d'Oryzon, constructeur indépendant à Caen depuis 1994 — notre équipe, nos valeurs, notre engagement.",
   alternates: { canonical: "https://oryzon.fr/notre-histoire" },
+  keywords: [
+    "histoire Oryzon",
+    "constructeur maison Caen depuis 1994",
+    "constructeur local Calvados",
+    "entreprise construction familiale Normandie",
+    "constructeur indépendant Caen",
+    "30 ans expérience construction Calvados",
+  ],
   openGraph: {
     title: "Notre histoire – Oryzon, constructeur en Calvados depuis 1994",
     description:
-      "Depuis 1994, Oryzon accompagne les familles normandes dans leurs projets de construction. Découvrez notre histoire, notre équipe et nos engagements.",
+      "Depuis 1994, Oryzon accompagne les familles normandes dans leurs projets de construction. Entreprise familiale indépendante, ancrée en Calvados.",
     type: "website",
     url: "https://oryzon.fr/notre-histoire",
     locale: "fr_FR",
     siteName: "Oryzon",
   },
+};
+
+const pageJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "AboutPage",
+      "@id": "https://oryzon.fr/notre-histoire#page",
+      name: "Notre histoire – Oryzon",
+      url: "https://oryzon.fr/notre-histoire",
+      description:
+        "L'histoire d'Oryzon, constructeur de maisons individuelles sur mesure à Caen depuis 1994.",
+      about: { "@id": "https://oryzon.fr/#organization" },
+      breadcrumb: {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Accueil", item: "https://oryzon.fr" },
+          { "@type": "ListItem", position: 2, name: "Notre histoire", item: "https://oryzon.fr/notre-histoire" },
+        ],
+      },
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://oryzon.fr/#organization",
+      name: "Oryzon",
+      foundingDate: "1994",
+      foundingLocation: { "@type": "Place", name: "Caen, Calvados, Normandie, France" },
+      founder: {
+        "@type": "Person",
+        name: "Alain Moreau",
+        jobTitle: "Fondateur & Gérant",
+      },
+      numberOfEmployees: { "@type": "QuantitativeValue", value: 12 },
+      description:
+        "Constructeur de maisons individuelles sur mesure à Caen depuis 1994. Entreprise familiale indépendante, 800+ réalisations en Calvados et Normandie.",
+      slogan: "Votre maison, telle que vous l'imaginez.",
+      award: "Premier prix régional de la construction normande 2003",
+    },
+  ],
 };
 
 // ── Data ──────────────────────────────────────────────────────────────────────
@@ -109,6 +156,11 @@ const STATS = [
 
 export default function NotreHistoirePage() {
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd) }}
+      />
     <div className="min-h-[100dvh]">
 
       {/* ── Hero ────────────────────────────────────────────────────── */}
@@ -464,5 +516,6 @@ export default function NotreHistoirePage() {
       </div>
 
     </div>
+    </>
   );
 }

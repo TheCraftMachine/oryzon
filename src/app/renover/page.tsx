@@ -171,6 +171,89 @@ const data: ServiceData = {
   ],
 };
 
+const pageJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://oryzon.fr/renover#service",
+      name: "Rénovation de maison à Caen et en Calvados",
+      serviceType: "Rénovation de maison",
+      provider: { "@id": "https://oryzon.fr/#organization" },
+      areaServed: [
+        { "@type": "AdministrativeArea", name: "Calvados" },
+        { "@type": "City", name: "Caen" },
+      ],
+      description:
+        "Rénovation complète ou partielle de maison à Caen et en Calvados. Diagnostic gratuit inclus, devis fixe garanti, rénovation énergétique éligible aux aides MaPrimeRénov' et CEE.",
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Rénovation",
+        itemListElement: [
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Diagnostic complet avant travaux" } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Rénovation énergétique (isolation, chauffage)" } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Restructuration des espaces" } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Remise aux normes électricité et plomberie" } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Rénovation maison ancienne et normande" } },
+        ],
+      },
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Comment se déroule une rénovation complète de maison en Calvados ?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Oryzon commence par un diagnostic complet du bâti (structure, réseaux, isolation, humidité). Ensuite vient la conception du projet avec visualisation VR, puis les démarches administratives et enfin le chantier coordonné par un chef de projet unique.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "La rénovation énergétique est-elle éligible aux aides de l'État ?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Oui. En Calvados, plusieurs aides sont disponibles pour la rénovation énergétique : MaPrimeRénov', CEE (Certificats d'Économies d'Énergie), éco-PTZ, TVA réduite à 5,5 %. Oryzon accompagne ses clients dans l'identification et la demande de ces aides.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Faut-il quitter son logement pendant les travaux de rénovation ?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Cela dépend de l'ampleur des travaux. Pour une rénovation partielle, vous pouvez généralement rester. Pour une rénovation complète, un relogement temporaire est souvent nécessaire. Oryzon vous aide à planifier cela dès la phase de conception.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Combien de temps dure une rénovation complète de maison ?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "La durée dépend de l'ampleur des travaux : de 2 à 8 mois pour le chantier, auxquels s'ajoutent 2 à 6 semaines de conception et les éventuelles démarches administratives.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Peut-on rénover et agrandir sa maison en même temps ?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Absolument — c'est souvent plus économique. Combiner rénovation et extension permet de n'ouvrir le chantier qu'une seule fois et de coordonner tous les corps de métier de façon optimale.",
+          },
+        },
+      ],
+    },
+  ],
+};
+
 export default function RenoverPage() {
-  return <ServicePage data={data} />;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd) }}
+      />
+      <ServicePage data={data} />
+    </>
+  );
 }

@@ -35,6 +35,15 @@ export async function generateMetadata({
     title,
     description,
     alternates: { canonical },
+    keywords: [
+      "blog construction maison Calvados",
+      "conseils construction maison Normandie",
+      "guide rénovation maison Caen",
+      "prix construction maison individuelle Calvados",
+      "aides rénovation énergétique Calvados",
+      "extension maison conseils Normandie",
+      "constructeur maison blog Caen",
+    ],
     openGraph: {
       title,
       description,

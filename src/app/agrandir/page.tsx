@@ -168,6 +168,100 @@ const data: ServiceData = {
   ],
 };
 
+const pageJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://oryzon.fr/agrandir#service",
+      name: "Extension et agrandissement de maison en Calvados",
+      serviceType: "Extension de maison",
+      provider: { "@id": "https://oryzon.fr/#organization" },
+      areaServed: [
+        { "@type": "AdministrativeArea", name: "Calvados" },
+        { "@type": "City", name: "Caen" },
+      ],
+      description:
+        "Extension de maison, surélévation et aménagement de combles en Calvados. Intégration architecturale parfaite, chantier en site occupé, devis fixe garanti.",
+      offers: {
+        "@type": "Offer",
+        priceCurrency: "EUR",
+        priceSpecification: {
+          "@type": "UnitPriceSpecification",
+          minPrice: 1500,
+          maxPrice: 2500,
+          priceCurrency: "EUR",
+          unitText: "par m²",
+        },
+      },
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Agrandissement",
+        itemListElement: [
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Extension de plain-pied" } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Surélévation de maison" } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Aménagement et transformation de combles" } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Extension ossature bois" } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Véranda et extension vitrée" } },
+        ],
+      },
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Faut-il un permis de construire pour une extension de maison en Calvados ?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Cela dépend de la surface. Jusqu'à 20 m², une déclaration préalable suffit (40 m² en zone couverte par un PLU). Au-delà, un permis de construire est obligatoire. Oryzon gère l'ensemble des démarches administratives.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Combien coûte une extension de maison à Caen ?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Une extension de plain-pied en Calvados coûte généralement entre 1 500 et 2 500 €/m². Une surélévation ou l'aménagement de combles varie selon la structure existante. Oryzon établit un devis fixe après diagnostic.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Peut-on rester dans sa maison pendant les travaux d'extension ?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Dans la majorité des cas, oui. Oryzon organise les chantiers en site occupé avec un plan de phasage pour préserver votre confort quotidien. Seules certaines opérations spécifiques peuvent nécessiter une courte absence.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Qu'est-ce que la surélévation de maison ?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "La surélévation consiste à ajouter un étage supplémentaire sur une maison existante. Elle permet de doubler la surface habitable sans empiéter sur le jardin. C'est une solution idéale en zone urbaine à Caen ou dans d'autres communes du Calvados.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Une extension peut-elle valoriser mon bien immobilier ?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Oui. Une extension bien conçue augmente significativement la valeur de revente d'un bien. En Calvados, gagner 30 à 50 m² peut représenter une plus-value considérable selon la localisation.",
+          },
+        },
+      ],
+    },
+  ],
+};
+
 export default function AgrandirPage() {
-  return <ServicePage data={data} />;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd) }}
+      />
+      <ServicePage data={data} />
+    </>
+  );
 }

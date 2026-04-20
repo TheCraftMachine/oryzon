@@ -176,6 +176,108 @@ const data: ServiceData = {
   ],
 };
 
+const pageJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://oryzon.fr/construire#service",
+      name: "Construction de maison individuelle sur mesure en Calvados",
+      serviceType: "Construction de maison individuelle",
+      provider: { "@id": "https://oryzon.fr/#organization" },
+      areaServed: [
+        { "@type": "AdministrativeArea", name: "Calvados" },
+        { "@type": "City", name: "Caen" },
+      ],
+      description:
+        "Construction de maisons individuelles entièrement sur mesure en Calvados. Plans personnalisés pour chaque terrain, prix fixe garanti, interlocuteur unique, visualisation en réalité virtuelle avant le chantier.",
+      offers: {
+        "@type": "Offer",
+        priceCurrency: "EUR",
+        priceSpecification: {
+          "@type": "UnitPriceSpecification",
+          minPrice: 1800,
+          maxPrice: 2800,
+          priceCurrency: "EUR",
+          unitText: "par m²",
+        },
+      },
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Construction sur mesure",
+        itemListElement: [
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Plans d'architecte sur mesure" } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Visualisation en réalité virtuelle" } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Gestion du permis de construire" } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Coordination de tous les corps de métier" } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Garanties décennale, biennale, parfait achèvement" } },
+        ],
+      },
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Combien coûte la construction d'une maison individuelle en Calvados ?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "En Calvados, comptez entre 1 800 et 2 800 €/m² pour une construction sur mesure de qualité, hors terrain. Le coût varie selon la superficie, les matériaux et les finitions. Oryzon établit un devis détaillé et fixe après le premier rendez-vous.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Faut-il déjà avoir un terrain pour construire avec Oryzon ?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Non. Oryzon peut vous accompagner dans la recherche de terrain en Calvados. Nous connaissons bien le marché local et pouvons vous orienter vers des zones adaptées à votre projet et à votre budget.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Combien de temps prend la construction d'une maison en Normandie ?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "De la signature du contrat à la remise des clés, comptez 12 à 18 mois selon la complexité : 2 à 4 mois pour l'obtention du permis de construire, puis 10 à 14 mois de chantier.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Oryzon propose-t-il des maisons à faible consommation énergétique ?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Oui. Tous les projets Oryzon intègrent les standards RE2020. Des options plus poussées sont disponibles : ossature bois, isolation renforcée, panneaux solaires, récupération d'eaux pluviales, maison passive.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Que couvre la garantie décennale d'un constructeur de maison ?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "La garantie décennale couvre pendant 10 ans tous les désordres affectant la solidité de l'ouvrage ou le rendant impropre à sa destination : fondations, murs porteurs, charpente, toiture, étanchéité.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Peut-on visualiser sa future maison avant le début des travaux ?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Oui. Oryzon propose une visite en réalité virtuelle de votre future maison avant le premier coup de pelle. Vous visitez chaque pièce à l'échelle réelle, ajustez les détails et validez avant signature.",
+          },
+        },
+      ],
+    },
+  ],
+};
+
 export default function ConstruirePage() {
-  return <ServicePage data={data} />;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd) }}
+      />
+      <ServicePage data={data} />
+    </>
+  );
 }
