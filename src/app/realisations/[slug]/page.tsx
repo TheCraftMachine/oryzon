@@ -153,7 +153,7 @@ export default async function ProjectPage({
           </div>
 
           {/* Right: specs card */}
-          <div className="lg:sticky lg:top-8">
+          <div className="lg:sticky lg:top-24">
             <div className="rounded-[1.75rem] bg-[#0D1117] p-6">
 
               <div className="flex items-center gap-2 mb-6">
@@ -202,6 +202,7 @@ export default async function ProjectPage({
                 alt={`${project.title} — vue 1`}
                 width={900}
                 height={675}
+                sizes="(max-width: 768px) 100vw, 67vw"
                 className="w-full h-full object-cover hover:scale-[1.03] transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)]"
               />
             </div>
@@ -214,6 +215,7 @@ export default async function ProjectPage({
                   alt={`${project.title} — vue 2`}
                   width={500}
                   height={500}
+                  sizes="(max-width: 768px) 100vw, 33vw"
                   className="w-full h-full object-cover hover:scale-[1.03] transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)]"
                 />
               </div>
@@ -223,6 +225,7 @@ export default async function ProjectPage({
                   alt={`${project.title} — vue 3`}
                   width={500}
                   height={500}
+                  sizes="(max-width: 768px) 100vw, 33vw"
                   className="w-full h-full object-cover hover:scale-[1.03] transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)]"
                 />
               </div>
@@ -235,6 +238,7 @@ export default async function ProjectPage({
                 alt={`${project.title} — vue 4`}
                 width={700}
                 height={525}
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className="w-full h-full object-cover hover:scale-[1.03] transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)]"
               />
             </div>
@@ -244,6 +248,7 @@ export default async function ProjectPage({
                 alt={`${project.title} — vue principale`}
                 width={700}
                 height={525}
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className="w-full h-full object-cover hover:scale-[1.03] transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)]"
               />
             </div>

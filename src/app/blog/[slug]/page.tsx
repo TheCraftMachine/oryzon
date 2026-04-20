@@ -122,6 +122,7 @@ const components: PortableTextComponents = {
               alt={value.alt ?? ""}
               width={1200}
               height={700}
+              sizes="(max-width: 768px) 100vw, 680px"
               className="w-full object-cover"
             />
           </div>
@@ -151,7 +152,7 @@ function RelatedCard({ post }: { post: PostCard }) {
               src={img}
               alt={post.title}
               fill
-              sizes="33vw"
+              sizes="(max-width: 640px) 100vw, 33vw"
               className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
             />
           )}
@@ -339,7 +340,7 @@ export default async function BlogPostPage({
 
           {/* Sticky sidebar */}
           <aside className="hidden lg:block">
-            <div className="sticky top-8 space-y-4">
+            <div className="sticky top-24 space-y-4">
 
               {/* Article meta */}
               <div className="rounded-2xl bg-white ring-1 ring-black/6 p-6">

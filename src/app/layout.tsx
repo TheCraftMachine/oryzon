@@ -86,6 +86,7 @@ export default function RootLayout({
       lang="fr"
       className={`${cinzel.variable} ${jakarta.variable} h-full antialiased`}
       suppressHydrationWarning
+      data-scroll-behavior="smooth"
     >
       <head>
         <script

@@ -107,7 +107,7 @@ function FeaturedCard({ post }: { post: PostCard }) {
 
   return (
     <Link href={`/blog/${post.slug.current}`} className="group block">
-      <div className="relative rounded-[1.75rem] overflow-hidden bg-[#0D1117]" style={{ aspectRatio: "16/7" }}>
+      <div className="relative rounded-[1.75rem] overflow-hidden bg-[#0D1117] aspect-[4/3] md:aspect-[16/7]">
 
         {/* Image */}
         {img ? (

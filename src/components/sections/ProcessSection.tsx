@@ -89,7 +89,7 @@ export default function ProcessSection() {
   return (
     <>
     {/* ── Mobile: timeline verticale ─────────────────────────── */}
-    <section className="lg:hidden bg-[#0D1117] px-6 py-20">
+    <section className="lg:hidden bg-[#0D1117] px-6 pt-28 pb-20">
       <div className="max-w-lg mx-auto">
         <span className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/6 px-3 py-1.5 text-[10px] uppercase tracking-[0.2em] font-medium text-white/40 mb-5">
           <span className="w-1 h-1 rounded-full bg-[#C49A5A]" />
@@ -173,7 +173,7 @@ export default function ProcessSection() {
                       key={step.number}
                       ref={(el) => { videoRefs.current[i] = el; }}
                       src={step.video}
-                      muted loop playsInline
+                      muted loop playsInline preload="metadata"
                       className={[
                         "absolute inset-0 w-full h-full object-cover transition-opacity duration-700",
                         i === activeStep ? "opacity-100" : "opacity-0",

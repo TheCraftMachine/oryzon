@@ -49,7 +49,7 @@ export default function Footer() {
         <div className="pt-20 pb-14 flex flex-col md:flex-row md:items-end justify-between gap-10 border-b border-white/[0.07]">
 
           {/* Wordmark + tagline */}
-          <div>
+          <div className="text-center md:text-left">
             <p className="text-[10px] uppercase tracking-[0.35em] text-[#C49A5A]/60 mb-5">
               Caen · Calvados · Normandie
             </p>
@@ -66,7 +66,7 @@ export default function Footer() {
           </div>
 
           {/* CTA */}
-          <div className="flex flex-col items-start md:items-end gap-3 md:pb-2">
+          <div className="flex flex-col items-center md:items-end gap-3 md:pb-2">
             <GoldButton href="/contact" size="lg">Démarrer mon projet</GoldButton>
             <p className="text-[11px] text-white/20">Premier RDV gratuit · Sans engagement</p>
           </div>

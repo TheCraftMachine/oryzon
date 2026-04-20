@@ -18,6 +18,20 @@ export default function VRSection() {
     else video.addEventListener("loadedmetadata", onReady, { once: true });
   }, []);
 
+  // Desktop: start loading video when section approaches (2 viewports away)
+  useEffect(() => {
+    if (window.matchMedia("(max-width: 1023px)").matches) return;
+    const video = videoRef.current;
+    const wrapper = wrapperRef.current;
+    if (!video || !wrapper) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { video.preload = "auto"; video.load(); observer.disconnect(); } },
+      { rootMargin: "200% 0px" }
+    );
+    observer.observe(wrapper);
+    return () => observer.disconnect();
+  }, []);
+
   // Desktop: GSAP scrubs video.currentTime — CSS sticky handles pinning
   useEffect(() => {
     if (window.matchMedia("(max-width: 1023px)").matches) return;
@@ -80,7 +94,7 @@ export default function VRSection() {
           </div>
 
           <div className="absolute inset-0">
-            <video ref={videoRef} src="/videos/vr-plongeon.mp4" muted playsInline preload="auto"
+            <video ref={videoRef} src="/videos/vr-plongeon.mp4" muted playsInline preload="none"
               className="w-full h-full object-cover" />
           </div>
 
@@ -110,7 +124,7 @@ export default function VRSection() {
         <video
           ref={mobileVideoRef}
           src="/videos/vr-plongeon.mp4"
-          muted loop playsInline
+          muted loop playsInline preload="none"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
 

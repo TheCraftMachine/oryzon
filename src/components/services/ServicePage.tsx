@@ -80,19 +80,6 @@ function Hero({ data }: { data: ServiceData }) {
         <div className="absolute inset-0 bg-gradient-to-t from-[#0D1117]/95 via-[#0D1117]/50 to-[#0D1117]/30" />
       </div>
 
-      {/* Back */}
-      <div className="relative z-10 pt-28 px-6 md:px-12">
-        <Link
-          href="/"
-          className="inline-flex items-center gap-2 text-white/30 text-xs hover:text-white/60 transition-colors group"
-        >
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="transition-transform duration-200 group-hover:-translate-x-0.5">
-            <path d="M9 2L4 7l5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-          Accueil
-        </Link>
-      </div>
-
       {/* Content */}
       <div className="relative z-10 flex-1 flex flex-col justify-end max-w-7xl mx-auto w-full px-6 md:px-12 pb-16 md:pb-24">
         <motion.div
@@ -269,7 +256,7 @@ function ForWho({ data }: { data: ServiceData }) {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="bg-[#0D1117] hover:bg-white/4 transition-colors duration-300 p-8 group"
+              className="bg-[#0D1117] hover:bg-white/4 transition-colors duration-300 p-6 md:p-8 group"
             >
               <span className="font-display text-[#C49A5A] text-xs tracking-widest mb-4 block opacity-60">
                 0{i + 1}
@@ -405,7 +392,7 @@ function Process({ data }: { data: ServiceData }) {
                         transition={{ duration: 0.35, ease: EASE }}
                         className="overflow-hidden"
                       >
-                        <p className="text-sm text-[#6B6B6B] leading-relaxed mt-4 ml-12 max-w-md">
+                        <p className="text-sm text-[#6B6B6B] leading-relaxed mt-4 sm:ml-12 max-w-md">
                           {step.body}
                         </p>
                       </motion.div>

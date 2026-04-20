@@ -232,6 +232,7 @@ export default function NotreHistoirePage() {
                   alt="Chantier Oryzon"
                   width={700}
                   height={460}
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                   className="rounded-[1.25rem] w-full object-cover"
                   style={{ aspectRatio: "3/2" }}
                 />

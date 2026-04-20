@@ -94,7 +94,7 @@ export default function Navbar() {
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="fixed inset-0 z-[200] bg-[#0D1117]/96 backdrop-blur-2xl flex flex-col"
           >
-            <nav className="flex-1 flex flex-col justify-center px-8 md:px-20">
+            <nav className="flex-1 flex flex-col justify-center px-8 md:px-20 pt-20">
               <ul className="space-y-0">
                 {NAV_LINKS.map((link, i) => (
                   <motion.li
