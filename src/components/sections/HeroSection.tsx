@@ -46,7 +46,8 @@ export default function HeroSection() {
       />
 
       {/* ── Main content ─────────────────────────────────── */}
-      <div className="relative z-10 flex-1 flex flex-col justify-end max-w-7xl mx-auto w-full px-6 md:px-12 pb-12">
+      <div className="relative z-10 flex-1 flex flex-col max-w-7xl mx-auto w-full px-6 md:px-12">
+      <div className="mt-auto pt-24 md:pt-0 pb-12">
 
         {/* Eyebrow */}
         <motion.div
@@ -146,6 +147,7 @@ export default function HeroSection() {
             ))}
           </div>
         </motion.div>
+      </div>
       </div>
 
       {/* Scroll indicator */}
