@@ -57,9 +57,9 @@ const jsonLd = {
       url: "https://oryzon.fr",
       logo: {
         "@type": "ImageObject",
-        url: "https://oryzon.fr/logo.png",
-        width: 200,
-        height: 60,
+        url: "https://oryzon.fr/images/logo_oryzon.webp",
+        width: 1071,
+        height: 208,
       },
       image: "https://oryzon.fr/images/hero.jpg",
       description:

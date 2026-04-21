@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import GoldButton from "@/components/ui/GoldButton";
 
 const SERVICES = [
@@ -53,12 +54,15 @@ export default function Footer() {
             <p className="text-[10px] uppercase tracking-[0.35em] text-[#C49A5A]/60 mb-5">
               Caen · Calvados · Normandie
             </p>
-            <h2
-              className="font-display text-white"
-              style={{ fontSize: "clamp(3.5rem, 8vw, 6.5rem)", lineHeight: 0.95, letterSpacing: "-0.03em" }}
-            >
-              Oryzon
-            </h2>
+            <Image
+              src="/images/logo_oryzon.webp"
+              alt="Oryzon – Constructeur de maisons sur mesure en Calvados"
+              width={0}
+              height={0}
+              sizes="600px"
+              className="block"
+              style={{ height: "clamp(2.8rem, 7vw, 5.5rem)", width: "auto" }}
+            />
             <p className="text-white/30 text-sm mt-4 leading-relaxed">
               Constructeur de maisons sur mesure.<br />
               Du plan à la remise des clés.

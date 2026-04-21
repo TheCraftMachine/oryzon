@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import GoldButton from "@/components/ui/GoldButton";
@@ -47,11 +48,17 @@ export default function Navbar() {
           ].join(" ")}
         >
           {/* Logo */}
-          <Link
-            href="/"
-            className="font-display text-white text-sm font-semibold tracking-[0.15em] uppercase hover:text-[#C49A5A] transition-colors duration-200 px-2"
-          >
-            Oryzon
+          <Link href="/" className="px-1 mb-1 opacity-90 hover:opacity-100 transition-opacity duration-200">
+            <Image
+              src="/images/logo_oryzon.webp"
+              alt="Oryzon – Constructeur de maisons sur mesure en Calvados"
+              width={0}
+              height={0}
+              sizes="200px"
+              className="block"
+              style={{ height: "24px", width: "auto" }}
+              priority
+            />
           </Link>
 
           {/* Separator */}
