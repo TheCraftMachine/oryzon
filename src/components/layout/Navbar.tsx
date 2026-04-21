@@ -36,7 +36,7 @@ export default function Navbar() {
   return (
     <>
       {/* ── Floating pill — no entrance animation to avoid SSR flash ── */}
-      <header className="fixed top-0 left-0 right-0 z-[300] flex justify-center pt-4 px-4 pointer-events-none">
+      <header className="fixed top-0 left-0 right-0 z-[300] flex justify-center lg:justify-end pt-4 px-4 pointer-events-none">
         <nav
           className={[
             "pointer-events-auto flex items-center gap-4",
