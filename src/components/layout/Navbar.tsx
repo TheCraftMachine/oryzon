@@ -8,12 +8,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import GoldButton from "@/components/ui/GoldButton";
 
 const NAV_LINKS = [
-  { label: "Construire", href: "/construire" },
-  { label: "Rénover", href: "/renover" },
-  { label: "Agrandir", href: "/agrandir" },
-  { label: "Réalisations", href: "/realisations" },
-  { label: "Notre histoire", href: "/notre-histoire" },
-  { label: "Blog", href: "/blog" },
+  { label: "Savoir-faire", href: "/#expertises" },
+  { label: "Réalité virtuelle", href: "/#vr" },
+  { label: "Processus", href: "/#processus" },
+  { label: "Réalisations", href: "/#realisations" },
+  { label: "Pourquoi Oryzon", href: "/#pourquoi" },
+  { label: "FAQ", href: "/#faq" },
 ];
 
 export default function Navbar() {
@@ -48,15 +48,15 @@ export default function Navbar() {
           ].join(" ")}
         >
           {/* Logo */}
-          <Link href="/" className="px-1 mb-1 opacity-90 hover:opacity-100 transition-opacity duration-200">
+          <Link href="/" className="flex items-center px-2 opacity-90 hover:opacity-100 transition-opacity duration-200">
             <Image
-              src="/images/logo_oryzon.webp"
+              src="/images/nav-logo.webp"
               alt="Oryzon – Constructeur de maisons sur mesure en Calvados"
               width={0}
               height={0}
               sizes="200px"
               className="block"
-              style={{ height: "24px", width: "auto" }}
+              style={{ height: "18px", width: "auto" }}
               priority
             />
           </Link>
@@ -72,7 +72,7 @@ export default function Navbar() {
             onClick={() => setOpen((v) => !v)}
             aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
             aria-expanded={open}
-            className="w-9 h-9 flex flex-col items-center justify-center gap-[5px] cursor-pointer rounded-full hover:bg-white/8 transition-colors duration-200"
+            className="w-11 h-11 flex flex-col items-center justify-center gap-[5px] cursor-pointer rounded-full hover:bg-white/8 transition-colors duration-200"
           >
             <span className={[
               "block h-px w-4 bg-white origin-center transition-all duration-300",

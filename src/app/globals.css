@@ -62,6 +62,24 @@ body {
   line-height: 1.1;
 }
 
+/* ─── Section spacing tokens (3-tier rhythm) ─────────── */
+.section-y { padding-block: 5rem; }
+.section-x { padding-inline: 1.5rem; }
+@media (min-width: 768px) {
+  .section-y { padding-block: 7rem; }
+  .section-x { padding-inline: 3rem; }
+}
+@media (min-width: 1024px) {
+  .section-y { padding-block: 8rem; }
+}
+
+/* H2 display — unified clamp for content sections */
+.h2-display {
+  font-size: clamp(2.2rem, 4vw, 4rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
 /* ─── Selection ──────────────────────────────────────── */
 ::selection {
   background-color: var(--color-gold);

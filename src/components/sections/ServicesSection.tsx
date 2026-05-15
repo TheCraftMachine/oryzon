@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
 import { motion, type Variants, type Easing } from "framer-motion";
 
@@ -12,29 +11,29 @@ const SERVICES = [
     title: "Construction",
     subtitle: "sur mesure",
     description:
-      "Chaque maison est conçue depuis zéro, pensée pour votre terrain, votre exposition, votre vie. Pas de plans standard, pas de compromis.",
+      "Marre du copier-coller ? Nous aussi. Votre terrain est unique, votre exposition est spécifique : votre plan doit l'être tout autant.",
     href: "/construire",
-    image: "/images/service-construction.jpg",
-    tag: "De l'esquisse à la remise des clés",
+    image: "/images/service-construction.png",
+    tag: "Du projet à la livraison",
   },
   {
     number: "02",
     title: "Agrandissement",
-    subtitle: "& extension",
+    subtitle: "& personnalisation",
     description:
-      "Vous aimez votre quartier, votre maison, vos voisins. Ajoutez l'espace qui manque sans changer ce que vous aimez déjà.",
+      "Vous aimez votre quartier, votre maison, votre cadre de vie. Ajoutez de l'espace qui manque sans changer ce que vous aimez déjà. Nous le réalisons sur-mesure.",
     href: "/agrandir",
-    image: "/images/service-agrandissement.jpg",
+    image: "/images/service-agrandissement.png",
     tag: "Extension, surélévation, combles",
   },
   {
     number: "03",
     title: "Rénovation",
-    subtitle: "& transformation",
+    subtitle: "& optimisation",
     description:
-      "Vous avez trouvé la localisation de vos rêves. On s'occupe du reste — de la mise aux normes aux finitions sur mesure.",
+      "Une rénovation totale bien pensée depuis la conception : nous intégrons les dernières normes techniques au cœur de votre projet pour un résultat aussi performant qu'élégant.",
     href: "/renover",
-    image: "/images/service-renovation.jpg",
+    image: "/images/service-renovation-1.jpg",
     tag: "Rénovation complète ou partielle",
   },
 ];
@@ -50,7 +49,7 @@ const cardVariants: Variants = {
 
 export default function ServicesSection() {
   return (
-    <section className="bg-[#F9F7F4] py-32 px-6 md:px-12">
+    <section className="bg-[#F9F7F4] section-y section-x">
       <div className="max-w-7xl mx-auto">
 
         {/* Header */}
@@ -63,9 +62,9 @@ export default function ServicesSection() {
         >
           <span className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-black/4 px-3 py-1.5 text-[10px] uppercase tracking-[0.2em] font-medium text-black/40 mb-6">
             <span className="w-1 h-1 rounded-full bg-[#C49A5A]" />
-            Nos expertises
+            Notre savoir-faire
           </span>
-          <h2 className="font-display text-[#111111]" style={{ fontSize: "clamp(2.2rem, 4vw, 4rem)", lineHeight: 1.05, letterSpacing: "-0.03em" }}>
+          <h2 className="font-display h2-display text-[#111111]">
             Ce que nous<br />
             <em className="not-italic" style={{ color: "#C49A5A" }}>construisons</em> pour vous.
           </h2>
@@ -83,7 +82,7 @@ export default function ServicesSection() {
               viewport={{ once: true, margin: "-60px" }}
             >
               {/* Double-bezel outer shell */}
-              <Link href={service.href} className="group block h-full">
+              <div className="group block h-full">
                 <div className="h-full rounded-[1.75rem] bg-black/4 ring-1 ring-black/6 p-1.5">
                   {/* Inner core */}
                   <div className="h-full rounded-[1.25rem] bg-white shadow-[inset_0_1px_1px_rgba(255,255,255,0.8)] overflow-hidden flex flex-col">
@@ -120,8 +119,8 @@ export default function ServicesSection() {
                         {service.description}
                       </p>
 
-                      {/* Arrow CTA */}
-                      <div className="mt-6 flex items-center justify-between">
+                      {/* Arrow CTA — hidden */}
+                      <div className="hidden mt-6 items-center justify-between">
                         <span className="text-xs font-semibold text-[#111111] tracking-wide group-hover:text-[#C49A5A] transition-colors duration-200">
                           En savoir plus
                         </span>
@@ -135,7 +134,7 @@ export default function ServicesSection() {
 
                   </div>
                 </div>
-              </Link>
+              </div>
             </motion.div>
           ))}
         </div>

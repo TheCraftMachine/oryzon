@@ -55,13 +55,13 @@ export default function Footer() {
               Caen · Calvados · Normandie
             </p>
             <Image
-              src="/images/logo_oryzon.webp"
+              src="/images/footer-logo.webp"
               alt="Oryzon – Constructeur de maisons sur mesure en Calvados"
               width={0}
               height={0}
               sizes="600px"
               className="block"
-              style={{ height: "clamp(2.8rem, 7vw, 5.5rem)", width: "auto" }}
+              style={{ height: "clamp(5rem, 12vw, 9rem)", width: "auto" }}
             />
             <p className="text-white/30 text-sm mt-4 leading-relaxed">
               Constructeur de maisons sur mesure.<br />

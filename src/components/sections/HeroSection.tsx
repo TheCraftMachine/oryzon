@@ -6,9 +6,9 @@ import { motion } from "framer-motion";
 import GoldButton from "@/components/ui/GoldButton";
 
 const STATS = [
-  { value: "+30 ans", label: "de métier" },
-  { value: "+800", label: "réalisations" },
+  { value: "+30 ans", label: "d'expérience" },
   { value: "100%", label: "sur mesure" },
+  { value: "Réalité", label: "virtuelle" },
   { value: "1 seul", label: "interlocuteur" },
 ];
 
@@ -49,19 +49,6 @@ export default function HeroSection() {
       <div className="relative z-10 flex-1 flex flex-col max-w-7xl mx-auto w-full px-6 md:px-12">
         <div className="mt-auto pt-24 md:pt-0 pb-12">
 
-          {/* Eyebrow */}
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="mb-4 md:mb-6"
-          >
-            <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/14 px-3 py-1.5 text-[10px] uppercase tracking-[0.2em] font-medium text-white/90">
-              <span className="w-1 h-1 rounded-full" style={{ backgroundColor: "#C49A5A" }} />
-              Construction, agrandissement et rénovation sur mesure
-            </span>
-          </motion.div>
-
           {/* Headline — clip reveal line by line */}
           <h1 className="font-display text-white mb-5 md:mb-8" aria-label={HEADLINE_LINES.join(" ")}>
             {HEADLINE_LINES.map((line, i) => (
@@ -90,6 +77,19 @@ export default function HeroSection() {
             ))}
           </h1>
 
+          {/* Eyebrow — sous le titre */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.85, ease: [0.16, 1, 0.3, 1] }}
+            className="mb-5 md:mb-6"
+          >
+            <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/14 px-3 py-1.5 text-[10px] uppercase tracking-[0.2em] font-medium text-white/90">
+              <span className="w-1 h-1 rounded-full" style={{ backgroundColor: "#C49A5A" }} />
+              Construction, agrandissement et rénovation sur mesure
+            </span>
+          </motion.div>
+
           {/* Subtitle */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -97,8 +97,7 @@ export default function HeroSection() {
             transition={{ duration: 0.7, delay: 0.95, ease: [0.16, 1, 0.3, 1] }}
             className="text-white/85 text-base md:text-lg max-w-md leading-relaxed mb-6 md:mb-10"
           >
-            De l'esquisse à la remise des clés — avec un seul interlocuteur
-            et votre projet en réalité virtuelle avant le premier coup de pelle.
+            Votre rêve prend vie sous vos yeux, bien avant de sortir de terre.
           </motion.p>
 
           {/* CTAs */}
@@ -113,7 +112,7 @@ export default function HeroSection() {
 
             {/* Secondary */}
             <Link
-              href="/realisations"
+              href="/#realisations"
               className="inline-flex items-center gap-2 text-white/70 text-sm font-medium hover:text-white transition-colors duration-200 group"
             >
               <span>Voir nos réalisations</span>
@@ -156,7 +155,7 @@ export default function HeroSection() {
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1.8 }}
         aria-hidden="true"
-        className="absolute bottom-8 right-8 md:right-12 z-10 flex flex-col items-center gap-2"
+        className="absolute bottom-8 right-8 md:right-12 z-10 hidden md:flex flex-col items-center gap-2"
       >
         <span className="text-[10px] text-white/30 uppercase tracking-[0.2em] rotate-90 origin-center translate-y-4">
           Scroll

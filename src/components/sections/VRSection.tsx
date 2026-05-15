@@ -119,7 +119,7 @@ export default function VRSection() {
       </div>
 
       {/* ── Mobile: section normale, vidéo autoplay ─────────────── */}
-      <section className="lg:hidden relative bg-[#0D1117] overflow-hidden h-[100dvh]">
+      <section className="lg:hidden relative bg-[#0D1117] overflow-hidden min-h-[100dvh]">
 
         {/* Vidéo plein fond */}
         <video
@@ -134,7 +134,7 @@ export default function VRSection() {
         <div className="absolute inset-0 bg-gradient-to-t from-[#0D1117]/80 via-transparent to-[#0D1117]/30 pointer-events-none" />
 
         {/* Contenu */}
-        <div className="relative z-10 flex flex-col items-center justify-center h-full px-6 py-24 text-center">
+        <div className="relative z-10 flex flex-col items-center justify-center min-h-[100dvh] px-6 py-24 text-center">
           <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/8 px-3 py-1.5 text-[10px] uppercase tracking-[0.2em] font-medium text-white/60 mb-8">
             <span className="w-1 h-1 rounded-full bg-[#C49A5A]" />
             Réalité virtuelle
@@ -142,17 +142,17 @@ export default function VRSection() {
 
           <h2 className="font-display text-white mb-5"
             style={{ fontSize: "clamp(2.2rem, 9vw, 3.5rem)", lineHeight: 1.0, letterSpacing: "-0.03em" }}>
-            Voyez votre maison<br />
+            Visitez votre maison<br />
             <em className="not-italic" style={{ color: "#C49A5A" }}>avant qu'elle existe.</em>
           </h2>
 
           <p className="text-white/60 text-sm max-w-xs leading-relaxed mb-10">
-            Visitez chaque pièce en réalité virtuelle avant le premier coup de pelle.
-            Vous ajustez, vous validez.
+            Explorez chaque pièce avec la réalité virtuelle, et visualisez les moindres détails.
+            Vous ne rêvez plus votre projet, vous le concrétisez.
           </p>
 
           <div className="flex flex-wrap justify-center gap-2 mb-10">
-            {["Visite à 360°", "Temps réel", "Matériaux au choix"].map(f => (
+            {["Visite immersive à 360°", "Finitions sur-mesure", "Espaces personnalisés"].map(f => (
               <span key={f} className="rounded-full border border-white/12 bg-white/6 px-3 py-1.5 text-[10px] text-white/50">{f}</span>
             ))}
           </div>
@@ -172,15 +172,15 @@ function OverlayContent() {
       </span>
       <h2 className="font-display text-white mb-6"
         style={{ fontSize: "clamp(2.5rem, 6vw, 6rem)", lineHeight: 1.0, letterSpacing: "-0.03em" }}>
-        Voyez votre maison<br />
+        Visitez votre maison<br />
         <em className="not-italic" style={{ color: "#C49A5A" }}>avant qu'elle existe.</em>
       </h2>
       <p className="text-white/60 text-base max-w-lg leading-relaxed mb-10">
-        Avant le premier coup de pelle, vous visitez chaque pièce en réalité virtuelle.
-        Vous ajustez, vous validez, vous avancez sereinement.
+        Explorez chaque pièce avec la réalité virtuelle, et visualisez les moindres détails.
+        Vous ne rêvez plus votre projet, vous le concrétisez.
       </p>
       <div className="flex flex-wrap justify-center gap-3 pointer-events-auto">
-        {["Visite immersive à 360°", "Modifications en temps réel", "Matériaux & finitions au choix"].map(f => (
+        {["Visite immersive à 360°", "Finitions sur-mesure", "Espaces personnalisés"].map(f => (
           <span key={f} className="rounded-full border border-white/12 bg-white/6 px-4 py-2 text-xs text-white/50">{f}</span>
         ))}
       </div>

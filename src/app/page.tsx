@@ -21,7 +21,6 @@ import VRSection from "@/components/sections/VRSection";
 import ProcessSection from "@/components/sections/ProcessSection";
 import RealisationsSection from "@/components/sections/RealisationsSection";
 import WhySection from "@/components/sections/WhySection";
-import FounderSection from "@/components/sections/FounderSection";
 import FAQSection from "@/components/sections/FAQSection";
 import CTAFinalSection from "@/components/sections/CTAFinalSection";
 
@@ -29,14 +28,13 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
-      <ServicesSection />
-      <VRSection />
-      <ProcessSection />
-      <RealisationsSection />
-      <WhySection />
-      <FounderSection />
-      <FAQSection />
-      <CTAFinalSection />
+      <div id="expertises"><ServicesSection /></div>
+      <div id="vr"><VRSection /></div>
+      <div id="processus"><ProcessSection /></div>
+      <div id="realisations"><RealisationsSection /></div>
+      <div id="pourquoi"><WhySection /></div>
+      <div id="faq"><FAQSection /></div>
+      <div id="contact"><CTAFinalSection /></div>
     </>
   );
 }

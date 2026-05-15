@@ -1,48 +1,49 @@
 "use client";
 
 import GoldButton from "@/components/ui/GoldButton";
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 const STEPS: {
   number: string;
   title: string;
   description: string;
-  video: string;
+  image: string;
   duration: string;
 }[] = [
     {
       number: "01",
-      title: "Rendez-vous découverte",
-      description: "On écoute votre projet, votre terrain, vos envies. Aucun engagement — juste une conversation pour comprendre ce que vous voulez construire.",
-      video: "/videos/process-rdv.mp4",
+      title: "Premier contact",
+      description: "Vous venez avec vos idées, vos envies et votre terrain. Nous échangeons sur votre projet de construction.",
+      image: "/images/step1.png",
       duration: "30 min",
     },
     {
       number: "02",
       title: "Conception des plans",
-      description: "Votre maison prend forme sur papier. Plans, façades, volumes — tout est pensé sur mesure pour votre terrain et votre style de vie.",
-      video: "/videos/process-plans.mp4",
+      description: "Votre projet prend forme sur papier. Plans, façades, volumes — tout est pensé sur mesure pour votre terrain et style de vie.",
+      image: "/images/step2.png",
       duration: "4–6 semaines",
     },
     {
       number: "03",
-      title: "Visualisation en VR",
-      description: "Vous enfilez le casque et vous visitez votre future maison pièce par pièce. Vous ajustez en temps réel avant de valider définitivement.",
-      video: "/videos/process-vr.mp4",
+      title: "Projection en VR",
+      description: "Vous enfilez le casque et vous visitez vos espaces, pièce par pièce. Vous personnalisez à l'infini votre projet.",
+      image: "/images/step3.png",
       duration: "1 séance",
     },
     {
       number: "04",
-      title: "Chantier & suivi",
-      description: "Un seul interlocuteur vous accompagne du premier coup de pelle à la fin du chantier. Délais contractuels, rapports hebdomadaires.",
-      video: "/videos/process-chantier.mp4",
+      title: "Suivi des travaux",
+      description: "Un seul interlocuteur vous accompagne de la conception à la fin de la prestation : délais, accompagnement personnalisé, optimisation de la prestation.",
+      image: "/images/step4.png",
       duration: "10–14 mois",
     },
     {
       number: "05",
       title: "Remise des clés",
-      description: "Votre maison est livrée conforme aux plans, aux délais et au budget convenu. Garanties décennale et parfait achèvement incluses.",
-      video: "/videos/process-cles.mp4",
+      description: "Votre projet de vie est livré conforme aux plans, aux délais et au budget convenu.",
+      image: "/images/step5.png",
       duration: "Jour J",
     },
   ];
@@ -55,20 +56,12 @@ export default function ProcessSection() {
   const [activeStep, setActiveStep] = useState(0);
   const activeStepRef = useRef(0);
   const wrapperRef = useRef<HTMLDivElement>(null);
-  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
 
-  // Play/pause videos
+  // Scroll listener — rAF-guarded to coalesce events to one read per frame
   useEffect(() => {
-    videoRefs.current.forEach((video, i) => {
-      if (!video) return;
-      if (i === activeStep) { video.currentTime = 0; video.play().catch(() => { }); }
-      else video.pause();
-    });
-  }, [activeStep]);
-
-  // Scroll listener — no GSAP, no DOM mutation, no React conflict
-  useEffect(() => {
-    const onScroll = () => {
+    let rafId: number | null = null;
+    const compute = () => {
+      rafId = null;
       const wrapper = wrapperRef.current;
       if (!wrapper) return;
       const { top, height } = wrapper.getBoundingClientRect();
@@ -81,15 +74,22 @@ export default function ProcessSection() {
         setActiveStep(index);
       }
     };
+    const onScroll = () => {
+      if (rafId !== null) return;
+      rafId = requestAnimationFrame(compute);
+    };
 
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (rafId !== null) cancelAnimationFrame(rafId);
+    };
   }, []);
 
   return (
     <>
     {/* ── Mobile: timeline verticale ─────────────────────────── */}
-    <section className="lg:hidden bg-[#0D1117] px-6 pt-28 pb-20">
+    <section className="lg:hidden bg-[#0D1117] px-6 py-20 md:py-28">
       <div className="max-w-lg mx-auto">
         <span className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/6 px-3 py-1.5 text-[10px] uppercase tracking-[0.2em] font-medium text-white/40 mb-5">
           <span className="w-1 h-1 rounded-full bg-[#C49A5A]" />
@@ -145,18 +145,15 @@ export default function ProcessSection() {
 
     {/* ── Desktop: sticky scroll animation ───────────────────── */}
     <div ref={wrapperRef} style={{ height: WRAPPER_HEIGHT }} className="hidden lg:block bg-[#0D1117]">
-      <section className="sticky top-0 h-[100dvh] flex flex-col justify-center px-6 md:px-12 py-20">
-        <div className="max-w-7xl mx-auto w-full">
+      <section className="sticky top-0 h-[100dvh] flex flex-col justify-center px-6 md:px-12 lg:px-20 xl:px-24 py-28 lg:py-36 overflow-hidden">
+        <div className="max-w-6xl mx-auto w-full">
 
           <div className="mb-12">
             <span className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/6 px-3 py-1.5 text-[10px] uppercase tracking-[0.2em] font-medium text-white/40 mb-5">
               <span className="w-1 h-1 rounded-full bg-[#C49A5A]" />
               Le processus
             </span>
-            <h2
-              className="font-display text-white"
-              style={{ fontSize: "clamp(2rem, 3.5vw, 3.5rem)", lineHeight: 1.05, letterSpacing: "-0.03em" }}
-            >
+            <h2 className="font-display h2-display text-white">
               Votre projet,{" "}
               <em className="not-italic" style={{ color: "#C49A5A" }}>étape par étape.</em>
             </h2>
@@ -169,13 +166,15 @@ export default function ProcessSection() {
               <div className="rounded-[1.75rem] bg-white/5 ring-1 ring-white/8 p-1.5">
                 <div className="rounded-[1.25rem] overflow-hidden bg-[#111827] aspect-[4/3] relative">
                   {STEPS.map((step, i) => (
-                    <video
+                    <Image
                       key={step.number}
-                      ref={(el) => { videoRefs.current[i] = el; }}
-                      src={step.video}
-                      muted loop playsInline preload="metadata"
+                      src={step.image}
+                      alt={step.title}
+                      fill
+                      sizes="(min-width: 1024px) 50vw, 100vw"
+                      priority={i === 0}
                       className={[
-                        "absolute inset-0 w-full h-full object-cover transition-opacity duration-700",
+                        "object-cover transition-opacity duration-700",
                         i === activeStep ? "opacity-100" : "opacity-0",
                       ].join(" ")}
                     />
@@ -245,8 +244,8 @@ export default function ProcessSection() {
                         {step.description}
                       </p>
                       {i === activeStep && (
-                        <div className="lg:hidden mt-5 rounded-xl overflow-hidden aspect-video bg-[#111827]">
-                          <video src={step.video} autoPlay muted loop playsInline className="w-full h-full object-cover" />
+                        <div className="lg:hidden mt-5 rounded-xl overflow-hidden aspect-video bg-[#111827] relative">
+                          <Image src={step.image} alt={step.title} fill sizes="100vw" className="object-cover" />
                         </div>
                       )}
                     </div>
@@ -255,16 +254,6 @@ export default function ProcessSection() {
               ))}
             </div>
           </div>
-
-          {/* CTA */}
-          <div className="mt-10 pt-8 border-t border-white/8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-            <p className="text-white/40 text-sm leading-relaxed">
-              Prêt à voir votre projet prendre forme ?{" "}
-              <span className="text-white/60">Premier rendez-vous gratuit, sans engagement.</span>
-            </p>
-            <GoldButton href="/contact" size="lg" className="shrink-0">Démarrer mon projet</GoldButton>
-          </div>
-
         </div>
       </section>
     </div>

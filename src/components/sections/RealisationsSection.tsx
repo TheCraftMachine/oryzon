@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import GoldButton from "@/components/ui/GoldButton";
@@ -46,7 +45,7 @@ const PROJECTS = [
 
 export default function RealisationsSection() {
   return (
-    <section className="bg-[#F9F7F4] py-32 px-6 md:px-12">
+    <section className="bg-[#F9F7F4] section-y section-x">
       <div className="max-w-7xl mx-auto">
 
         {/* Header */}
@@ -62,25 +61,15 @@ export default function RealisationsSection() {
               <span className="w-1 h-1 rounded-full bg-[#C49A5A]" />
               Réalisations
             </span>
-            <h2
-              className="font-display text-[#111111]"
-              style={{ fontSize: "clamp(2.2rem, 4vw, 4rem)", lineHeight: 1.05, letterSpacing: "-0.03em" }}
-            >
-              +800 projets.<br />
+            <h2 className="font-display h2-display text-[#111111]">
+              Plus de 30 ans de projets.<br />
               <em className="not-italic" style={{ color: "#C49A5A" }}>Chacun unique.</em>
             </h2>
           </div>
-          <Link
-            href="/realisations"
-            className="group inline-flex items-center gap-2 text-sm font-medium text-[#111111] hover:text-[#C49A5A] transition-colors duration-200 shrink-0"
-          >
-            <span>Voir toutes nos réalisations</span>
-            <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
-          </Link>
         </motion.div>
 
         {/* Grid — Z-pattern: 7-5 / 5-7 */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-6 sm:gap-5 md:gap-4">
           {PROJECTS.map((project, i) => {
             // Alternating: large (7) on left then right
             const isLarge = i === 0 || i === 3;
@@ -93,7 +82,7 @@ export default function RealisationsSection() {
                 transition={{ duration: 0.7, delay: (i % 2) * 0.12, ease: [0.16, 1, 0.3, 1] }}
                 className={isLarge ? "md:col-span-7" : "md:col-span-5"}
               >
-                <Link href={project.href} className="group block h-full">
+                <div className="group block h-full">
                   <div className="rounded-[1.75rem] bg-black/4 ring-1 ring-black/6 p-1.5 h-full">
                     <div className="rounded-[1.25rem] overflow-hidden bg-[#111111] h-full flex flex-col">
 
@@ -136,7 +125,7 @@ export default function RealisationsSection() {
 
                     </div>
                   </div>
-                </Link>
+                </div>
               </motion.div>
             );
           })}
@@ -153,8 +142,8 @@ export default function RealisationsSection() {
           <p className="text-sm text-black/40">
             Découvrez l'ensemble de nos projets — construction, rénovation, agrandissement.
           </p>
-          <GoldButton href="/realisations" size="lg" className="shrink-0">
-            Voir toutes nos réalisations
+          <GoldButton href="/contact" size="lg" className="shrink-0">
+            Parlons de votre projet
           </GoldButton>
         </motion.div>
 
