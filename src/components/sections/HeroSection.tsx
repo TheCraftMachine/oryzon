@@ -16,7 +16,7 @@ const HEADLINE_LINES = ["Votre maison,", "telle que vous", "l'imaginez."];
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-[100dvh] flex flex-col bg-[--color-bg-dark] overflow-hidden">
+    <section className="relative flex flex-col bg-[--color-bg-dark] overflow-hidden">
 
       {/* ── Background image with Ken Burns ──────────────── */}
       <div className="absolute inset-0 z-0">
@@ -32,6 +32,8 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-t from-[#0D1117]/95 via-[#0D1117]/30 to-transparent" />
         {/* Very subtle top vignette — navbar readability only */}
         <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#0D1117]/50 to-transparent" />
+        {/* Right-side scrim — desktop only, gives the vertical logo contrast */}
+        <div className="hidden lg:block absolute inset-y-0 right-0 w-1/2 bg-gradient-to-l from-[#0D1117]/75 via-[#0D1117]/35 to-transparent" />
       </div>
 
       {/* ── Grain overlay (fixed, GPU-safe) ──────────────── */}
@@ -45,9 +47,15 @@ export default function HeroSection() {
         }}
       />
 
-      {/* ── Main content ─────────────────────────────────── */}
-      <div className="relative z-10 flex-1 flex flex-col max-w-7xl mx-auto w-full px-6 md:px-12">
+      {/* ── Main content — 100dvh fold ───────────────────── */}
+      <div className="relative z-10 min-h-[100dvh] flex flex-col max-w-9xl mx-auto w-full px-6 md:px-10 lg:px-10 xl:px-14">
         <div className="mt-auto pt-24 md:pt-0 pb-12">
+
+          {/* ── Top row: text + logo (grid on lg+) ───────── */}
+          <div className="lg:grid lg:grid-cols-12 lg:gap-6 lg:items-center">
+
+          {/* ── Left: text block ─────────────────────────── */}
+          <div className="lg:col-span-7 lg:relative lg:z-10">
 
           {/* Headline — clip reveal line by line */}
           <h1 className="font-display text-white mb-5 md:mb-8" aria-label={HEADLINE_LINES.join(" ")}>
@@ -55,7 +63,7 @@ export default function HeroSection() {
               <span key={i} className="block overflow-hidden">
                 <motion.span
                   className="block"
-                  style={{ fontSize: "clamp(3rem, 7vw, 7.5rem)", lineHeight: 1.05, letterSpacing: "-0.03em" }}
+                  style={{ fontSize: "clamp(2.5rem, 6.5vw, 5.5rem)", lineHeight: 1.05, letterSpacing: "-0.03em" }}
                   initial={{ y: "110%" }}
                   animate={{ y: "0%" }}
                   transition={{
@@ -77,12 +85,12 @@ export default function HeroSection() {
             ))}
           </h1>
 
-          {/* Eyebrow — sous le titre */}
+          {/* Eyebrow — sous le titre — masqué sur mobile pour aérer */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.85, ease: [0.16, 1, 0.3, 1] }}
-            className="mb-5 md:mb-6"
+            className="hidden sm:block mb-5 md:mb-6"
           >
             <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/14 px-3 py-1.5 text-[10px] uppercase tracking-[0.2em] font-medium text-white/90">
               <span className="w-1 h-1 rounded-full" style={{ backgroundColor: "#C49A5A" }} />
@@ -105,7 +113,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 1.1, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-wrap items-center gap-4 mb-16 md:mb-20"
+            className="flex flex-wrap items-center gap-4 mb-10 md:mb-20"
           >
             {/* Primary */}
             <GoldButton href="/contact" size="lg">Parlons de votre projet</GoldButton>
@@ -120,20 +128,43 @@ export default function HeroSection() {
             </Link>
           </motion.div>
 
-          {/* Stats bar */}
+          </div>
+
+          {/* ── Right: vertical logo — desktop only ──────── */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.2, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="hidden lg:flex lg:col-span-5 lg:items-center lg:justify-end lg:relative"
+            aria-hidden="true"
+          >
+            <Image
+              src="/images/hero-logo-vertical.webp"
+              alt=""
+              width={760}
+              height={440}
+              priority
+              sizes="(min-width: 1920px) 1200px, 65vw"
+              className="block h-auto absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 max-w-none drop-shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
+              style={{ width: "clamp(34rem, 65vw, 75rem)" }}
+            />
+          </motion.div>
+          </div>
+
+          {/* ── Stats bar — full width under both blocks ─── */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 1.3 }}
-            className="border-t border-white/10 pt-6"
+            className="hidden sm:block border-t border-white/10 pt-6 mt-10 lg:mt-14"
           >
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0">
               {STATS.map((stat, i) => (
                 <div
                   key={i}
                   className={[
                     "flex flex-col gap-0.5",
-                    i > 0 ? "md:border-l md:border-white/10 md:pl-8" : "",
+                    i > 0 ? "lg:border-l lg:border-white/10 lg:pl-8" : "",
                   ].join(" ")}
                 >
                   <span className="font-display text-2xl md:text-3xl text-white font-medium">
@@ -146,6 +177,24 @@ export default function HeroSection() {
               ))}
             </div>
           </motion.div>
+        </div>
+      </div>
+
+      {/* ── Stats mobile — sous le fold (visibles au scroll) ─── */}
+      <div className="sm:hidden relative z-10 max-w-7xl mx-auto w-full px-6 pb-20 pt-4">
+        <div className="border-t border-white/10 pt-8">
+          <div className="grid grid-cols-2 gap-y-6 gap-x-4">
+            {STATS.map((stat, i) => (
+              <div key={i} className="flex flex-col gap-0.5">
+                <span className="font-display text-2xl text-white font-medium">
+                  {stat.value}
+                </span>
+                <span className="text-xs text-white/40 tracking-wide">
+                  {stat.label}
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
