@@ -62,7 +62,7 @@ export default function RealisationsSection() {
               Réalisations
             </span>
             <h2 className="font-display h2-display text-[#111111]">
-              Plus de 30 d’expérience<br />
+              Plus de 30 ans d’expérience<br />
               <em className="not-italic" style={{ color: "#C49A5A" }}>Chacun unique.</em>
             </h2>
           </div>
