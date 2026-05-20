@@ -14,6 +14,8 @@ export const metadata: Metadata = {
     url: "https://oryzon-lake.vercel.app",
     locale: "fr_FR",
     siteName: "Oryzon",
+
+    images: [{ url: "/og-default.jpg", width: 1200, height: 630, alt: "Oryzon — Constructeur de maisons sur mesure à Caen" }],
   },
 };
 import ServicesSection from "@/components/sections/ServicesSection";
