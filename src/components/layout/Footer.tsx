@@ -8,9 +8,6 @@ const SECTIONS = [
   { label: "Réalisations", href: "/#realisations" },
   { label: "Pourquoi Oryzon", href: "/#pourquoi" },
   { label: "FAQ", href: "/#faq" },
-];
-
-const COMPANY = [
   { label: "Contact", href: "/contact" },
 ];
 
@@ -45,38 +42,11 @@ export default function Footer() {
 
       <div className="relative max-w-7xl mx-auto px-6 md:px-12">
 
-        {/* ── Brand row ───────────────────────────────────────── */}
-        <div className="pt-10 md:pt-16 pb-14 flex flex-col md:flex-row md:items-center md:justify-between gap-10 md:gap-12 border-b border-white/[0.07]">
-
-          {/* Wordmark */}
-          <Image
-            src="/images/footer-logo.webp"
-            alt="Oryzon – Constructeur de maisons sur mesure en Calvados"
-            width={0}
-            height={0}
-            sizes="800px"
-            className="block mx-auto md:mx-0 shrink-0"
-            style={{ height: "clamp(12rem, 32vw, 26rem)", width: "auto" }}
-          />
-
-          {/* Eyebrow + tagline — right side on desktop */}
-          <div className="flex flex-col items-center md:items-end text-center md:text-right md:max-w-sm">
-
-            <p className="font-display text-white/85 text-2xl md:text-3xl leading-tight" style={{ letterSpacing: "-0.02em" }}>
-              Constructeur de maisons<br />
-              <em className="not-italic" style={{ color: "#C49A5A" }}>sur mesure.</em>
-            </p>
-            <p className="text-white/30 text-sm mt-3 leading-relaxed">
-              Du plan à la remise des clés.
-            </p>
-          </div>
-        </div>
-
-        {/* ── Links + Contact row ─────────────────────────────── */}
-        <div className="py-14 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 md:gap-8">
+        {/* ── Links + Logo + Contact row ─────────────────────── */}
+        <div className="pt-16 md:pt-20 pb-14 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 md:gap-8 items-center">
 
           {/* Sections (one-page nav) */}
-          <div>
+          <div className="md:col-span-1">
             <p className="text-[9px] uppercase tracking-[0.3em] text-white/20 mb-7">Sections</p>
             <ul className="space-y-4">
               {SECTIONS.map((item) => (
@@ -93,26 +63,21 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Company */}
-          <div>
-            <p className="text-[9px] uppercase tracking-[0.3em] text-white/20 mb-7">Société</p>
-            <ul className="space-y-4">
-              {COMPANY.map((item) => (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className="group flex items-center gap-0 text-sm text-white/45 hover:text-white transition-colors duration-200"
-                  >
-                    <span className="w-0 shrink-0 h-px bg-[#C49A5A] group-hover:w-4 transition-all duration-300 ease-out mr-0 group-hover:mr-2" />
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+          {/* Logo — center column (50%) */}
+          <div className="md:col-span-2 flex justify-center">
+            <Image
+              src="/images/footer-logo.webp"
+              alt="Oryzon – Constructeur de maisons sur mesure en Calvados"
+              width={760}
+              height={440}
+              sizes="800px"
+              className="block w-auto max-w-none"
+              style={{ height: "clamp(12rem, 26vw, 22rem)" }}
+            />
           </div>
 
           {/* Contact */}
-          <div className="sm:col-span-2 md:col-span-1">
+          <div className="sm:col-span-2 md:col-span-1 md:justify-self-end">
             <p className="text-[9px] uppercase tracking-[0.3em] text-white/20 mb-7">Contact</p>
             <div className="space-y-4">
               <a
