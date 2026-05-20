@@ -89,8 +89,8 @@ export default function ProcessSection() {
   return (
     <>
     {/* ── Mobile: timeline verticale ─────────────────────────── */}
-    <section className="lg:hidden bg-[#0D1117] px-6 py-20 md:py-28">
-      <div className="max-w-lg mx-auto">
+    <section className="xl:hidden bg-[#0D1117] px-6 md:px-12 py-20 md:py-28">
+      <div className="max-w-lg md:max-w-xl lg:max-w-2xl mx-auto">
         <span className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/6 px-3 py-1.5 text-[10px] uppercase tracking-[0.2em] font-medium text-white/40 mb-5">
           <span className="w-1 h-1 rounded-full bg-[#C49A5A]" />
           Le processus
@@ -134,7 +134,7 @@ export default function ProcessSection() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-white/8 flex flex-col gap-4">
+        <div className="mt-12 pt-8 border-t border-white/8 flex flex-col items-center text-center gap-4">
           <p className="text-white/40 text-sm leading-relaxed">
             Premier rendez-vous gratuit, sans engagement.
           </p>
@@ -144,12 +144,12 @@ export default function ProcessSection() {
     </section>
 
     {/* ── Desktop: sticky scroll animation ───────────────────── */}
-    <div ref={wrapperRef} style={{ height: WRAPPER_HEIGHT }} className="hidden lg:block bg-[#0D1117]">
-      <section className="sticky top-0 h-[100dvh] flex flex-col justify-center px-6 md:px-12 lg:px-20 xl:px-24 py-28 lg:py-36 overflow-hidden">
+    <div ref={wrapperRef} style={{ height: WRAPPER_HEIGHT }} className="hidden xl:block bg-[#0D1117]">
+      <section className="sticky top-0 h-[100dvh] flex flex-col justify-center px-6 md:px-12 lg:px-16 xl:px-24 py-20 xl:py-32 overflow-hidden">
         <div className="max-w-6xl mx-auto w-full">
 
-          <div className="mb-12">
-            <span className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/6 px-3 py-1.5 text-[10px] uppercase tracking-[0.2em] font-medium text-white/40 mb-5">
+          <div className="mb-8 xl:mb-12">
+            <span className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/6 px-3 py-1.5 text-[10px] uppercase tracking-[0.2em] font-medium text-white/40 mb-4 xl:mb-5">
               <span className="w-1 h-1 rounded-full bg-[#C49A5A]" />
               Le processus
             </span>
@@ -159,7 +159,7 @@ export default function ProcessSection() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16">
 
             {/* Video panel */}
             <div className="hidden lg:flex flex-col justify-center">
@@ -202,13 +202,13 @@ export default function ProcessSection() {
             </div>
 
             {/* Steps */}
-            <div className="flex flex-col justify-center space-y-2">
+            <div className="flex flex-col justify-center space-y-1.5 xl:space-y-2">
               {STEPS.map((step, i) => (
                 <button
                   key={step.number}
                   onClick={() => setActiveStep(i)}
                   className={[
-                    "w-full text-left rounded-2xl px-6 py-5 transition-all duration-500 cursor-pointer",
+                    "w-full text-left rounded-2xl px-5 xl:px-6 py-4 xl:py-5 transition-all duration-500 cursor-pointer",
                     i === activeStep ? "bg-white/6 ring-1 ring-white/10" : "hover:bg-white/3",
                   ].join(" ")}
                 >

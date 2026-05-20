@@ -81,14 +81,14 @@ export default function RealisationsPage() {
             </div>
 
             {/* Stats */}
-            <div className="flex gap-10 lg:gap-12 lg:pb-2 shrink-0">
+            <div className="flex flex-wrap gap-x-8 gap-y-4 sm:gap-10 lg:gap-12 lg:pb-2 lg:shrink-0">
               {[
                 { value: "+800", label: "projets réalisés" },
                 { value: "30 ans", label: "de métier" },
                 { value: "100%", label: "sur mesure" },
               ].map((s) => (
                 <div key={s.label}>
-                  <p className="font-display text-white text-3xl md:text-4xl" style={{ letterSpacing: "-0.03em", color: "#C49A5A" }}>{s.value}</p>
+                  <p className="font-display text-white text-2xl sm:text-3xl md:text-4xl" style={{ letterSpacing: "-0.03em", color: "#C49A5A" }}>{s.value}</p>
                   <p className="text-white/35 text-xs mt-1">{s.label}</p>
                 </div>
               ))}

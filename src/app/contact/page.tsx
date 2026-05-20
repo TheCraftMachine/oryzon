@@ -309,10 +309,10 @@ export default function ContactPage() {
                         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.84a16 16 0 0 0 6 6l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
                       </svg>
                     </span>
-                    06 XX XX XX XX
+                    02 31 34 83 40
                   </a>
                   <a
-                    href="mailto:contact@oryzon.fr"
+                    href="mailto:contact@maison-oryzon.fr"
                     className="flex items-center gap-3 text-sm text-[#111111]/60 hover:text-[#C49A5A] transition-colors group"
                   >
                     <span className="w-7 h-7 rounded-full bg-black/4 flex items-center justify-center group-hover:bg-[#C49A5A]/10 transition-colors">
@@ -321,7 +321,7 @@ export default function ContactPage() {
                         <polyline points="22,6 12,13 2,6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
                       </svg>
                     </span>
-                    contact@oryzon.fr
+                    contact@maison-oryzon.fr
                   </a>
                   <div className="flex items-center gap-3 text-sm text-[#111111]/40">
                     <span className="w-7 h-7 rounded-full bg-black/4 flex items-center justify-center">

@@ -66,7 +66,7 @@ const jsonLd = {
         "Constructeur de maisons individuelles sur mesure à Caen depuis 1994. Construction neuve, rénovation et agrandissement en Calvados et Normandie. Prix fixe garanti, interlocuteur unique, visualisation VR.",
       slogan: "Votre maison, telle que vous l'imaginez.",
       foundingDate: "1994",
-      email: "contact@oryzon.fr",
+      email: "contact@maison-oryzon.fr",
       address: {
         "@type": "PostalAddress",
         streetAddress: "Caen",

@@ -7,32 +7,32 @@ const FAQS = [
   {
     question: "Combien de temps dure la construction d'une maison ?",
     answer:
-      "En moyenne, la construction d'une maison individuelle prend entre 10 et 14 mois, selon la superficie et la complexité du projet. Nous vous fournissons un calendrier précis dès la signature du contrat, et les délais sont garantis contractuellement.",
-  },
-  {
-    question: "Proposez-vous un contrat à prix fixe ?",
-    answer:
-      "Oui. Le devis signé est le prix final — aucune surprise à la livraison. Toutes les prestations sont détaillées au contrat. Les seules variations possibles sont les options que vous choisissez d'ajouter en cours de projet.",
+      "En moyenne, pour la construction d'une maison, celle-ci prend entre 10 et 14 mois, selon la superficie, la complexité du projet et de votre budget. Nous vous fournissons un calendrier dès la signature du contrat.",
   },
   {
     question: "Peut-on personnaliser les plans ?",
     answer:
-      "Absolument — c'est notre cœur de métier. Nous ne travaillons qu'avec des plans sur mesure, conçus spécifiquement pour votre terrain, votre exposition et votre mode de vie. Aucun plan standard.",
+      "Absolument, c'est notre cœur de métier ! Nous ne travaillons qu'avec des plans sur mesure, conçus spécifiquement pour votre terrain, votre exposition et votre mode de vie. Aucun plan standard. Nous vous apportons une expertise appropriée en fonction des spécificités de votre projet.",
+  },
+  {
+    question: "Proposez-vous un contrat réglementé ?",
+    answer:
+      "La prestation comprend un plan, un descriptif et un contrat. Toutes les prestations sont détaillées. Les seules variations possibles sont les options que vous choisissez d'ajouter en cours de projet.",
   },
   {
     question: "Comment fonctionne la visite en réalité virtuelle ?",
     answer:
-      "Une fois vos plans validés, nous créons un modèle 3D immersif de votre maison. Vous visitez chaque pièce avec un casque VR, à l'échelle réelle. Vous pouvez tester des variantes de matériaux, ajuster des dimensions, et valider définitivement avant le premier coup de pelle.",
+      "Une fois vos plans validés, nous pouvons créer un modèle 3D immersif de votre maison afin de mieux vous projeter. Vous visitez chaque pièce avec un casque VR, à l'échelle réelle. Vous pouvez vous visualiser et valider définitivement avant le premier coup de pelle.",
   },
   {
     question: "Intervenez-vous dans tout le Calvados ?",
     answer:
-      "Nous intervenons principalement dans l'agglomération caennaise et dans un rayon de 50 km autour de Caen — soit la majorité du Calvados. Contactez-nous pour vérifier votre zone.",
+      "Nous intervenons principalement dans l'agglomération caennaise et dans un rayon de 50 km autour de Caen, soit la majorité du Calvados. Contactez-nous pour vérifier votre zone.",
   },
   {
-    question: "Quelles garanties après la livraison ?",
+    question: "Quelles sont les garanties ?",
     answer:
-      "Tous nos projets sont couverts par la garantie décennale (10 ans sur le gros œuvre), la garantie de parfait achèvement (1 an) et la garantie biennale (2 ans sur les équipements). Votre investissement est protégé.",
+      "Tous nos projets de construction de maisons sont couverts par la garantie de livraison, la garantie de parfait achèvement (1 an), la garantie biennale (2 ans sur les équipements) et la garantie dommage ouvrage. Tous nos projets d'agrandissement et rénovation sont couverts par la garantie décennale et peuvent faire l'étude d'une garantie dommage ouvrage. Votre investissement est protégé.",
   },
 ];
 

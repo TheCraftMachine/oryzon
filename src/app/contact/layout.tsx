@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Contact & devis gratuit – Oryzon, constructeur à Caen",
   description:
-    "Prenez rendez-vous avec Oryzon pour votre projet de construction, rénovation ou agrandissement en Calvados. Premier entretien gratuit et sans engagement. Réponse sous 24h.",
+    "Prenez rendez-vous avec Oryzon pour votre projet de construction, rénovation ou agrandissement en Calvados. Premier entretien gratuit et sans engagement.",
   alternates: { canonical: "https://oryzon.fr/contact" },
   keywords: [
     "contact constructeur maison Caen",

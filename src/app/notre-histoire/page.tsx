@@ -204,7 +204,7 @@ export default function NotreHistoirePage() {
             </p>
 
             {/* Inline stats */}
-            <div className="flex items-center gap-8 border-t border-white/8 pt-8">
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-4 sm:gap-8 border-t border-white/8 pt-8">
               {[
                 { v: "+800", l: "projets" },
                 { v: "30 ans", l: "de métier" },

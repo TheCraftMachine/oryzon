@@ -5,7 +5,7 @@ import GoldButton from "@/components/ui/GoldButton";
 
 export default function CTAFinalSection() {
   return (
-    <section className="bg-[#0D1117] py-40 px-6 md:px-12 relative overflow-hidden">
+    <section className="bg-[#0D1117] pt-32 md:pt-40 pb-16 md:pb-20 px-6 md:px-12 relative overflow-hidden">
 
       {/* Background grid */}
       <div
@@ -55,13 +55,6 @@ export default function CTAFinalSection() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <GoldButton href="/contact" size="xl">Prendre rendez-vous</GoldButton>
-
-            <div className="flex items-center gap-3 text-white/30 text-xs">
-              <span className="w-px h-4 bg-white/15" />
-              <span>Réponse sous 24h</span>
-              <span>·</span>
-              <span>Caen & Calvados</span>
-            </div>
           </div>
         </motion.div>
 

@@ -40,15 +40,15 @@ export default function Navbar() {
       <header className="fixed top-0 left-0 right-0 z-[300] flex justify-center lg:justify-end pt-4 px-4 pointer-events-none">
         <nav
           className={[
-            "pointer-events-auto flex items-center gap-4",
-            "rounded-full px-3 py-2 transition-all duration-500",
+            "pointer-events-auto flex items-center gap-2 sm:gap-4",
+            "rounded-full px-2 sm:px-3 py-2 transition-all duration-500",
             scrolled || open
               ? "bg-[#0D1117]/90 backdrop-blur-xl ring-1 ring-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
               : "bg-[#0D1117]/70 backdrop-blur-md ring-1 ring-white/8",
           ].join(" ")}
         >
           {/* Logo */}
-          <Link href="/" className="flex items-center px-2 opacity-90 hover:opacity-100 transition-opacity duration-200">
+          <Link href="/" className="flex items-center px-1.5 sm:px-2 opacity-90 hover:opacity-100 transition-opacity duration-200">
             <Image
               src="/images/nav-logo.webp"
               alt="Oryzon – Constructeur de maisons sur mesure en Calvados"
@@ -61,11 +61,11 @@ export default function Navbar() {
             />
           </Link>
 
-          {/* Separator */}
-          <span className="w-px h-4 bg-white/15" aria-hidden="true" />
-
-          {/* CTA */}
-          <GoldButton href="/contact" size="sm">Prendre RDV</GoldButton>
+          {/* Separator + CTA — hidden on very small screens to prevent pill overflow */}
+          <span className="hidden sm:flex items-center gap-4">
+            <span className="w-px h-4 bg-white/15" aria-hidden="true" />
+            <GoldButton href="/contact" size="sm">Prendre RDV</GoldButton>
+          </span>
 
           {/* Hamburger */}
           <button

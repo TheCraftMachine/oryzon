@@ -1,17 +1,16 @@
 import Link from "next/link";
 import Image from "next/image";
-import GoldButton from "@/components/ui/GoldButton";
 
-const SERVICES = [
-  { label: "Construction sur mesure", href: "/construire" },
-  { label: "Rénovation", href: "/renover" },
-  { label: "Agrandissement", href: "/agrandir" },
-  { label: "Réalisations", href: "/realisations" },
+const SECTIONS = [
+  { label: "Savoir-faire", href: "/#expertises" },
+  { label: "Réalité virtuelle", href: "/#vr" },
+  { label: "Processus", href: "/#processus" },
+  { label: "Réalisations", href: "/#realisations" },
+  { label: "Pourquoi Oryzon", href: "/#pourquoi" },
+  { label: "FAQ", href: "/#faq" },
 ];
 
 const COMPANY = [
-  { label: "Notre histoire", href: "/notre-histoire" },
-  { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -47,43 +46,40 @@ export default function Footer() {
       <div className="relative max-w-7xl mx-auto px-6 md:px-12">
 
         {/* ── Brand row ───────────────────────────────────────── */}
-        <div className="pt-20 pb-14 flex flex-col md:flex-row md:items-end justify-between gap-10 border-b border-white/[0.07]">
+        <div className="pt-10 md:pt-16 pb-14 flex flex-col md:flex-row md:items-center md:justify-between gap-10 md:gap-12 border-b border-white/[0.07]">
 
-          {/* Wordmark + tagline */}
-          <div className="text-center md:text-left">
-            <p className="text-[10px] uppercase tracking-[0.35em] text-[#C49A5A]/60 mb-5">
-              Caen · Calvados · Normandie
+          {/* Wordmark */}
+          <Image
+            src="/images/footer-logo.webp"
+            alt="Oryzon – Constructeur de maisons sur mesure en Calvados"
+            width={0}
+            height={0}
+            sizes="800px"
+            className="block mx-auto md:mx-0 shrink-0"
+            style={{ height: "clamp(12rem, 32vw, 26rem)", width: "auto" }}
+          />
+
+          {/* Eyebrow + tagline — right side on desktop */}
+          <div className="flex flex-col items-center md:items-end text-center md:text-right md:max-w-sm">
+
+            <p className="font-display text-white/85 text-2xl md:text-3xl leading-tight" style={{ letterSpacing: "-0.02em" }}>
+              Constructeur de maisons<br />
+              <em className="not-italic" style={{ color: "#C49A5A" }}>sur mesure.</em>
             </p>
-            <Image
-              src="/images/footer-logo.webp"
-              alt="Oryzon – Constructeur de maisons sur mesure en Calvados"
-              width={0}
-              height={0}
-              sizes="600px"
-              className="block"
-              style={{ height: "clamp(5rem, 12vw, 9rem)", width: "auto" }}
-            />
-            <p className="text-white/30 text-sm mt-4 leading-relaxed">
-              Constructeur de maisons sur mesure.<br />
+            <p className="text-white/30 text-sm mt-3 leading-relaxed">
               Du plan à la remise des clés.
             </p>
-          </div>
-
-          {/* CTA */}
-          <div className="flex flex-col items-center md:items-end gap-3 md:pb-2">
-            <GoldButton href="/contact" size="lg">Démarrer mon projet</GoldButton>
-            <p className="text-[11px] text-white/20">Premier RDV gratuit · Sans engagement</p>
           </div>
         </div>
 
         {/* ── Links + Contact row ─────────────────────────────── */}
-        <div className="py-14 grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-8">
+        <div className="py-14 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 md:gap-8">
 
-          {/* Services */}
+          {/* Sections (one-page nav) */}
           <div>
-            <p className="text-[9px] uppercase tracking-[0.3em] text-white/20 mb-7">Services</p>
+            <p className="text-[9px] uppercase tracking-[0.3em] text-white/20 mb-7">Sections</p>
             <ul className="space-y-4">
-              {SERVICES.map((item) => (
+              {SECTIONS.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
@@ -116,7 +112,7 @@ export default function Footer() {
           </div>
 
           {/* Contact */}
-          <div className="col-span-2">
+          <div className="sm:col-span-2 md:col-span-1">
             <p className="text-[9px] uppercase tracking-[0.3em] text-white/20 mb-7">Contact</p>
             <div className="space-y-4">
               <a
@@ -128,10 +124,10 @@ export default function Footer() {
                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.84a16 16 0 0 0 6 6l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </span>
-                06 XX XX XX XX
+                02 31 34 83 40
               </a>
               <a
-                href="mailto:contact@oryzon.fr"
+                href="mailto:contact@maison-oryzon.fr"
                 className="group flex items-center gap-3 text-sm text-white/45 hover:text-white transition-colors duration-200"
               >
                 <span className="w-8 h-8 rounded-xl bg-white/[0.04] ring-1 ring-white/[0.07] flex items-center justify-center shrink-0 group-hover:ring-[#C49A5A]/30 group-hover:bg-[#C49A5A]/8 transition-all duration-200">
@@ -140,7 +136,7 @@ export default function Footer() {
                     <polyline points="22,6 12,13 2,6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
                   </svg>
                 </span>
-                contact@oryzon.fr
+                contact@maison-oryzon.fr
               </a>
               <div className="flex items-center gap-3 text-sm text-white/25">
                 <span className="w-8 h-8 rounded-xl bg-white/[0.04] ring-1 ring-white/[0.07] flex items-center justify-center shrink-0">
@@ -150,6 +146,34 @@ export default function Footer() {
                   </svg>
                 </span>
                 Caen &amp; Calvados, Normandie
+              </div>
+
+              {/* Social */}
+              <div className="flex items-center gap-2 pt-2">
+                <a
+                  href="https://www.facebook.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Oryzon sur Facebook"
+                  className="w-8 h-8 rounded-xl bg-white/[0.04] ring-1 ring-white/[0.07] flex items-center justify-center text-white/45 hover:text-white hover:ring-[#C49A5A]/30 hover:bg-[#C49A5A]/8 transition-all duration-200"
+                >
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+                    <path d="M13.5 21v-8.25h2.77l.41-3.22h-3.18V7.46c0-.93.26-1.57 1.6-1.57h1.7V3.02C16.5 3 15.5 2.9 14.3 2.9c-2.5 0-4.2 1.52-4.2 4.3v2.4H7.3v3.22h2.8V21h3.4z" />
+                  </svg>
+                </a>
+                <a
+                  href="https://www.instagram.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Oryzon sur Instagram"
+                  className="w-8 h-8 rounded-xl bg-white/[0.04] ring-1 ring-white/[0.07] flex items-center justify-center text-white/45 hover:text-white hover:ring-[#C49A5A]/30 hover:bg-[#C49A5A]/8 transition-all duration-200"
+                >
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden>
+                    <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" strokeWidth="1.6" />
+                    <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.6" />
+                    <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
+                  </svg>
+                </a>
               </div>
             </div>
           </div>
