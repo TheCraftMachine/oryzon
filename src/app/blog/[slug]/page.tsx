@@ -11,7 +11,7 @@ import { ReadingProgress } from "@/components/blog/ReadingProgress";
 
 export const revalidate = 60;
 
-const BASE = "https://oryzon.fr";
+const BASE = "https://oryzon-lake.vercel.app";
 
 export async function generateStaticParams() {
   const posts = await getAllPosts();

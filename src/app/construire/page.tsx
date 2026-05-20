@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Construction maison individuelle sur mesure – Caen, Calvados (14)",
   description:
     "Oryzon conçoit et construit votre maison individuelle sur mesure à Caen et dans tout le Calvados. Prix fixe garanti, délais contractuels, visualisation VR avant le chantier. Devis gratuit.",
-  alternates: { canonical: "https://oryzon.fr/construire" },
+  alternates: { canonical: "https://oryzon-lake.vercel.app/construire" },
   keywords: [
     "construction maison individuelle Caen",
     "constructeur maison sur mesure Calvados",
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     description:
       "Construisez votre maison sur mesure avec Oryzon, constructeur indépendant en Calvados depuis 1994. Aucun plan catalogue, prix fixe, interlocuteur unique.",
     type: "website",
-    url: "https://oryzon.fr/construire",
+    url: "https://oryzon-lake.vercel.app/construire",
     locale: "fr_FR",
     siteName: "Oryzon",
   },
@@ -181,10 +181,10 @@ const pageJsonLd = {
   "@graph": [
     {
       "@type": "Service",
-      "@id": "https://oryzon.fr/construire#service",
+      "@id": "https://oryzon-lake.vercel.app/construire#service",
       name: "Construction de maison individuelle sur mesure en Calvados",
       serviceType: "Construction de maison individuelle",
-      provider: { "@id": "https://oryzon.fr/#organization" },
+      provider: { "@id": "https://oryzon-lake.vercel.app/#organization" },
       areaServed: [
         { "@type": "AdministrativeArea", name: "Calvados" },
         { "@type": "City", name: "Caen" },

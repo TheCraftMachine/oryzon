@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Extension & agrandissement de maison – Caen, Calvados (14) | Oryzon",
   description:
     "Agrandissez votre maison sans déménager. Oryzon réalise vos extensions, surélévations et agrandissements à Caen et dans le Calvados. Intégration parfaite, devis fixe, chantier en site occupé.",
-  alternates: { canonical: "https://oryzon.fr/agrandir" },
+  alternates: { canonical: "https://oryzon-lake.vercel.app/agrandir" },
   keywords: [
     "extension maison Caen",
     "agrandissement maison Calvados",
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     description:
       "Ajoutez de l'espace sans quitter votre maison. Oryzon conçoit vos extensions sur mesure en Calvados : intégration architecturale parfaite, devis fixe garanti.",
     type: "website",
-    url: "https://oryzon.fr/agrandir",
+    url: "https://oryzon-lake.vercel.app/agrandir",
     locale: "fr_FR",
     siteName: "Oryzon",
   },
@@ -173,10 +173,10 @@ const pageJsonLd = {
   "@graph": [
     {
       "@type": "Service",
-      "@id": "https://oryzon.fr/agrandir#service",
+      "@id": "https://oryzon-lake.vercel.app/agrandir#service",
       name: "Extension et agrandissement de maison en Calvados",
       serviceType: "Extension de maison",
-      provider: { "@id": "https://oryzon.fr/#organization" },
+      provider: { "@id": "https://oryzon-lake.vercel.app/#organization" },
       areaServed: [
         { "@type": "AdministrativeArea", name: "Calvados" },
         { "@type": "City", name: "Caen" },

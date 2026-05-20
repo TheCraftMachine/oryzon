@@ -5,13 +5,13 @@ export const metadata: Metadata = {
   title: "Oryzon – Constructeur de maisons individuelles sur mesure à Caen, Calvados",
   description:
     "Oryzon construit votre maison sur mesure en Calvados depuis 1994. Construction neuve, rénovation, agrandissement à Caen et dans toute la Normandie. Devis gratuit, prix fixe garanti, visualisation en réalité virtuelle.",
-  alternates: { canonical: "https://oryzon.fr" },
+  alternates: { canonical: "https://oryzon-lake.vercel.app" },
   openGraph: {
     title: "Oryzon – Constructeur de maisons sur mesure à Caen, Calvados",
     description:
       "30 ans d'expertise en construction sur mesure en Normandie. Prix fixe garanti, interlocuteur unique, réalité virtuelle avant le premier coup de pelle.",
     type: "website",
-    url: "https://oryzon.fr",
+    url: "https://oryzon-lake.vercel.app",
     locale: "fr_FR",
     siteName: "Oryzon",
   },

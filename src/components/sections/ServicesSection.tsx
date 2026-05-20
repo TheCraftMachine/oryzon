@@ -13,7 +13,7 @@ const SERVICES = [
     description:
       "Marre du copier-coller ? Nous aussi. Votre terrain est unique, votre exposition est spécifique : votre plan doit l'être tout autant.",
     href: "/construire",
-    image: "/images/service-construction.png",
+    image: "/images/service-construction.webp",
     tag: "Du projet à la livraison",
   },
   {
@@ -23,7 +23,7 @@ const SERVICES = [
     description:
       "Vous aimez votre quartier, votre maison, votre cadre de vie. Ajoutez de l'espace qui manque sans changer ce que vous aimez déjà. Nous le réalisons sur-mesure.",
     href: "/agrandir",
-    image: "/images/service-agrandissement.png",
+    image: "/images/service-agrandissement.webp",
     tag: "Extension, surélévation, combles",
   },
   {

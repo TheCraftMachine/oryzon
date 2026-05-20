@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Notre histoire – Oryzon, constructeur de maisons en Calvados depuis 1994",
   description:
     "30 ans de métier, 800+ maisons construites en Normandie. Découvrez l'histoire d'Oryzon, constructeur indépendant à Caen depuis 1994 — notre équipe, nos valeurs, notre engagement.",
-  alternates: { canonical: "https://oryzon.fr/notre-histoire" },
+  alternates: { canonical: "https://oryzon-lake.vercel.app/notre-histoire" },
   keywords: [
     "histoire Oryzon",
     "constructeur maison Caen depuis 1994",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     description:
       "Depuis 1994, Oryzon accompagne les familles normandes dans leurs projets de construction. Entreprise familiale indépendante, ancrée en Calvados.",
     type: "website",
-    url: "https://oryzon.fr/notre-histoire",
+    url: "https://oryzon-lake.vercel.app/notre-histoire",
     locale: "fr_FR",
     siteName: "Oryzon",
   },
@@ -32,23 +32,23 @@ const pageJsonLd = {
   "@graph": [
     {
       "@type": "AboutPage",
-      "@id": "https://oryzon.fr/notre-histoire#page",
+      "@id": "https://oryzon-lake.vercel.app/notre-histoire#page",
       name: "Notre histoire – Oryzon",
-      url: "https://oryzon.fr/notre-histoire",
+      url: "https://oryzon-lake.vercel.app/notre-histoire",
       description:
         "L'histoire d'Oryzon, constructeur de maisons individuelles sur mesure à Caen depuis 1994.",
-      about: { "@id": "https://oryzon.fr/#organization" },
+      about: { "@id": "https://oryzon-lake.vercel.app/#organization" },
       breadcrumb: {
         "@type": "BreadcrumbList",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Accueil", item: "https://oryzon.fr" },
-          { "@type": "ListItem", position: 2, name: "Notre histoire", item: "https://oryzon.fr/notre-histoire" },
+          { "@type": "ListItem", position: 1, name: "Accueil", item: "https://oryzon-lake.vercel.app" },
+          { "@type": "ListItem", position: 2, name: "Notre histoire", item: "https://oryzon-lake.vercel.app/notre-histoire" },
         ],
       },
     },
     {
       "@type": "Organization",
-      "@id": "https://oryzon.fr/#organization",
+      "@id": "https://oryzon-lake.vercel.app/#organization",
       name: "Oryzon",
       foundingDate: "1994",
       foundingLocation: { "@type": "Place", name: "Caen, Calvados, Normandie, France" },

@@ -5,7 +5,7 @@ import Link from "next/link";
 import { PROJECTS } from "@/data/projects";
 import GoldButton from "@/components/ui/GoldButton";
 
-const BASE = "https://oryzon.fr";
+const BASE = "https://oryzon-lake.vercel.app";
 
 export function generateStaticParams() {
   return PROJECTS.map((p) => ({ slug: p.slug }));

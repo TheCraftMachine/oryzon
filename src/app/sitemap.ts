@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { getAllPosts } from "@/sanity/queries";
 import { PROJECTS } from "@/data/projects";
 
-const BASE = "https://oryzon.fr";
+const BASE = "https://oryzon-lake.vercel.app";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const posts = await getAllPosts();

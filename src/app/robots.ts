@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/studio/"],
       },
     ],
-    sitemap: "https://oryzon.fr/sitemap.xml",
+    sitemap: "https://oryzon-lake.vercel.app/sitemap.xml",
   };
 }

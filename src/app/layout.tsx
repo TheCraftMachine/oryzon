@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Oryzon" }],
   creator: "Oryzon",
-  metadataBase: new URL("https://oryzon.fr"),
+  metadataBase: new URL("https://oryzon-lake.vercel.app"),
   openGraph: {
     type: "website",
     locale: "fr_FR",
@@ -42,8 +42,23 @@ export const metadata: Metadata = {
     title: "Oryzon – Constructeur de maisons sur mesure à Caen",
     description:
       "Construisez la maison de vos rêves avec Oryzon. 30 ans de métier, un interlocuteur unique, et la réalité virtuelle pour visualiser votre projet.",
+    images: [
+      {
+        url: "/og-default.jpg",
+        width: 1200,
+        height: 630,
+        type: "image/jpeg",
+        alt: "Oryzon — Constructeur de maisons sur mesure à Caen, Calvados",
+      },
+    ],
   },
-  twitter: { card: "summary_large_image" },
+  twitter: {
+    card: "summary_large_image",
+    title: "Oryzon – Constructeur de maisons sur mesure à Caen",
+    description:
+      "30 ans de métier, un interlocuteur unique, réalité virtuelle. Votre maison, sur mesure.",
+    images: ["/og-default.jpg"],
+  },
   robots: { index: true, follow: true },
 };
 
@@ -52,16 +67,16 @@ const jsonLd = {
   "@graph": [
     {
       "@type": ["LocalBusiness", "GeneralContractor"],
-      "@id": "https://oryzon.fr/#organization",
+      "@id": "https://oryzon-lake.vercel.app/#organization",
       name: "Oryzon",
-      url: "https://oryzon.fr",
+      url: "https://oryzon-lake.vercel.app",
       logo: {
         "@type": "ImageObject",
-        url: "https://oryzon.fr/images/logo_oryzon.webp",
+        url: "https://oryzon-lake.vercel.app/images/logo_oryzon.webp",
         width: 1071,
         height: 208,
       },
-      image: "https://oryzon.fr/images/hero.jpg",
+      image: "https://oryzon-lake.vercel.app/images/hero.jpg",
       description:
         "Constructeur de maisons individuelles sur mesure à Caen depuis 1994. Construction neuve, rénovation et agrandissement en Calvados et Normandie. Prix fixe garanti, interlocuteur unique, visualisation VR.",
       slogan: "Votre maison, telle que vous l'imaginez.",
@@ -98,7 +113,7 @@ const jsonLd = {
             itemOffered: {
               "@type": "Service",
               name: "Construction de maison individuelle sur mesure",
-              url: "https://oryzon.fr/construire",
+              url: "https://oryzon-lake.vercel.app/construire",
             },
           },
           {
@@ -106,7 +121,7 @@ const jsonLd = {
             itemOffered: {
               "@type": "Service",
               name: "Rénovation de maison",
-              url: "https://oryzon.fr/renover",
+              url: "https://oryzon-lake.vercel.app/renover",
             },
           },
           {
@@ -114,7 +129,7 @@ const jsonLd = {
             itemOffered: {
               "@type": "Service",
               name: "Extension et agrandissement de maison",
-              url: "https://oryzon.fr/agrandir",
+              url: "https://oryzon-lake.vercel.app/agrandir",
             },
           },
         ],
@@ -146,17 +161,17 @@ const jsonLd = {
     },
     {
       "@type": "WebSite",
-      "@id": "https://oryzon.fr/#website",
-      url: "https://oryzon.fr",
+      "@id": "https://oryzon-lake.vercel.app/#website",
+      url: "https://oryzon-lake.vercel.app",
       name: "Oryzon",
       description: "Constructeur de maisons sur mesure en Calvados",
-      publisher: { "@id": "https://oryzon.fr/#organization" },
+      publisher: { "@id": "https://oryzon-lake.vercel.app/#organization" },
       inLanguage: "fr-FR",
       potentialAction: {
         "@type": "SearchAction",
         target: {
           "@type": "EntryPoint",
-          urlTemplate: "https://oryzon.fr/blog?q={search_term_string}",
+          urlTemplate: "https://oryzon-lake.vercel.app/blog?q={search_term_string}",
         },
         "query-input": "required name=search_term_string",
       },

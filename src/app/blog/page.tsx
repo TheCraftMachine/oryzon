@@ -9,7 +9,7 @@ import GoldButton from "@/components/ui/GoldButton";
 
 export const revalidate = 60;
 
-const BASE = "https://oryzon.fr";
+const BASE = "https://oryzon-lake.vercel.app";
 
 export async function generateMetadata({
   searchParams,

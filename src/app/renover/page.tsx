@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Rénovation maison – Caen, Calvados (14) | Oryzon",
   description:
     "Rénovation complète ou partielle de maison à Caen et en Calvados. Diagnostic gratuit, devis fixe garanti, chantier sans mauvaises surprises. Oryzon rénove votre bien depuis 1994.",
-  alternates: { canonical: "https://oryzon.fr/renover" },
+  alternates: { canonical: "https://oryzon-lake.vercel.app/renover" },
   keywords: [
     "rénovation maison Caen",
     "rénovation maison Calvados",
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     description:
       "Transformez votre bien avec Oryzon. Diagnostic complet, devis fixe, rénovation globale ou partielle en Calvados. Résultat validé en réalité virtuelle avant travaux.",
     type: "website",
-    url: "https://oryzon.fr/renover",
+    url: "https://oryzon-lake.vercel.app/renover",
     locale: "fr_FR",
     siteName: "Oryzon",
   },
@@ -176,10 +176,10 @@ const pageJsonLd = {
   "@graph": [
     {
       "@type": "Service",
-      "@id": "https://oryzon.fr/renover#service",
+      "@id": "https://oryzon-lake.vercel.app/renover#service",
       name: "Rénovation de maison à Caen et en Calvados",
       serviceType: "Rénovation de maison",
-      provider: { "@id": "https://oryzon.fr/#organization" },
+      provider: { "@id": "https://oryzon-lake.vercel.app/#organization" },
       areaServed: [
         { "@type": "AdministrativeArea", name: "Calvados" },
         { "@type": "City", name: "Caen" },

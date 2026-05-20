@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: "Contact & devis gratuit – Oryzon, constructeur à Caen",
   description:
     "Prenez rendez-vous avec Oryzon pour votre projet de construction, rénovation ou agrandissement en Calvados. Premier entretien gratuit et sans engagement.",
-  alternates: { canonical: "https://oryzon.fr/contact" },
+  alternates: { canonical: "https://oryzon-lake.vercel.app/contact" },
   keywords: [
     "contact constructeur maison Caen",
     "devis construction maison Calvados",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     description:
       "30 minutes avec notre équipe pour définir votre projet. Gratuit, sans engagement. Constructeur de maisons individuelles à Caen depuis 1994.",
     type: "website",
-    url: "https://oryzon.fr/contact",
+    url: "https://oryzon-lake.vercel.app/contact",
     locale: "fr_FR",
     siteName: "Oryzon",
   },
@@ -27,17 +27,17 @@ export const metadata: Metadata = {
 const pageJsonLd = {
   "@context": "https://schema.org",
   "@type": "ContactPage",
-  "@id": "https://oryzon.fr/contact#page",
+  "@id": "https://oryzon-lake.vercel.app/contact#page",
   name: "Contact Oryzon – Devis gratuit",
-  url: "https://oryzon.fr/contact",
+  url: "https://oryzon-lake.vercel.app/contact",
   description:
     "Prenez rendez-vous avec Oryzon pour votre projet de construction, rénovation ou agrandissement en Calvados. Premier RDV gratuit et sans engagement.",
-  provider: { "@id": "https://oryzon.fr/#organization" },
+  provider: { "@id": "https://oryzon-lake.vercel.app/#organization" },
   breadcrumb: {
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Accueil", item: "https://oryzon.fr" },
-      { "@type": "ListItem", position: 2, name: "Contact", item: "https://oryzon.fr/contact" },
+      { "@type": "ListItem", position: 1, name: "Accueil", item: "https://oryzon-lake.vercel.app" },
+      { "@type": "ListItem", position: 2, name: "Contact", item: "https://oryzon-lake.vercel.app/contact" },
     ],
   },
 };
