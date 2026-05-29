@@ -230,11 +230,11 @@ export default function ContactPage() {
               className="font-display text-white mb-4"
               style={{ fontSize: "clamp(2.2rem, 4.5vw, 4.5rem)", lineHeight: 1.05, letterSpacing: "-0.03em" }}
             >
-              Parlons de<br />
-              <em className="not-italic" style={{ color: "#C49A5A" }}>votre maison.</em>
+              prenons le temps d’étudier<br />
+              <em className="not-italic" style={{ color: "#C49A5A" }}>votre projet.</em>
             </h1>
             <p className="text-white/50 text-base max-w-md leading-relaxed">
-              30 minutes pour vous écouter, vous conseiller, et voir ensemble si votre projet est réalisable. Gratuit, sans engagement.
+              Nous analysons ensemble ce qui est réalisable sur votre idée en un projet concret sans aucun engagement.
             </p>
           </div>
         </div>
@@ -256,7 +256,7 @@ export default function ContactPage() {
                         <path d="M12 7v5l3 3" stroke="#C49A5A" strokeWidth="1.5" strokeLinecap="round" />
                       </svg>
                     ),
-                    title: "30 minutes chrono",
+                    title: "Un rdv personnalisé",
                     body: "Un rendez-vous court, structuré et efficace. Vous repartez avec une vision claire de votre projet.",
                   },
                   {
@@ -276,8 +276,8 @@ export default function ContactPage() {
                         <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="#C49A5A" strokeWidth="1.5" strokeLinecap="round" />
                       </svg>
                     ),
-                    title: "Directement avec Olivier",
-                    body: "Pas d'assistant commercial. Vous échangez dès le départ avec le fondateur et chef de projet.",
+                    title: "Votre interlocuteur dédié, un contact direct",
+                    body: "Bénéficiez d’un échange direct avec un expert impliqué à chaque étape de votre projet.",
                   },
                 ].map(item => (
                   <div key={item.title} className="flex gap-4">
@@ -301,7 +301,7 @@ export default function ContactPage() {
                 </p>
                 <div className="space-y-3">
                   <a
-                    href="tel:+33XXXXXXXXX"
+                    href="tel:+33231348340"
                     className="flex items-center gap-3 text-sm text-[#111111]/60 hover:text-[#C49A5A] transition-colors group"
                   >
                     <span className="w-7 h-7 rounded-full bg-black/4 flex items-center justify-center group-hover:bg-[#C49A5A]/10 transition-colors">
@@ -309,7 +309,7 @@ export default function ContactPage() {
                         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.84a16 16 0 0 0 6 6l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
                       </svg>
                     </span>
-                    02 31 34 83 40
+                    02 31 348 340
                   </a>
                   <a
                     href="mailto:contact@maison-oryzon.fr"
