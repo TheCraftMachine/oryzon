@@ -33,7 +33,7 @@ const SERVICES = [
     description:
       "Une rénovation totale bien pensée depuis la conception : nous intégrons les dernières normes techniques au cœur de votre projet pour un résultat aussi performant qu'élégant.",
     href: "/renover",
-    image: "/images/service-renovation-1.jpg",
+    image: "/images/service-renovation.webp",
     tag: "Rénovation complète ou partielle",
   },
 ];

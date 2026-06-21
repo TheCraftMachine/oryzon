@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import FooterAnimatedChips from "./FooterAnimatedChips";
 
 const SECTIONS = [
   { label: "Savoir-faire", href: "/#expertises" },
@@ -63,17 +64,18 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Logo — center column (50%) */}
-          <div className="md:col-span-2 flex justify-center">
+          {/* Logo + chips animés en loop — center column (50%) */}
+          <div className="md:col-span-2 flex flex-col items-center gap-5 md:gap-6">
             <Image
-              src="/images/logo-vertical-blackmode.svg"
+              src="/images/logo-black-animated.webp"
               alt="Oryzon – Constructeur de maisons sur mesure en Calvados"
-              width={760}
-              height={440}
+              width={456}
+              height={239}
               unoptimized
               className="block w-auto max-w-none"
-              style={{ height: "clamp(12rem, 26vw, 22rem)" }}
+              style={{ height: "clamp(7rem, 16vw, 12rem)" }}
             />
+            <FooterAnimatedChips />
           </div>
 
           {/* Contact */}
