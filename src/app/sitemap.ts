@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
 import { PROJECTS } from "@/data/projects";
 
+export const dynamic = "force-static";
+
 const BASE = "https://oryzon-lake.vercel.app";
 
 export default function sitemap(): MetadataRoute.Sitemap {
