@@ -5,7 +5,7 @@ import GoldButton from "@/components/ui/GoldButton";
 
 export default function CTAFinalSection() {
   return (
-    <section className="bg-[#0D1117] pt-32 md:pt-40 pb-16 md:pb-20 px-6 md:px-12 relative overflow-hidden">
+    <section className="bg-[#16202a] pt-32 md:pt-40 pb-16 md:pb-20 px-6 md:px-12 relative overflow-hidden">
 
       {/* Background grid */}
       <div
@@ -36,7 +36,7 @@ export default function CTAFinalSection() {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
           <span className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/6 px-3 py-1.5 text-[10px] uppercase tracking-[0.2em] font-medium text-white/40 mb-10">
-            <span className="w-1 h-1 rounded-full bg-[#C49A5A]" />
+            <span className="w-1 h-1 rounded-full bg-[#ba873f]" />
             Votre projet commence ici
           </span>
 
@@ -45,7 +45,7 @@ export default function CTAFinalSection() {
             style={{ fontSize: "clamp(2.5rem, 6vw, 6rem)", lineHeight: 1.0, letterSpacing: "-0.03em" }}
           >
             Parlons de<br />
-            <em className="not-italic" style={{ color: "#C49A5A" }}>votre maison.</em>
+            <em className="not-italic" style={{ color: "#ba873f" }}>votre maison.</em>
           </h2>
 
           <p className="text-white/50 text-base md:text-lg max-w-lg mx-auto leading-relaxed mb-12">

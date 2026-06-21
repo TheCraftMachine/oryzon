@@ -17,7 +17,7 @@ const REASONS = [
   },
   {
     title: "Les garanties",
-    description: "Les garanties — décennale, financière, technique, biennale, dommage-ouvrage, contractant général — sont adaptées à chacun de nos contrats.",
+    description: "Les garanties - décennale, financière, technique, biennale, dommage-ouvrage, contractant général - sont adaptées à chacun de nos contrats.",
   },
   {
     title: "Réalité virtuelle",
@@ -45,12 +45,12 @@ export default function WhySection() {
             className="lg:col-span-4 lg:sticky lg:top-28 lg:self-start"
           >
             <span className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-black/4 px-3 py-1.5 text-[10px] uppercase tracking-[0.2em] font-medium text-black/40 mb-6">
-              <span className="w-1 h-1 rounded-full bg-[#C49A5A]" />
+              <span className="w-1 h-1 rounded-full bg-[#ba873f]" />
               Pourquoi Oryzon
             </span>
             <h2 className="font-display h2-display text-[#111111] mb-6">
               L'évidence du<br />
-              <em className="not-italic" style={{ color: "#C49A5A" }}>sur-mesure.</em>
+              <em className="not-italic" style={{ color: "#ba873f" }}>sur-mesure.</em>
             </h2>
             <p className="text-sm text-[#6B6B6B] leading-relaxed max-w-sm">
               Construire une maison, un agrandissement ou une rénovation est l'un
@@ -71,7 +71,7 @@ export default function WhySection() {
                 className="bg-[#F2EDE6] p-7 md:p-8 hover:bg-[#EDE5DA] transition-colors duration-300 group"
               >
                 <h3
-                  className="font-display text-[#111111] mb-3 group-hover:text-[#0D3559] transition-colors duration-300"
+                  className="font-display text-[#111111] mb-3 group-hover:text-[#16202a] transition-colors duration-300"
                   style={{ fontSize: "1.15rem", letterSpacing: "-0.02em", lineHeight: 1.2 }}
                 >
                   {reason.title}

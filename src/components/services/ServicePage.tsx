@@ -45,7 +45,7 @@ const EASE = [0.16, 1, 0.3, 1] as const;
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
     <span className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-black/4 px-3 py-1.5 text-[10px] uppercase tracking-[0.2em] font-medium text-black/40 mb-6">
-      <span className="w-1 h-1 rounded-full bg-[#C49A5A]" />
+      <span className="w-1 h-1 rounded-full bg-[#ba873f]" />
       {children}
     </span>
   );
@@ -54,7 +54,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 function SectionLabelDark({ children }: { children: React.ReactNode }) {
   return (
     <span className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/6 px-3 py-1.5 text-[10px] uppercase tracking-[0.2em] font-medium text-white/40 mb-6">
-      <span className="w-1 h-1 rounded-full bg-[#C49A5A]" />
+      <span className="w-1 h-1 rounded-full bg-[#ba873f]" />
       {children}
     </span>
   );
@@ -66,7 +66,7 @@ function Hero({ data }: { data: ServiceData }) {
   const parts = data.hero.headline.split(data.hero.goldWord);
 
   return (
-    <section className="relative min-h-[100dvh] flex flex-col bg-[#0D1117] overflow-hidden">
+    <section className="relative min-h-[100dvh] flex flex-col bg-[#16202a] overflow-hidden">
       {/* Background image */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -77,7 +77,7 @@ function Hero({ data }: { data: ServiceData }) {
           sizes="100vw"
           className="object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0D1117]/95 via-[#0D1117]/50 to-[#0D1117]/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#16202a]/95 via-[#16202a]/50 to-[#16202a]/30" />
       </div>
 
       {/* Content */}
@@ -89,7 +89,7 @@ function Hero({ data }: { data: ServiceData }) {
           className="mb-6"
         >
           <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-[10px] uppercase tracking-[0.2em] font-medium text-white/80">
-            <span className="w-1 h-1 rounded-full bg-[#C49A5A]" />
+            <span className="w-1 h-1 rounded-full bg-[#ba873f]" />
             {data.tag}
           </span>
         </motion.div>
@@ -114,7 +114,7 @@ function Hero({ data }: { data: ServiceData }) {
                 <span className="block overflow-hidden">
                   <motion.span
                     className="block not-italic"
-                    style={{ fontSize: "clamp(2.8rem, 6.5vw, 7rem)", lineHeight: 1.05, letterSpacing: "-0.03em", color: "#C49A5A" }}
+                    style={{ fontSize: "clamp(2.8rem, 6.5vw, 7rem)", lineHeight: 1.05, letterSpacing: "-0.03em", color: "#ba873f" }}
                     initial={{ y: "110%" }}
                     animate={{ y: "0%" }}
                     transition={{ duration: 0.75, delay: 0.45 + i * 0.12, ease: EASE }}
@@ -178,7 +178,7 @@ function Promise({ data }: { data: ServiceData }) {
               <span key={i}>
                 {part}
                 {i < arr.length - 1 && (
-                  <em className="not-italic" style={{ color: "#C49A5A" }}>{data.promise.goldPart}</em>
+                  <em className="not-italic" style={{ color: "#ba873f" }}>{data.promise.goldPart}</em>
                 )}
               </span>
             ))}
@@ -200,7 +200,7 @@ function Promise({ data }: { data: ServiceData }) {
               className="rounded-[1.75rem] bg-black/3 ring-1 ring-black/6 p-1.5"
             >
               <div className="rounded-[1.25rem] bg-white p-7 h-full flex flex-col">
-                <div className="w-10 h-10 rounded-xl bg-[#C49A5A]/10 flex items-center justify-center mb-5">
+                <div className="w-10 h-10 rounded-xl bg-[#ba873f]/10 flex items-center justify-center mb-5">
                   {card.icon}
                 </div>
                 <h3
@@ -223,7 +223,7 @@ function Promise({ data }: { data: ServiceData }) {
 
 function ForWho({ data }: { data: ServiceData }) {
   return (
-    <section className="bg-[#0D1117] py-32 px-6 md:px-12">
+    <section className="bg-[#16202a] py-32 px-6 md:px-12">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -241,7 +241,7 @@ function ForWho({ data }: { data: ServiceData }) {
               <span key={i}>
                 {part}
                 {i < arr.length - 1 && (
-                  <em className="not-italic" style={{ color: "#C49A5A" }}>{data.forWho.goldPart}</em>
+                  <em className="not-italic" style={{ color: "#ba873f" }}>{data.forWho.goldPart}</em>
                 )}
               </span>
             ))}
@@ -256,13 +256,13 @@ function ForWho({ data }: { data: ServiceData }) {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="bg-[#0D1117] hover:bg-white/4 transition-colors duration-300 p-6 md:p-8 group"
+              className="bg-[#16202a] hover:bg-white/4 transition-colors duration-300 p-6 md:p-8 group"
             >
-              <span className="font-display text-[#C49A5A] text-xs tracking-widest mb-4 block opacity-60">
+              <span className="font-display text-[#ba873f] text-xs tracking-widest mb-4 block opacity-60">
                 0{i + 1}
               </span>
               <h3
-                className="font-display text-white mb-3 group-hover:text-[#C49A5A] transition-colors duration-300"
+                className="font-display text-white mb-3 group-hover:text-[#ba873f] transition-colors duration-300"
                 style={{ fontSize: "1.1rem", letterSpacing: "-0.02em", lineHeight: 1.2 }}
               >
                 {s.title}
@@ -303,7 +303,7 @@ function Process({ data }: { data: ServiceData }) {
                 <span key={i}>
                   {part}
                   {i < arr.length - 1 && (
-                    <em className="not-italic" style={{ color: "#C49A5A" }}>{data.process.goldPart}</em>
+                    <em className="not-italic" style={{ color: "#ba873f" }}>{data.process.goldPart}</em>
                   )}
                 </span>
               ))}
@@ -321,7 +321,7 @@ function Process({ data }: { data: ServiceData }) {
                   aria-label={`Étape ${i + 1}`}
                   className={[
                     "rounded-full transition-all duration-300 cursor-pointer",
-                    i === open ? "w-8 h-2 bg-[#C49A5A]" : "w-2 h-2 bg-black/15 hover:bg-black/30",
+                    i === open ? "w-8 h-2 bg-[#ba873f]" : "w-2 h-2 bg-black/15 hover:bg-black/30",
                   ].join(" ")}
                 />
               ))}
@@ -350,7 +350,7 @@ function Process({ data }: { data: ServiceData }) {
                       <span
                         className={[
                           "font-display text-2xl transition-colors duration-300 shrink-0",
-                          open === i ? "text-[#C49A5A]" : "text-black/15",
+                          open === i ? "text-[#ba873f]" : "text-black/15",
                         ].join(" ")}
                       >
                         {step.number}
@@ -368,13 +368,13 @@ function Process({ data }: { data: ServiceData }) {
                     <div className="flex items-center gap-3 shrink-0">
                       <span className={[
                         "hidden sm:block rounded-full border px-2.5 py-0.5 text-[10px] transition-colors duration-300",
-                        open === i ? "border-[#C49A5A]/40 text-[#C49A5A]/70" : "border-black/10 text-black/30",
+                        open === i ? "border-[#ba873f]/40 text-[#ba873f]/70" : "border-black/10 text-black/30",
                       ].join(" ")}>
                         {step.duration}
                       </span>
                       <span className={[
                         "w-6 h-6 rounded-full border flex items-center justify-center transition-all duration-300",
-                        open === i ? "border-[#C49A5A] bg-[#C49A5A] text-white rotate-45" : "border-black/15 text-black/30",
+                        open === i ? "border-[#ba873f] bg-[#ba873f] text-white rotate-45" : "border-black/15 text-black/30",
                       ].join(" ")} aria-hidden="true">
                         <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
                           <path d="M5 2v6M2 5h6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
@@ -429,7 +429,7 @@ function FAQ({ items }: { items: ServiceData["faq"] }) {
             style={{ fontSize: "clamp(2rem, 3.5vw, 3.5rem)", lineHeight: 1.05, letterSpacing: "-0.03em" }}
           >
             Vos questions,{" "}
-            <em className="not-italic" style={{ color: "#C49A5A" }}>nos réponses.</em>
+            <em className="not-italic" style={{ color: "#ba873f" }}>nos réponses.</em>
           </h2>
         </motion.div>
 
@@ -450,7 +450,7 @@ function FAQ({ items }: { items: ServiceData["faq"] }) {
                 <span className={[
                   "shrink-0 w-6 h-6 rounded-full border flex items-center justify-center transition-all duration-300 mt-0.5",
                   openIndex === i
-                    ? "border-[#C49A5A] bg-[#C49A5A] text-white rotate-45"
+                    ? "border-[#ba873f] bg-[#ba873f] text-white rotate-45"
                     : "border-black/15 text-black/40 group-hover:border-black/30",
                 ].join(" ")} aria-hidden="true">
                   <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
@@ -500,15 +500,15 @@ function OtherServices({ items }: { items: ServiceData["others"] }) {
             >
               <Link
                 href={item.href}
-                className="group flex items-center justify-between rounded-2xl bg-white ring-1 ring-black/6 px-6 py-5 hover:ring-[#C49A5A]/40 transition-all duration-300"
+                className="group flex items-center justify-between rounded-2xl bg-white ring-1 ring-black/6 px-6 py-5 hover:ring-[#ba873f]/40 transition-all duration-300"
               >
                 <div>
-                  <span className="text-[10px] uppercase tracking-widest text-[#C49A5A] block mb-1">{item.tag}</span>
-                  <span className="font-display text-[#111111] text-lg group-hover:text-[#C49A5A] transition-colors duration-300" style={{ letterSpacing: "-0.02em" }}>
+                  <span className="text-[10px] uppercase tracking-widest text-[#ba873f] block mb-1">{item.tag}</span>
+                  <span className="font-display text-[#111111] text-lg group-hover:text-[#ba873f] transition-colors duration-300" style={{ letterSpacing: "-0.02em" }}>
                     {item.label}
                   </span>
                 </div>
-                <span className="w-8 h-8 rounded-full border border-black/10 flex items-center justify-center text-[#111111]/40 group-hover:bg-[#C49A5A] group-hover:border-[#C49A5A] group-hover:text-white transition-all duration-300">
+                <span className="w-8 h-8 rounded-full border border-black/10 flex items-center justify-center text-[#111111]/40 group-hover:bg-[#ba873f] group-hover:border-[#ba873f] group-hover:text-white transition-all duration-300">
                   <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
                     <path d="M2 8L8 2M8 2H3M8 2V7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
@@ -526,7 +526,7 @@ function OtherServices({ items }: { items: ServiceData["others"] }) {
 
 function CTAFinal({ tag }: { tag: string }) {
   return (
-    <section className="bg-[#0D1117] py-40 px-6 md:px-12 relative overflow-hidden">
+    <section className="bg-[#16202a] py-40 px-6 md:px-12 relative overflow-hidden">
       <div aria-hidden="true" className="absolute inset-0 opacity-[0.04]"
         style={{
           backgroundImage: `linear-gradient(rgba(196,154,90,1) 1px, transparent 1px), linear-gradient(90deg, rgba(196,154,90,1) 1px, transparent 1px)`,
@@ -545,7 +545,7 @@ function CTAFinal({ tag }: { tag: string }) {
           transition={{ duration: 0.8, ease: EASE }}
         >
           <span className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/6 px-3 py-1.5 text-[10px] uppercase tracking-[0.2em] font-medium text-white/40 mb-10">
-            <span className="w-1 h-1 rounded-full bg-[#C49A5A]" />
+            <span className="w-1 h-1 rounded-full bg-[#ba873f]" />
             {tag}
           </span>
           <h2
@@ -553,7 +553,7 @@ function CTAFinal({ tag }: { tag: string }) {
             style={{ fontSize: "clamp(2.5rem, 5vw, 5.5rem)", lineHeight: 1.0, letterSpacing: "-0.03em" }}
           >
             Votre projet commence<br />
-            <em className="not-italic" style={{ color: "#C49A5A" }}>par une conversation.</em>
+            <em className="not-italic" style={{ color: "#ba873f" }}>par une conversation.</em>
           </h2>
           <p className="text-white/50 text-base md:text-lg max-w-lg mx-auto leading-relaxed mb-12">
             Premier rendez-vous gratuit et sans engagement. On écoute, on conseille, vous décidez.
@@ -562,7 +562,6 @@ function CTAFinal({ tag }: { tag: string }) {
             <GoldButton href="/contact" size="xl">Prendre rendez-vous</GoldButton>
             <div className="flex items-center gap-3 text-white/30 text-xs">
               <span className="w-px h-4 bg-white/15" />
-              <span>Réponse sous 24h</span>
               <span>·</span>
               <span>Caen & Calvados</span>
             </div>

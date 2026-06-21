@@ -9,6 +9,7 @@ export type Project = {
   duration: string;
   image: string;
   gallery: string[];
+  plans?: string[];
   tagline: string;
   description: string[];
   highlights: { label: string; value: string }[];
@@ -18,18 +19,21 @@ export const PROJECTS: Project[] = [
   {
     id: 1,
     slug: "villa-contemporaine",
-    title: "Villa contemporaine",
-    location: "Caen, Calvados",
+    title: "Maison contemporaine",
+    location: "Calvados",
     type: "Construction",
-    surface: "180 m²",
+    surface: "+70 m²",
     year: "2024",
     duration: "13 mois",
-    image: "/images/realisation-1.jpg",
+    image: "/images/realisation_1/final.webp",
     gallery: [
-      "/images/realisation-2.jpg",
-      "/images/realisation-3.jpg",
-      "/images/realisation-1.jpg",
-      "/images/realisation-2.jpg",
+      "/images/realisation_1/3D.webp",
+    ],
+    plans: [
+      "/images/realisation_1/plan1.webp",
+      "/images/realisation_1/plan2.webp",
+      "/images/realisation_1/plan3.webp",
+      "/images/realisation_1/plan4.webp",
     ],
     tagline: "Lignes épurées, volumes généreux.",
     description: [
@@ -49,18 +53,21 @@ export const PROJECTS: Project[] = [
   {
     id: 2,
     slug: "extension-vitree",
-    title: "Extension vitrée",
-    location: "Bayeux, Calvados",
-    type: "Agrandissement",
-    surface: "45 m²",
+    title: "Maison contemporaine",
+    location: "Calvados",
+    type: "Construction",
+    surface: "+60 m²",
     year: "2024",
     duration: "4 mois",
-    image: "/images/realisation-2.jpg",
+    image: "/images/realisation_2/final.webp",
     gallery: [
-      "/images/realisation-1.jpg",
-      "/images/realisation-3.jpg",
-      "/images/realisation-2.jpg",
-      "/images/realisation-1.jpg",
+      "/images/realisation_2/3D.webp",
+    ],
+    plans: [
+      "/images/realisation_2/plan1.webp",
+      "/images/realisation_2/plan2.webp",
+      "/images/realisation_2/plan3.webp",
+      "/images/realisation_2/plan4.webp",
     ],
     tagline: "Un jardin d'hiver lumineux, sans cloisonnement.",
     description: [
@@ -80,18 +87,22 @@ export const PROJECTS: Project[] = [
   {
     id: 3,
     slug: "renovation-complete",
-    title: "Rénovation complète",
-    location: "Hérouville-Saint-Clair",
-    type: "Rénovation",
-    surface: "130 m²",
+    title:"Maison de plein-pied",
+    location: "Calvados",
+    type: "Construction",
+    surface: "+180 m²",
     year: "2023",
     duration: "8 mois",
-    image: "/images/realisation-3.jpg",
+    image: "/images/realisation_3/final.webp",
     gallery: [
-      "/images/realisation-1.jpg",
-      "/images/realisation-2.jpg",
-      "/images/realisation-3.jpg",
-      "/images/realisation-1.jpg",
+      "/images/realisation_3/3D2.webp",
+      "/images/realisation_3/3D1.webp",
+    ],
+    plans: [
+      "/images/realisation_3/plan1.webp",
+      "/images/realisation_3/plan2.webp",
+      "/images/realisation_3/plan3.webp",
+      "/images/realisation_3/plan4.webp",
     ],
     tagline: "Une maison des années 80 entièrement repensée.",
     description: [
@@ -111,18 +122,15 @@ export const PROJECTS: Project[] = [
   {
     id: 4,
     slug: "maison-de-plain-pied",
-    title: "Maison de plain-pied",
+    title: "Maison rénovée",
     location: "Lisieux, Calvados",
-    type: "Construction",
-    surface: "155 m²",
+    type: "Rénovation",
+    surface: "+60 m²",
     year: "2023",
     duration: "11 mois",
-    image: "/images/realisation-1.jpg",
+    image: "/images/realisation_4/final.webp",
     gallery: [
-      "/images/realisation-3.jpg",
-      "/images/realisation-2.jpg",
-      "/images/realisation-1.jpg",
-      "/images/realisation-3.jpg",
+      "/images/realisation_4/debut.webp",
     ],
     tagline: "Accessibilité et confort au cœur du projet.",
     description: [

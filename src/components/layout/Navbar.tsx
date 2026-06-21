@@ -43,8 +43,8 @@ export default function Navbar() {
             "pointer-events-auto flex items-center gap-2 sm:gap-4",
             "rounded-full px-2 sm:px-3 py-2 transition-all duration-500",
             scrolled || open
-              ? "bg-[#0D1117]/90 backdrop-blur-xl ring-1 ring-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
-              : "bg-[#0D1117]/70 backdrop-blur-md ring-1 ring-white/8",
+              ? "bg-[#16202a]/90 backdrop-blur-xl ring-1 ring-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
+              : "bg-[#16202a]/70 backdrop-blur-md ring-1 ring-white/8",
           ].join(" ")}
         >
           {/* Logo */}
@@ -99,7 +99,7 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="fixed inset-0 z-[200] bg-[#0D1117]/96 backdrop-blur-2xl flex flex-col"
+            className="fixed inset-0 z-[200] bg-[#16202a]/96 backdrop-blur-2xl flex flex-col"
           >
             <nav className="flex-1 flex flex-col justify-center px-8 md:px-20 pt-20">
               <ul className="space-y-0">
@@ -124,7 +124,7 @@ export default function Navbar() {
                       <span className="font-display text-3xl md:text-5xl text-white/85 group-hover:text-white transition-colors duration-200">
                         {link.label}
                       </span>
-                      <span className="w-8 h-8 rounded-full border border-white/15 flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:border-[#C49A5A] group-hover:text-[#C49A5A] transition-all duration-200">
+                      <span className="w-8 h-8 rounded-full border border-white/15 flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:border-[#ba873f] group-hover:text-[#ba873f] transition-all duration-200">
                         <ArrowIcon />
                       </span>
                     </Link>

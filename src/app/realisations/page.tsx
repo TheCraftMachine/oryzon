@@ -54,7 +54,7 @@ export default function RealisationsPage() {
     <div className="min-h-[100dvh] bg-[#F9F7F4]">
 
       {/* ── Hero ───────────────────────────────────────────────────── */}
-      <div className="bg-[#0D1117] px-6 md:px-12 pt-32 pb-24 relative overflow-hidden">
+      <div className="bg-[#16202a] px-6 md:px-12 pt-32 pb-24 relative overflow-hidden">
 
         {/* Blueprint grid */}
         <div aria-hidden className="pointer-events-none absolute inset-0 opacity-[0.025]" style={{
@@ -67,12 +67,12 @@ export default function RealisationsPage() {
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-12">
             <div className="max-w-2xl">
               <span className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/6 px-3 py-1.5 text-[10px] uppercase tracking-[0.2em] font-medium text-white/40 mb-8">
-                <span className="w-1 h-1 rounded-full bg-[#C49A5A]" />
+                <span className="w-1 h-1 rounded-full bg-[#ba873f]" />
                 Portfolio
               </span>
               <h1 className="font-display text-white mb-5" style={{ fontSize: "clamp(2.5rem, 5.5vw, 5.5rem)", lineHeight: 1.0, letterSpacing: "-0.03em" }}>
                 Chaque maison,<br />
-                <em className="not-italic" style={{ color: "#C49A5A" }}>une histoire.</em>
+                <em className="not-italic" style={{ color: "#ba873f" }}>une histoire.</em>
               </h1>
               <p className="text-white/45 text-base max-w-lg leading-relaxed">
                 30 ans de métier en Calvados. Des maisons sur mesure, des rénovations exigeantes,
@@ -88,7 +88,7 @@ export default function RealisationsPage() {
                 { value: "100%", label: "sur mesure" },
               ].map((s) => (
                 <div key={s.label}>
-                  <p className="font-display text-white text-2xl sm:text-3xl md:text-4xl" style={{ letterSpacing: "-0.03em", color: "#C49A5A" }}>{s.value}</p>
+                  <p className="font-display text-white text-2xl sm:text-3xl md:text-4xl" style={{ letterSpacing: "-0.03em", color: "#ba873f" }}>{s.value}</p>
                   <p className="text-white/35 text-xs mt-1">{s.label}</p>
                 </div>
               ))}
@@ -178,7 +178,7 @@ export default function RealisationsPage() {
                           </div>
                           <div className="flex items-center gap-3 shrink-0">
                             <span className="text-xs text-white/30">{project.surface}</span>
-                            <span className="w-7 h-7 rounded-full border border-white/15 flex items-center justify-center text-white/40 group-hover:bg-[#C49A5A] group-hover:border-[#C49A5A] group-hover:text-white transition-all duration-300">
+                            <span className="w-7 h-7 rounded-full border border-white/15 flex items-center justify-center text-white/40 group-hover:bg-[#ba873f] group-hover:border-[#ba873f] group-hover:text-white transition-all duration-300">
                               <svg width="9" height="9" viewBox="0 0 10 10" fill="none" aria-hidden>
                                 <path d="M2 8L8 2M8 2H3M8 2V7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                               </svg>
@@ -203,19 +203,19 @@ export default function RealisationsPage() {
       </div>
 
       {/* ── CTA ────────────────────────────────────────────────────── */}
-      <div className="bg-[#0D1117] px-6 md:px-12 py-24 relative overflow-hidden">
+      <div className="bg-[#16202a] px-6 md:px-12 py-24 relative overflow-hidden">
         <div aria-hidden className="pointer-events-none absolute inset-0 opacity-[0.025]" style={{
           backgroundImage: `linear-gradient(rgba(196,154,90,1) 1px, transparent 1px), linear-gradient(90deg, rgba(196,154,90,1) 1px, transparent 1px)`,
           backgroundSize: "80px 80px",
         }} />
         <div className="relative max-w-3xl mx-auto text-center">
           <span className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/6 px-3 py-1.5 text-[10px] uppercase tracking-[0.2em] font-medium text-white/40 mb-8">
-            <span className="w-1 h-1 rounded-full bg-[#C49A5A]" />
+            <span className="w-1 h-1 rounded-full bg-[#ba873f]" />
             Votre projet
           </span>
           <h2 className="font-display text-white mb-5" style={{ fontSize: "clamp(2rem, 4.5vw, 4.5rem)", lineHeight: 1.0, letterSpacing: "-0.03em" }}>
             À vous de<br />
-            <em className="not-italic" style={{ color: "#C49A5A" }}>laisser votre empreinte.</em>
+            <em className="not-italic" style={{ color: "#ba873f" }}>laisser votre empreinte.</em>
           </h2>
           <p className="text-white/40 text-base max-w-md mx-auto leading-relaxed mb-10">
             Premier rendez-vous gratuit et sans engagement.

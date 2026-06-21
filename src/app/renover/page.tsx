@@ -46,8 +46,8 @@ const data: ServiceData = {
       {
         icon: (
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-            <path d="M9 11l3 3L22 4" stroke="#C49A5A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" stroke="#C49A5A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M9 11l3 3L22 4" stroke="#ba873f" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" stroke="#ba873f" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         ),
         title: "Diagnostic complet inclus",
@@ -56,7 +56,7 @@ const data: ServiceData = {
       {
         icon: (
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#C49A5A" strokeWidth="1.5" strokeLinejoin="round" />
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#ba873f" strokeWidth="1.5" strokeLinejoin="round" />
           </svg>
         ),
         title: "Devis fixe, garanti",
@@ -65,8 +65,8 @@ const data: ServiceData = {
       {
         icon: (
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-            <circle cx="12" cy="12" r="3" stroke="#C49A5A" strokeWidth="1.5" />
-            <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83" stroke="#C49A5A" strokeWidth="1.5" strokeLinecap="round" />
+            <circle cx="12" cy="12" r="3" stroke="#ba873f" strokeWidth="1.5" />
+            <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83" stroke="#ba873f" strokeWidth="1.5" strokeLinecap="round" />
           </svg>
         ),
         title: "Rénovation globale ou partielle",

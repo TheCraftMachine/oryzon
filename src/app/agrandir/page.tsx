@@ -46,10 +46,10 @@ const data: ServiceData = {
       {
         icon: (
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-            <rect x="3" y="3" width="7" height="7" stroke="#C49A5A" strokeWidth="1.5" strokeLinejoin="round" />
-            <rect x="14" y="3" width="7" height="7" stroke="#C49A5A" strokeWidth="1.5" strokeLinejoin="round" />
-            <rect x="3" y="14" width="7" height="7" stroke="#C49A5A" strokeWidth="1.5" strokeLinejoin="round" />
-            <path d="M14 17.5h7M17.5 14v7" stroke="#C49A5A" strokeWidth="1.5" strokeLinecap="round" />
+            <rect x="3" y="3" width="7" height="7" stroke="#ba873f" strokeWidth="1.5" strokeLinejoin="round" />
+            <rect x="14" y="3" width="7" height="7" stroke="#ba873f" strokeWidth="1.5" strokeLinejoin="round" />
+            <rect x="3" y="14" width="7" height="7" stroke="#ba873f" strokeWidth="1.5" strokeLinejoin="round" />
+            <path d="M14 17.5h7M17.5 14v7" stroke="#ba873f" strokeWidth="1.5" strokeLinecap="round" />
           </svg>
         ),
         title: "Intégration parfaite",
@@ -58,8 +58,8 @@ const data: ServiceData = {
       {
         icon: (
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-            <path d="M3 12l9-9 9 9v8a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-8z" stroke="#C49A5A" strokeWidth="1.5" strokeLinejoin="round" />
-            <path d="M9 22V12h6v10" stroke="#C49A5A" strokeWidth="1.5" strokeLinejoin="round" />
+            <path d="M3 12l9-9 9 9v8a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-8z" stroke="#ba873f" strokeWidth="1.5" strokeLinejoin="round" />
+            <path d="M9 22V12h6v10" stroke="#ba873f" strokeWidth="1.5" strokeLinejoin="round" />
           </svg>
         ),
         title: "Chantier en site occupé",
@@ -68,7 +68,7 @@ const data: ServiceData = {
       {
         icon: (
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#C49A5A" strokeWidth="1.5" strokeLinejoin="round" />
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#ba873f" strokeWidth="1.5" strokeLinejoin="round" />
           </svg>
         ),
         title: "Devis fixe, zéro surprise",

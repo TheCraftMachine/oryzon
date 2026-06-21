@@ -89,16 +89,16 @@ export default function ProcessSection() {
   return (
     <>
     {/* ── Mobile: timeline verticale ─────────────────────────── */}
-    <section className="xl:hidden bg-[#0D1117] px-6 md:px-12 py-20 md:py-28">
+    <section className="xl:hidden bg-[#16202a] px-6 md:px-12 py-20 md:py-28">
       <div className="max-w-lg md:max-w-xl lg:max-w-2xl mx-auto">
         <span className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/6 px-3 py-1.5 text-[10px] uppercase tracking-[0.2em] font-medium text-white/40 mb-5">
-          <span className="w-1 h-1 rounded-full bg-[#C49A5A]" />
+          <span className="w-1 h-1 rounded-full bg-[#ba873f]" />
           Le processus
         </span>
         <h2 className="font-display text-white mb-12"
           style={{ fontSize: "clamp(1.9rem, 7vw, 2.8rem)", lineHeight: 1.05, letterSpacing: "-0.03em" }}>
           Votre projet,{" "}
-          <em className="not-italic" style={{ color: "#C49A5A" }}>étape par étape.</em>
+          <em className="not-italic" style={{ color: "#ba873f" }}>étape par étape.</em>
         </h2>
 
         <div className="relative">
@@ -110,8 +110,8 @@ export default function ProcessSection() {
               <div key={step.number} className="relative flex gap-6 pb-10 last:pb-0">
                 {/* Dot */}
                 <div className="relative z-10 flex flex-col items-center shrink-0">
-                  <div className="w-[1.4rem] h-[1.4rem] rounded-full bg-[#0D1117] ring-1 ring-[#C49A5A]/60 flex items-center justify-center mt-0.5">
-                    <div className="w-1.5 h-1.5 rounded-full bg-[#C49A5A]" />
+                  <div className="w-[1.4rem] h-[1.4rem] rounded-full bg-[#16202a] ring-1 ring-[#ba873f]/60 flex items-center justify-center mt-0.5">
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#ba873f]" />
                   </div>
                 </div>
 
@@ -121,7 +121,7 @@ export default function ProcessSection() {
                     <h3 className="font-display text-white" style={{ fontSize: "1.05rem", letterSpacing: "-0.02em" }}>
                       {step.title}
                     </h3>
-                    <span className="shrink-0 rounded-full border border-[#C49A5A]/30 text-[#C49A5A]/70 px-2.5 py-0.5 text-[10px]">
+                    <span className="shrink-0 rounded-full border border-[#ba873f]/30 text-[#ba873f]/70 px-2.5 py-0.5 text-[10px]">
                       {step.duration}
                     </span>
                   </div>
@@ -144,18 +144,18 @@ export default function ProcessSection() {
     </section>
 
     {/* ── Desktop: sticky scroll animation ───────────────────── */}
-    <div ref={wrapperRef} style={{ height: WRAPPER_HEIGHT }} className="hidden xl:block bg-[#0D1117]">
+    <div ref={wrapperRef} style={{ height: WRAPPER_HEIGHT }} className="hidden xl:block bg-[#16202a]">
       <section className="sticky top-0 h-[100dvh] flex flex-col justify-center px-6 md:px-12 lg:px-16 xl:px-24 py-20 xl:py-32 overflow-hidden">
         <div className="max-w-6xl mx-auto w-full">
 
           <div className="mb-8 xl:mb-12">
             <span className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/6 px-3 py-1.5 text-[10px] uppercase tracking-[0.2em] font-medium text-white/40 mb-4 xl:mb-5">
-              <span className="w-1 h-1 rounded-full bg-[#C49A5A]" />
+              <span className="w-1 h-1 rounded-full bg-[#ba873f]" />
               Le processus
             </span>
             <h2 className="font-display h2-display text-white">
               Votre projet,{" "}
-              <em className="not-italic" style={{ color: "#C49A5A" }}>étape par étape.</em>
+              <em className="not-italic" style={{ color: "#ba873f" }}>étape par étape.</em>
             </h2>
           </div>
 
@@ -179,11 +179,11 @@ export default function ProcessSection() {
                       ].join(" ")}
                     />
                   ))}
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#0D3559]/40 to-[#0D1117]/80 pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#16202a]/40 to-[#16202a]/80 pointer-events-none" />
                   <div className="absolute bottom-0 left-0 right-0 p-5">
                     <div className="flex items-end justify-between">
                       <div>
-                        <p className="font-display text-[#C49A5A] text-xs tracking-widest mb-1">Étape {STEPS[activeStep].number}</p>
+                        <p className="font-display text-[#ba873f] text-xs tracking-widest mb-1">Étape {STEPS[activeStep].number}</p>
                         <p className="font-display text-white text-lg" style={{ letterSpacing: "-0.02em" }}>{STEPS[activeStep].title}</p>
                       </div>
                       <span className="rounded-full border border-white/15 bg-white/8 px-3 py-1 text-[10px] text-white/50">{STEPS[activeStep].duration}</span>
@@ -195,7 +195,7 @@ export default function ProcessSection() {
                 {STEPS.map((_, i) => (
                   <button key={i} onClick={() => setActiveStep(i)} aria-label={`Étape ${i + 1}`}
                     className={["rounded-full transition-all duration-300 cursor-pointer",
-                      i === activeStep ? "w-6 h-1.5 bg-[#C49A5A]" : "w-1.5 h-1.5 bg-white/20 hover:bg-white/40",
+                      i === activeStep ? "w-6 h-1.5 bg-[#ba873f]" : "w-1.5 h-1.5 bg-white/20 hover:bg-white/40",
                     ].join(" ")} />
                 ))}
               </div>
@@ -215,7 +215,7 @@ export default function ProcessSection() {
                   <div className="flex items-start gap-5">
                     <span className={[
                       "font-display text-4xl transition-colors duration-300 shrink-0 leading-none mt-0.5",
-                      i === activeStep ? "text-[#C49A5A]" : "text-white/15",
+                      i === activeStep ? "text-[#ba873f]" : "text-white/15",
                     ].join(" ")}>
                       {step.number}
                     </span>
@@ -232,7 +232,7 @@ export default function ProcessSection() {
                         </h3>
                         <span className={[
                           "shrink-0 rounded-full border px-2.5 py-0.5 text-[10px] transition-all duration-300",
-                          i === activeStep ? "border-[#C49A5A]/40 text-[#C49A5A]/80" : "border-white/8 text-white/20",
+                          i === activeStep ? "border-[#ba873f]/40 text-[#ba873f]/80" : "border-white/8 text-white/20",
                         ].join(" ")}>
                           {step.duration}
                         </span>

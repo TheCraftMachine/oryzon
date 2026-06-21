@@ -46,7 +46,7 @@ const data: ServiceData = {
       {
         icon: (
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#C49A5A" strokeWidth="1.5" strokeLinejoin="round" />
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#ba873f" strokeWidth="1.5" strokeLinejoin="round" />
           </svg>
         ),
         title: "Prix fixe garanti",
@@ -55,8 +55,8 @@ const data: ServiceData = {
       {
         icon: (
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-            <circle cx="12" cy="12" r="10" stroke="#C49A5A" strokeWidth="1.5" />
-            <path d="M12 7v5l3 3" stroke="#C49A5A" strokeWidth="1.5" strokeLinecap="round" />
+            <circle cx="12" cy="12" r="10" stroke="#ba873f" strokeWidth="1.5" />
+            <path d="M12 7v5l3 3" stroke="#ba873f" strokeWidth="1.5" strokeLinecap="round" />
           </svg>
         ),
         title: "Délais contractuels",
@@ -65,7 +65,7 @@ const data: ServiceData = {
       {
         icon: (
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-            <path d="M2 12h20M12 2l10 10-10 10" stroke="#C49A5A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M2 12h20M12 2l10 10-10 10" stroke="#ba873f" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         ),
         title: "100 % sur mesure",

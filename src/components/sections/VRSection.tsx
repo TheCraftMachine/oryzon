@@ -82,11 +82,11 @@ export default function VRSection() {
   return (
     <>
       {/* ── Desktop: 400vh sticky scroll-scrub ─────────────────── */}
-      <div ref={wrapperRef} style={{ height: "400vh" }} className="hidden lg:block bg-[#0D1117]">
-        <section className="sticky top-0 h-[100dvh] relative bg-[#0D1117] overflow-hidden">
+      <div ref={wrapperRef} style={{ height: "400vh" }} className="hidden lg:block bg-[#16202a]">
+        <section className="sticky top-0 h-[100dvh] relative bg-[#16202a] overflow-hidden">
 
           <div className="absolute top-0 left-0 right-0 z-20 h-px bg-white/10">
-            <div ref={progressRef} className="h-full bg-[#C49A5A] origin-left" style={{ transform: "scaleX(0)", transition: "none" }} />
+            <div ref={progressRef} className="h-full bg-[#ba873f] origin-left" style={{ transform: "scaleX(0)", transition: "none" }} />
           </div>
 
           <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 pointer-events-none">
@@ -95,11 +95,11 @@ export default function VRSection() {
           </div>
 
           <div className="absolute inset-0">
-            <video ref={videoRef} src="/videos/vr-plongeon.mp4" muted playsInline preload="none"
+            <video ref={videoRef} src="/videos/vr.mp4" muted playsInline preload="none"
               className="w-full h-full object-cover" />
           </div>
 
-          <div className="absolute inset-0 bg-[#0D1117]/40 pointer-events-none" />
+          <div className="absolute inset-0 bg-[#16202a]/40 pointer-events-none" />
 
           {!videoReady && (
             <div className="absolute inset-0 opacity-10" style={{
@@ -119,31 +119,31 @@ export default function VRSection() {
       </div>
 
       {/* ── Mobile: section normale, vidéo autoplay ─────────────── */}
-      <section className="lg:hidden relative bg-[#0D1117] overflow-hidden min-h-[100dvh]">
+      <section className="lg:hidden relative bg-[#16202a] overflow-hidden min-h-[100dvh]">
 
         {/* Vidéo plein fond */}
         <video
           ref={mobileVideoRef}
-          src="/videos/vr-plongeon.mp4"
+          src="/videos/vr.mp4"
           muted loop playsInline preload="none"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
 
         {/* Dégradés */}
-        <div className="absolute inset-0 bg-[#0D1117]/50 pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0D1117]/80 via-transparent to-[#0D1117]/30 pointer-events-none" />
+        <div className="absolute inset-0 bg-[#16202a]/50 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#16202a]/80 via-transparent to-[#16202a]/30 pointer-events-none" />
 
         {/* Contenu */}
         <div className="relative z-10 flex flex-col items-center justify-center min-h-[100dvh] px-6 py-24 text-center">
           <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/8 px-3 py-1.5 text-[10px] uppercase tracking-[0.2em] font-medium text-white/60 mb-8">
-            <span className="w-1 h-1 rounded-full bg-[#C49A5A]" />
+            <span className="w-1 h-1 rounded-full bg-[#ba873f]" />
             Réalité virtuelle
           </span>
 
           <h2 className="font-display text-white mb-5"
             style={{ fontSize: "clamp(2.2rem, 9vw, 3.5rem)", lineHeight: 1.0, letterSpacing: "-0.03em" }}>
             Visitez votre maison<br />
-            <em className="not-italic" style={{ color: "#C49A5A" }}>avant qu'elle existe.</em>
+            <em className="not-italic" style={{ color: "#ba873f" }}>avant qu'elle existe.</em>
           </h2>
 
           <p className="text-white/60 text-sm max-w-xs leading-relaxed mb-10">
@@ -168,12 +168,12 @@ function OverlayContent() {
   return (
     <>
       <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/8 px-3 py-1.5 text-[10px] uppercase tracking-[0.2em] font-medium text-white/60 mb-8">
-        <span className="w-1 h-1 rounded-full bg-[#C49A5A]" />Réalité virtuelle
+        <span className="w-1 h-1 rounded-full bg-[#ba873f]" />Réalité virtuelle
       </span>
       <h2 className="font-display text-white mb-6"
         style={{ fontSize: "clamp(2.5rem, 6vw, 6rem)", lineHeight: 1.0, letterSpacing: "-0.03em" }}>
         Visitez votre maison<br />
-        <em className="not-italic" style={{ color: "#C49A5A" }}>avant qu'elle existe.</em>
+        <em className="not-italic" style={{ color: "#ba873f" }}>avant qu'elle existe.</em>
       </h2>
       <p className="text-white/60 text-base max-w-lg leading-relaxed mb-10">
         Explorez chaque pièce avec la réalité virtuelle, et visualisez les moindres détails.

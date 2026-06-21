@@ -51,7 +51,7 @@ export default function FAQSection() {
           className="mb-14"
         >
           <span className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-black/4 px-3 py-1.5 text-[10px] uppercase tracking-[0.2em] font-medium text-black/40 mb-6">
-            <span className="w-1 h-1 rounded-full bg-[#C49A5A]" />
+            <span className="w-1 h-1 rounded-full bg-[#ba873f]" />
             FAQ
           </span>
           <h2
@@ -59,7 +59,7 @@ export default function FAQSection() {
             style={{ fontSize: "clamp(2rem, 3.5vw, 3.5rem)", lineHeight: 1.05, letterSpacing: "-0.03em" }}
           >
             Vos questions,<br />
-            <em className="not-italic" style={{ color: "#C49A5A" }}>nos réponses.</em>
+            <em className="not-italic" style={{ color: "#ba873f" }}>nos réponses.</em>
           </h2>
         </motion.div>
 
@@ -89,7 +89,7 @@ export default function FAQSection() {
                   className={[
                     "shrink-0 w-6 h-6 rounded-full border flex items-center justify-center transition-all duration-300 mt-0.5",
                     openIndex === i
-                      ? "border-[#C49A5A] bg-[#C49A5A] text-white rotate-45"
+                      ? "border-[#ba873f] bg-[#ba873f] text-white rotate-45"
                       : "border-black/15 text-black/40 group-hover:border-black/30",
                   ].join(" ")}
                   aria-hidden="true"

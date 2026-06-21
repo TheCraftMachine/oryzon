@@ -31,7 +31,7 @@ export default function GoldButton({ children, size = "lg", className = "", href
 
   const base = [
     "group inline-flex items-center rounded-full",
-    "bg-[#C49A5A] hover:bg-[#D4AA6E] text-white",
+    "bg-[#ba873f] hover:bg-[#d1a464] text-white",
     "font-medium tracking-[0.04em]",
     "transition-all duration-300",
     "active:scale-[0.97]",

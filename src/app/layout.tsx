@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cinzel, Plus_Jakarta_Sans } from "next/font/google";
+import { Cinzel, Lexend_Deca } from "next/font/google";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import "./globals.css";
@@ -11,8 +11,8 @@ const cinzel = Cinzel({
   display: "swap",
 });
 
-const jakarta = Plus_Jakarta_Sans({
-  variable: "--font-jakarta",
+const lexend = Lexend_Deca({
+  variable: "--font-lexend",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
   display: "swap",
@@ -76,7 +76,7 @@ const jsonLd = {
         width: 1071,
         height: 208,
       },
-      image: "https://oryzon-lake.vercel.app/images/hero.jpg",
+      image: "https://oryzon-lake.vercel.app/images/front.webp",
       description:
         "Constructeur de maisons individuelles sur mesure à Caen depuis 1994. Construction neuve, rénovation et agrandissement en Calvados et Normandie. Prix fixe garanti, interlocuteur unique, visualisation VR.",
       slogan: "Votre maison, telle que vous l'imaginez.",
@@ -167,14 +167,6 @@ const jsonLd = {
       description: "Constructeur de maisons sur mesure en Calvados",
       publisher: { "@id": "https://oryzon-lake.vercel.app/#organization" },
       inLanguage: "fr-FR",
-      potentialAction: {
-        "@type": "SearchAction",
-        target: {
-          "@type": "EntryPoint",
-          urlTemplate: "https://oryzon-lake.vercel.app/blog?q={search_term_string}",
-        },
-        "query-input": "required name=search_term_string",
-      },
     },
   ],
 };
@@ -185,7 +177,7 @@ export default function RootLayout({
   return (
     <html
       lang="fr"
-      className={`${cinzel.variable} ${jakarta.variable} h-full antialiased`}
+      className={`${cinzel.variable} ${lexend.variable} h-full antialiased`}
       suppressHydrationWarning
       data-scroll-behavior="smooth"
     >

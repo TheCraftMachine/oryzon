@@ -2,19 +2,19 @@
 
 @theme inline {
   /* Fonts */
-  --font-sans: var(--font-jakarta), system-ui, sans-serif;
+  --font-sans: var(--font-lexend), system-ui, sans-serif;
   --font-serif: var(--font-cinzel), Georgia, serif;
 
   /* Brand */
-  --color-blue-deep: #0D3559;
-  --color-blue: #124C7C;
-  --color-blue-light: #1A6FAD;
-  --color-gold: #C49A5A;
-  --color-gold-light: #D4B07A;
+  --color-blue-deep: #16202a;
+  --color-blue: #2a3b50;
+  --color-blue-light: #3e556e;
+  --color-gold: #ba873f;
+  --color-gold-light: #d1a464;
 
   /* Backgrounds */
   --color-bg: #F9F7F4;
-  --color-bg-dark: #0D1117;
+  --color-bg-dark: #16202a;
   --color-surface: #FFFFFF;
   --color-surface-warm: #F2EDE6;
 
@@ -109,6 +109,10 @@ body {
   transform-origin: center center;
   will-change: transform;
 }
+
+/* ─── Hide scrollbar (utility) ────────────────────────── */
+.no-scrollbar { scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
 
 /* ─── Reduced motion ─────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {

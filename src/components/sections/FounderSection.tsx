@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function FounderSection() {
   return (
-    <section className="bg-[#0D1117] py-40 px-6 md:px-12 overflow-hidden">
+    <section className="bg-[#16202a] py-40 px-6 md:px-12 overflow-hidden">
       <div className="max-w-4xl mx-auto">
 
         <motion.div
@@ -15,7 +15,7 @@ export default function FounderSection() {
         >
           {/* Opening mark */}
           <div
-            className="font-display text-[#C49A5A] leading-none select-none mb-8"
+            className="font-display text-[#ba873f] leading-none select-none mb-8"
             style={{ fontSize: "clamp(5rem, 12vw, 10rem)", opacity: 0.25, lineHeight: 0.8 }}
             aria-hidden="true"
           >
@@ -33,7 +33,7 @@ export default function FounderSection() {
               }}
             >
               Une maison n'est pas un produit.{" "}
-              <span style={{ color: "#C49A5A" }}>
+              <span style={{ color: "#ba873f" }}>
                 C'est un lieu que l'on ne cessera de traverser,
                 de regarder, d'habiter.
               </span>{" "}
@@ -50,7 +50,7 @@ export default function FounderSection() {
               transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
               className="mt-12 flex items-center gap-6"
             >
-              <span className="w-12 h-px bg-[#C49A5A]/40 shrink-0" />
+              <span className="w-12 h-px bg-[#ba873f]/40 shrink-0" />
               <div>
                 <p className="font-display text-white/80 text-sm tracking-wide">
                   Olivier

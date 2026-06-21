@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -15,13 +16,22 @@ const STATS = [
 const HEADLINE_LINES = ["Votre maison,", "telle que vous", "l'imaginez."];
 
 export default function HeroSection() {
+  // Intro adaptative : fond blanc + logo sombre en journée, fond bleu + logo clair la nuit.
+  // Défaut "nuit" pendant le SSR pour matcher le bg-dark de la section (évite un flash blanc
+  // chez les visiteurs nocturnes au premier paint).
+  const [isDay, setIsDay] = useState(false);
+  useEffect(() => {
+    const hour = new Date().getHours();
+    setIsDay(hour >= 7 && hour < 19);
+  }, []);
+
   return (
     <section className="relative min-h-[100dvh] flex flex-col bg-[--color-bg-dark] overflow-hidden">
 
       {/* ── Background image with Ken Burns ──────────────── */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/hero.jpg"
+          src="/images/front.webp"
           alt="Maison contemporaine construite par Oryzon en Calvados"
           fill
           priority
@@ -29,9 +39,9 @@ export default function HeroSection() {
           className="object-cover object-[center_40%] animate-ken-burns"
         />
         {/* Bottom gradient — for text legibility on lower portion */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0D1117]/95 via-[#0D1117]/30 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#16202a]/95 via-[#16202a]/30 to-transparent" />
         {/* Very subtle top vignette — navbar readability only */}
-        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#0D1117]/50 to-transparent" />
+        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#16202a]/50 to-transparent" />
       </div>
 
       {/* ── Grain overlay (fixed, GPU-safe) ──────────────── */}
@@ -60,14 +70,14 @@ export default function HeroSection() {
                   animate={{ y: "0%" }}
                   transition={{
                     duration: 0.75,
-                    delay: 0.5 + i * 0.12,
+                    delay: 3.0 + i * 0.12,
                     ease: [0.16, 1, 0.3, 1],
                   }}
                 >
                   {i === 2 ? (
                     <>
                       {"l'"}
-                      <em className="not-italic" style={{ color: "#C49A5A" }}>imaginez.</em>
+                      <em className="not-italic" style={{ color: "#ba873f" }}>imaginez.</em>
                     </>
                   ) : (
                     line
@@ -81,11 +91,11 @@ export default function HeroSection() {
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.85, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.6, delay: 3.35, ease: [0.16, 1, 0.3, 1] }}
             className="mb-5 md:mb-6"
           >
             <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/14 px-3 py-1.5 text-[10px] uppercase tracking-[0.2em] font-medium text-white/90">
-              <span className="w-1 h-1 rounded-full" style={{ backgroundColor: "#C49A5A" }} />
+              <span className="w-1 h-1 rounded-full" style={{ backgroundColor: "#ba873f" }} />
               Construction, agrandissement et rénovation sur mesure
             </span>
           </motion.div>
@@ -94,7 +104,7 @@ export default function HeroSection() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.95, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.7, delay: 3.45, ease: [0.16, 1, 0.3, 1] }}
             className="text-white/85 text-base md:text-lg max-w-md leading-relaxed mb-6 md:mb-10"
           >
             Votre rêve prend vie sous vos yeux, bien avant de sortir de terre.
@@ -104,7 +114,7 @@ export default function HeroSection() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 1.1, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.7, delay: 3.6, ease: [0.16, 1, 0.3, 1] }}
             className="flex flex-wrap items-center gap-4 mb-16 md:mb-20"
           >
             {/* Primary */}
@@ -124,7 +134,7 @@ export default function HeroSection() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 1.3 }}
+            transition={{ duration: 0.8, delay: 3.8 }}
             className="border-t border-white/10 pt-6"
           >
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0">
@@ -150,18 +160,95 @@ export default function HeroSection() {
       </div>
 
       {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1.8 }}
-        aria-hidden="true"
-        className="absolute bottom-8 right-8 md:right-12 z-10 hidden md:flex flex-col items-center gap-2"
+      <motion.button
+        type="button"
+        onClick={() => {
+          window.scrollTo({ top: window.innerHeight, behavior: "smooth" });
+        }}
+        initial={{ opacity: 0, y: 8 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 4.0, ease: [0.16, 1, 0.3, 1] }}
+        aria-label="Faire défiler vers le contenu suivant"
+        className="absolute bottom-6 right-6 md:bottom-8 md:right-12 z-10 flex flex-col items-center gap-3 text-white/80 hover:text-white transition-colors duration-200 cursor-pointer group"
       >
-        <span className="text-[10px] text-white/30 uppercase tracking-[0.2em] rotate-90 origin-center translate-y-4">
-          Scroll
+        <span
+          className="text-[10px] uppercase tracking-[0.3em] font-medium"
+          style={{ writingMode: "vertical-rl" }}
+        >
+          Découvrir
         </span>
-        <div className="w-px h-12 bg-gradient-to-b from-white/0 to-white/30 animate-pulse" />
+        <span
+          aria-hidden="true"
+          className="flex flex-col items-center -space-y-1 text-[#ba873f] group-hover:text-[#d1a464] transition-colors duration-200"
+        >
+          <motion.span
+            className="flex"
+            animate={{ y: [0, 5, 0], opacity: [0.35, 1, 0.35] }}
+            transition={{ duration: 1.4, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <ChevronDown />
+          </motion.span>
+          <motion.span
+            className="flex"
+            animate={{ y: [0, 5, 0], opacity: [0.35, 1, 0.35] }}
+            transition={{
+              duration: 1.4,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 0.2,
+            }}
+          >
+            <ChevronDown />
+          </motion.span>
+        </span>
+      </motion.button>
+
+      {/* ── Intro overlay (fades to reveal the hero) ── */}
+      <motion.div
+        initial={{ opacity: 1 }}
+        animate={{ opacity: 0 }}
+        transition={{ duration: 0.3, delay: 2.7, ease: [0.32, 0.72, 0, 1] }}
+        aria-hidden="true"
+        className={`pointer-events-none fixed inset-0 z-[400] ${isDay ? "bg-white" : "bg-[#16202a]"}`}
+      />
+
+      {/* ── Intro logo (centered, large, fades + slight scale-down on exit) ── */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.96 }}
+        animate={{ opacity: [0, 1, 1, 0], scale: [0.96, 1, 1, 0.92] }}
+        transition={{
+          duration: 3.0,
+          times: [0, 0.12, 0.92, 1],
+          ease: [0.16, 1, 0.3, 1],
+        }}
+        aria-hidden="true"
+        className="pointer-events-none fixed inset-0 z-[401] flex items-center justify-center px-8"
+      >
+        <Image
+          src={isDay ? "/images/logo-vertical-lightmode.svg" : "/images/logo-vertical-blackmode.svg"}
+          alt=""
+          width={760}
+          height={440}
+          unoptimized
+          preload
+          loading="eager"
+          className="block w-auto h-[clamp(320px,62vh,640px)] max-w-[82vw]"
+        />
       </motion.div>
     </section>
+  );
+}
+
+function ChevronDown() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+      <path
+        d="M4 7.5L10 13L16 7.5"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
   );
 }

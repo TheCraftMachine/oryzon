@@ -18,7 +18,7 @@ const LEGAL = [
 
 export default function Footer() {
   return (
-    <footer className="relative bg-[#0D1117] overflow-hidden">
+    <footer className="relative bg-[#16202a] overflow-hidden">
 
       {/* Blueprint grid — architectural texture */}
       <div
@@ -55,7 +55,7 @@ export default function Footer() {
                     href={item.href}
                     className="group flex items-center gap-0 text-sm text-white/45 hover:text-white transition-colors duration-200"
                   >
-                    <span className="w-0 shrink-0 h-px bg-[#C49A5A] group-hover:w-4 transition-all duration-300 ease-out mr-0 group-hover:mr-2" />
+                    <span className="w-0 shrink-0 h-px bg-[#ba873f] group-hover:w-4 transition-all duration-300 ease-out mr-0 group-hover:mr-2" />
                     {item.label}
                   </Link>
                 </li>
@@ -66,11 +66,11 @@ export default function Footer() {
           {/* Logo — center column (50%) */}
           <div className="md:col-span-2 flex justify-center">
             <Image
-              src="/images/footer-logo.webp"
+              src="/images/logo-vertical-blackmode.svg"
               alt="Oryzon – Constructeur de maisons sur mesure en Calvados"
               width={760}
               height={440}
-              sizes="800px"
+              unoptimized
               className="block w-auto max-w-none"
               style={{ height: "clamp(12rem, 26vw, 22rem)" }}
             />
@@ -84,7 +84,7 @@ export default function Footer() {
                 href="tel:+33231348340"
                 className="group flex items-center gap-3 text-sm text-white/45 hover:text-white transition-colors duration-200"
               >
-                <span className="w-8 h-8 rounded-xl bg-white/[0.04] ring-1 ring-white/[0.07] flex items-center justify-center shrink-0 group-hover:ring-[#C49A5A]/30 group-hover:bg-[#C49A5A]/8 transition-all duration-200">
+                <span className="w-8 h-8 rounded-xl bg-white/[0.04] ring-1 ring-white/[0.07] flex items-center justify-center shrink-0 group-hover:ring-[#ba873f]/30 group-hover:bg-[#ba873f]/8 transition-all duration-200">
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden>
                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.84a16 16 0 0 0 6 6l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
@@ -95,7 +95,7 @@ export default function Footer() {
                 href="mailto:contact@maison-oryzon.fr"
                 className="group flex items-center gap-3 text-sm text-white/45 hover:text-white transition-colors duration-200"
               >
-                <span className="w-8 h-8 rounded-xl bg-white/[0.04] ring-1 ring-white/[0.07] flex items-center justify-center shrink-0 group-hover:ring-[#C49A5A]/30 group-hover:bg-[#C49A5A]/8 transition-all duration-200">
+                <span className="w-8 h-8 rounded-xl bg-white/[0.04] ring-1 ring-white/[0.07] flex items-center justify-center shrink-0 group-hover:ring-[#ba873f]/30 group-hover:bg-[#ba873f]/8 transition-all duration-200">
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden>
                     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
                     <polyline points="22,6 12,13 2,6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
@@ -120,7 +120,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Oryzon sur Facebook"
-                  className="w-8 h-8 rounded-xl bg-white/[0.04] ring-1 ring-white/[0.07] flex items-center justify-center text-white/45 hover:text-white hover:ring-[#C49A5A]/30 hover:bg-[#C49A5A]/8 transition-all duration-200"
+                  className="w-8 h-8 rounded-xl bg-white/[0.04] ring-1 ring-white/[0.07] flex items-center justify-center text-white/45 hover:text-white hover:ring-[#ba873f]/30 hover:bg-[#ba873f]/8 transition-all duration-200"
                 >
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
                     <path d="M13.5 21v-8.25h2.77l.41-3.22h-3.18V7.46c0-.93.26-1.57 1.6-1.57h1.7V3.02C16.5 3 15.5 2.9 14.3 2.9c-2.5 0-4.2 1.52-4.2 4.3v2.4H7.3v3.22h2.8V21h3.4z" />
@@ -131,7 +131,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Oryzon sur Instagram"
-                  className="w-8 h-8 rounded-xl bg-white/[0.04] ring-1 ring-white/[0.07] flex items-center justify-center text-white/45 hover:text-white hover:ring-[#C49A5A]/30 hover:bg-[#C49A5A]/8 transition-all duration-200"
+                  className="w-8 h-8 rounded-xl bg-white/[0.04] ring-1 ring-white/[0.07] flex items-center justify-center text-white/45 hover:text-white hover:ring-[#ba873f]/30 hover:bg-[#ba873f]/8 transition-all duration-200"
                 >
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden>
                     <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" strokeWidth="1.6" />
@@ -149,7 +149,7 @@ export default function Footer() {
       <div className="border-t border-white/[0.06]">
         <div className="max-w-7xl mx-auto px-6 md:px-12 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
           <div className="flex items-center gap-3">
-            <span className="w-1 h-1 rounded-full bg-[#C49A5A]/50" />
+            <span className="w-1 h-1 rounded-full bg-[#ba873f]/50" />
             <p className="text-[11px] text-white/20">
               © {new Date().getFullYear()} Oryzon · Tous droits réservés
             </p>

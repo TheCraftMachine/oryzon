@@ -61,17 +61,17 @@ export default function ServicesSection() {
           className="mb-16 md:mb-20"
         >
           <span className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-black/4 px-3 py-1.5 text-[10px] uppercase tracking-[0.2em] font-medium text-black/40 mb-6">
-            <span className="w-1 h-1 rounded-full bg-[#C49A5A]" />
+            <span className="w-1 h-1 rounded-full bg-[#ba873f]" />
             Notre savoir-faire
           </span>
           <h2 className="font-display h2-display text-[#111111]">
             Ce que nous<br />
-            <em className="not-italic" style={{ color: "#C49A5A" }}>construisons</em> pour vous.
+            <em className="not-italic" style={{ color: "#ba873f" }}>construisons</em> pour vous.
           </h2>
         </motion.div>
 
         {/* Cards grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
           {SERVICES.map((service, i) => (
             <motion.div
               key={service.number}
@@ -93,7 +93,7 @@ export default function ServicesSection() {
                         src={service.image}
                         alt={`${service.title} par Oryzon`}
                         fill
-                        sizes="(max-width: 768px) 100vw, 33vw"
+                        sizes="(max-width: 1024px) 100vw, 33vw"
                         className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:scale-105"
                       />
                       {/* Number badge */}
@@ -111,7 +111,7 @@ export default function ServicesSection() {
                       <h3 className="font-display text-[#111111] mb-1" style={{ fontSize: "1.6rem", lineHeight: 1.1, letterSpacing: "-0.02em" }}>
                         {service.title}
                       </h3>
-                      <p className="font-display text-[#C49A5A] mb-4" style={{ fontSize: "1.2rem", lineHeight: 1.1, letterSpacing: "-0.02em" }}>
+                      <p className="font-display text-[#ba873f] mb-4" style={{ fontSize: "1.2rem", lineHeight: 1.1, letterSpacing: "-0.02em" }}>
                         {service.subtitle}
                       </p>
 
@@ -121,10 +121,10 @@ export default function ServicesSection() {
 
                       {/* Arrow CTA — hidden */}
                       <div className="hidden mt-6 items-center justify-between">
-                        <span className="text-xs font-semibold text-[#111111] tracking-wide group-hover:text-[#C49A5A] transition-colors duration-200">
+                        <span className="text-xs font-semibold text-[#111111] tracking-wide group-hover:text-[#ba873f] transition-colors duration-200">
                           En savoir plus
                         </span>
-                        <span className="w-8 h-8 rounded-full border border-black/10 flex items-center justify-center text-[#111111] group-hover:bg-[#C49A5A] group-hover:border-[#C49A5A] group-hover:text-white transition-all duration-300">
+                        <span className="w-8 h-8 rounded-full border border-black/10 flex items-center justify-center text-[#111111] group-hover:bg-[#ba873f] group-hover:border-[#ba873f] group-hover:text-white transition-all duration-300">
                           <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
                             <path d="M2 8L8 2M8 2H3M8 2V7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                           </svg>

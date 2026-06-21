@@ -74,7 +74,7 @@ export default async function ProjectPage({
     <div className="min-h-[100dvh] bg-[#F9F7F4]">
 
       {/* ── Hero ──────────────────────────────────────────────────── */}
-      <div className="relative h-[75vh] bg-[#0D1117] overflow-hidden">
+      <div className="relative h-[75vh] bg-[#16202a] overflow-hidden">
 
         {/* Image */}
         <Image
@@ -87,8 +87,8 @@ export default async function ProjectPage({
         />
 
         {/* Gradients */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0D1117] via-[#0D1117]/40 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0D1117]/60 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#16202a] via-[#16202a]/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#16202a]/60 to-transparent" />
 
         {/* Blueprint grid texture */}
         <div aria-hidden className="pointer-events-none absolute inset-0 opacity-[0.03]" style={{
@@ -117,7 +117,7 @@ export default async function ProjectPage({
               {project.title}
             </h1>
 
-            <p className="text-[#C49A5A] text-base font-medium" style={{ letterSpacing: "-0.01em" }}>
+            <p className="text-[#ba873f] text-base font-medium" style={{ letterSpacing: "-0.01em" }}>
               {project.tagline}
             </p>
           </div>
@@ -154,10 +154,10 @@ export default async function ProjectPage({
 
           {/* Right: specs card */}
           <div className="lg:sticky lg:top-24">
-            <div className="rounded-[1.75rem] bg-[#0D1117] p-6">
+            <div className="rounded-[1.75rem] bg-[#16202a] p-6">
 
               <div className="flex items-center gap-2 mb-6">
-                <span className="w-1 h-1 rounded-full bg-[#C49A5A]" />
+                <span className="w-1 h-1 rounded-full bg-[#ba873f]" />
                 <p className="text-[10px] uppercase tracking-[0.2em] text-white/30">Fiche projet</p>
               </div>
 
@@ -306,19 +306,19 @@ export default async function ProjectPage({
       </div>
 
       {/* ── CTA ───────────────────────────────────────────────────── */}
-      <div className="bg-[#0D1117] px-6 md:px-12 py-24 relative overflow-hidden">
+      <div className="bg-[#16202a] px-6 md:px-12 py-24 relative overflow-hidden">
         <div aria-hidden className="pointer-events-none absolute inset-0 opacity-[0.025]" style={{
           backgroundImage: `linear-gradient(rgba(196,154,90,1) 1px, transparent 1px), linear-gradient(90deg, rgba(196,154,90,1) 1px, transparent 1px)`,
           backgroundSize: "80px 80px",
         }} />
         <div className="relative max-w-3xl mx-auto text-center">
           <span className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/6 px-3 py-1.5 text-[10px] uppercase tracking-[0.2em] font-medium text-white/40 mb-8">
-            <span className="w-1 h-1 rounded-full bg-[#C49A5A]" />
+            <span className="w-1 h-1 rounded-full bg-[#ba873f]" />
             Votre projet
           </span>
           <h2 className="font-display text-white mb-5" style={{ fontSize: "clamp(2rem, 4.5vw, 4.5rem)", lineHeight: 1.0, letterSpacing: "-0.03em" }}>
             À vous de<br />
-            <em className="not-italic" style={{ color: "#C49A5A" }}>laisser votre empreinte.</em>
+            <em className="not-italic" style={{ color: "#ba873f" }}>laisser votre empreinte.</em>
           </h2>
           <p className="text-white/40 text-base max-w-md mx-auto leading-relaxed mb-10">
             Premier rendez-vous gratuit et sans engagement.

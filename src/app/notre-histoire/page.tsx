@@ -119,7 +119,7 @@ const VALEURS = [
 const EQUIPE = [
   {
     initials: "AM",
-    color: "#C49A5A",
+    color: "#ba873f",
     name: "Alain Moreau",
     role: "Fondateur & Gérant",
     description: "30 ans de métier. A posé lui-même les premières pierres d'Oryzon en 1994. Toujours présent sur les chantiers complexes.",
@@ -166,7 +166,7 @@ export default function NotreHistoirePage() {
     <div className="min-h-[100dvh]">
 
       {/* ── Hero ────────────────────────────────────────────────────── */}
-      <section className="relative bg-[#0D1117] overflow-hidden" style={{ minHeight: "100dvh" }}>
+      <section className="relative bg-[#16202a] overflow-hidden" style={{ minHeight: "100dvh" }}>
 
         {/* Blueprint grid */}
         <div aria-hidden className="pointer-events-none absolute inset-0 opacity-[0.025]" style={{
@@ -176,7 +176,7 @@ export default function NotreHistoirePage() {
 
         {/* Radial glow */}
         <div aria-hidden className="pointer-events-none absolute -bottom-32 -left-32 w-[600px] h-[600px] rounded-full opacity-[0.07]"
-          style={{ background: "radial-gradient(circle, #C49A5A 0%, transparent 70%)" }} />
+          style={{ background: "radial-gradient(circle, #ba873f 0%, transparent 70%)" }} />
 
         {/* Split layout */}
         <div className="relative min-h-[100dvh] grid grid-cols-1 lg:grid-cols-2">
@@ -187,7 +187,7 @@ export default function NotreHistoirePage() {
 
 
             <span className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/6 px-3 py-1.5 text-[10px] uppercase tracking-[0.2em] font-medium text-white/40 mb-10 w-fit">
-              <span className="w-1 h-1 rounded-full bg-[#C49A5A]" />
+              <span className="w-1 h-1 rounded-full bg-[#ba873f]" />
               Notre histoire
             </span>
 
@@ -196,7 +196,7 @@ export default function NotreHistoirePage() {
               style={{ fontSize: "clamp(3rem, 5.5vw, 6.5rem)", lineHeight: 0.95, letterSpacing: "-0.03em" }}
             >
               Bâtisseurs<br />
-              <em className="not-italic" style={{ color: "#C49A5A" }}>depuis</em><br />
+              <em className="not-italic" style={{ color: "#ba873f" }}>depuis</em><br />
               1994.
             </h1>
 
@@ -213,7 +213,7 @@ export default function NotreHistoirePage() {
                 { v: "Caen", l: "Normandie" },
               ].map((s) => (
                 <div key={s.l}>
-                  <p className="font-display text-[#C49A5A] text-xl" style={{ letterSpacing: "-0.03em" }}>{s.v}</p>
+                  <p className="font-display text-[#ba873f] text-xl" style={{ letterSpacing: "-0.03em" }}>{s.v}</p>
                   <p className="text-white/30 text-[11px] mt-0.5">{s.l}</p>
                 </div>
               ))}
@@ -230,12 +230,12 @@ export default function NotreHistoirePage() {
               sizes="50vw"
               className="object-cover object-center"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#0D1117] via-[#0D1117]/20 to-transparent" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0D1117]/60 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#16202a] via-[#16202a]/20 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#16202a]/60 to-transparent" />
 
             {/* Year badge floating */}
             <div className="absolute bottom-12 right-12 rounded-2xl bg-black/40 backdrop-blur-md border border-white/10 px-6 py-4">
-              <p className="font-display text-[#C49A5A] text-4xl" style={{ letterSpacing: "-0.04em" }}>1994</p>
+              <p className="font-display text-[#ba873f] text-4xl" style={{ letterSpacing: "-0.04em" }}>1994</p>
               <p className="text-white/40 text-xs mt-1">Année de création</p>
             </div>
           </div>
@@ -254,13 +254,13 @@ export default function NotreHistoirePage() {
 
             {/* Left: quote */}
             <div className="lg:sticky lg:top-24">
-              <div className="w-8 h-px bg-[#C49A5A] mb-8" />
+              <div className="w-8 h-px bg-[#ba873f] mb-8" />
               <blockquote
                 className="font-display text-black/85"
                 style={{ fontSize: "clamp(1.8rem, 3vw, 2.8rem)", lineHeight: 1.15, letterSpacing: "-0.03em" }}
               >
                 "Une maison, c'est{" "}
-                <em className="not-italic" style={{ color: "#C49A5A" }}>la décision la plus importante</em>{" "}
+                <em className="not-italic" style={{ color: "#ba873f" }}>la décision la plus importante</em>{" "}
                 d'une vie. Elle mérite qu'on la traite comme telle."
               </blockquote>
               <p className="text-black/35 text-sm mt-6">— Alain Moreau, fondateur</p>
@@ -297,7 +297,7 @@ export default function NotreHistoirePage() {
       </section>
 
       {/* ── Timeline ────────────────────────────────────────────────── */}
-      <section className="bg-[#0D1117] px-6 md:px-12 py-24 md:py-32 relative overflow-hidden">
+      <section className="bg-[#16202a] px-6 md:px-12 py-24 md:py-32 relative overflow-hidden">
 
         <div aria-hidden className="pointer-events-none absolute inset-0 opacity-[0.02]" style={{
           backgroundImage: `linear-gradient(rgba(196,154,90,1) 1px, transparent 1px), linear-gradient(90deg, rgba(196,154,90,1) 1px, transparent 1px)`,
@@ -309,12 +309,12 @@ export default function NotreHistoirePage() {
           <div className="flex items-end justify-between mb-16 flex-wrap gap-6">
             <div>
               <span className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/6 px-3 py-1.5 text-[10px] uppercase tracking-[0.2em] font-medium text-white/40 mb-5">
-                <span className="w-1 h-1 rounded-full bg-[#C49A5A]" />
+                <span className="w-1 h-1 rounded-full bg-[#ba873f]" />
                 Jalons
               </span>
               <h2 className="font-display text-white" style={{ fontSize: "clamp(2rem, 4vw, 4rem)", lineHeight: 1.0, letterSpacing: "-0.03em" }}>
                 Trente ans<br />
-                <em className="not-italic" style={{ color: "#C49A5A" }}>de construction.</em>
+                <em className="not-italic" style={{ color: "#ba873f" }}>de construction.</em>
               </h2>
             </div>
           </div>
@@ -331,7 +331,7 @@ export default function NotreHistoirePage() {
                   {/* Year */}
                   <div className="lg:w-[8.5rem] lg:pr-10 shrink-0 flex lg:flex-col lg:items-end">
                     <span
-                      className="font-display text-[#C49A5A]/60 group-hover:text-[#C49A5A] transition-colors duration-300"
+                      className="font-display text-[#ba873f]/60 group-hover:text-[#ba873f] transition-colors duration-300"
                       style={{ fontSize: "clamp(1.4rem, 2.5vw, 2rem)", letterSpacing: "-0.03em" }}
                     >
                       {item.year}
@@ -340,13 +340,13 @@ export default function NotreHistoirePage() {
 
                   {/* Dot on line */}
                   <div className="hidden lg:flex items-start justify-center w-6 shrink-0 pt-2 relative z-10">
-                    <div className="w-2 h-2 rounded-full bg-[#0D1117] ring-1 ring-[#C49A5A]/40 group-hover:ring-[#C49A5A] group-hover:bg-[#C49A5A]/20 transition-all duration-300" />
+                    <div className="w-2 h-2 rounded-full bg-[#16202a] ring-1 ring-[#ba873f]/40 group-hover:ring-[#ba873f] group-hover:bg-[#ba873f]/20 transition-all duration-300" />
                   </div>
 
                   {/* Content */}
                   <div className="lg:pl-10 flex-1 pb-1">
                     <h3
-                      className="font-display text-white mb-2 group-hover:text-[#C49A5A] transition-colors duration-300"
+                      className="font-display text-white mb-2 group-hover:text-[#ba873f] transition-colors duration-300"
                       style={{ fontSize: "1.3rem", letterSpacing: "-0.02em", lineHeight: 1.2 }}
                     >
                       {item.title}
@@ -373,7 +373,7 @@ export default function NotreHistoirePage() {
 
           <div className="mb-16">
             <span className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-black/4 px-3 py-1.5 text-[10px] uppercase tracking-[0.2em] font-medium text-black/30 mb-5">
-              <span className="w-1 h-1 rounded-full bg-[#C49A5A]" />
+              <span className="w-1 h-1 rounded-full bg-[#ba873f]" />
               Ce qui nous guide
             </span>
             <h2 className="font-display text-black/85" style={{ fontSize: "clamp(2rem, 4vw, 4rem)", lineHeight: 1.0, letterSpacing: "-0.03em" }}>
@@ -388,12 +388,12 @@ export default function NotreHistoirePage() {
                 className="bg-[#F9F7F4] p-8 md:p-10 group hover:bg-white transition-colors duration-300"
               >
                 <div className="flex items-start justify-between mb-8">
-                  <span className="font-display text-[#C49A5A]/50 text-5xl" style={{ letterSpacing: "-0.05em", lineHeight: 1 }}>
+                  <span className="font-display text-[#ba873f]/50 text-5xl" style={{ letterSpacing: "-0.05em", lineHeight: 1 }}>
                     {v.number}
                   </span>
                   {i === 0 && (
-                    <div className="w-8 h-8 rounded-full bg-[#C49A5A]/10 flex items-center justify-center">
-                      <div className="w-2 h-2 rounded-full bg-[#C49A5A]" />
+                    <div className="w-8 h-8 rounded-full bg-[#ba873f]/10 flex items-center justify-center">
+                      <div className="w-2 h-2 rounded-full bg-[#ba873f]" />
                     </div>
                   )}
                 </div>
@@ -417,7 +417,7 @@ export default function NotreHistoirePage() {
           <div className="flex items-end justify-between mb-16 flex-wrap gap-6">
             <div>
               <span className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-black/4 px-3 py-1.5 text-[10px] uppercase tracking-[0.2em] font-medium text-black/30 mb-5">
-                <span className="w-1 h-1 rounded-full bg-[#C49A5A]" />
+                <span className="w-1 h-1 rounded-full bg-[#ba873f]" />
                 Les visages d'Oryzon
               </span>
               <h2 className="font-display text-black/85" style={{ fontSize: "clamp(2rem, 4vw, 4rem)", lineHeight: 1.0, letterSpacing: "-0.03em" }}>
@@ -431,7 +431,7 @@ export default function NotreHistoirePage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {EQUIPE.map((member) => (
-              <div key={member.name} className="group rounded-[1.5rem] bg-white ring-1 ring-black/6 p-6 hover:ring-[#C49A5A]/30 transition-all duration-300 hover:shadow-[0_8px_40px_rgba(0,0,0,0.06)]">
+              <div key={member.name} className="group rounded-[1.5rem] bg-white ring-1 ring-black/6 p-6 hover:ring-[#ba873f]/30 transition-all duration-300 hover:shadow-[0_8px_40px_rgba(0,0,0,0.06)]">
 
                 {/* Avatar */}
                 <div
@@ -444,7 +444,7 @@ export default function NotreHistoirePage() {
                 <p className="font-display text-black/85 text-base mb-0.5" style={{ letterSpacing: "-0.02em" }}>
                   {member.name}
                 </p>
-                <p className="text-[#C49A5A] text-xs mb-4" style={{ letterSpacing: "0.02em" }}>
+                <p className="text-[#ba873f] text-xs mb-4" style={{ letterSpacing: "0.02em" }}>
                   {member.role}
                 </p>
                 <p className="text-black/40 text-sm leading-relaxed">{member.description}</p>
@@ -458,7 +458,7 @@ export default function NotreHistoirePage() {
               <p className="font-display text-black/60 text-base mb-1" style={{ letterSpacing: "-0.02em" }}>Vous rejoindre l'équipe ?</p>
               <p className="text-black/35 text-sm">On cherche des compagnons passionnés par le bâti normand.</p>
             </div>
-            <Link href="/contact" className="shrink-0 text-sm text-[#C49A5A] hover:text-[#C49A5A]/70 transition-colors font-medium whitespace-nowrap">
+            <Link href="/contact" className="shrink-0 text-sm text-[#ba873f] hover:text-[#ba873f]/70 transition-colors font-medium whitespace-nowrap">
               Nous écrire →
             </Link>
           </div>
@@ -466,22 +466,22 @@ export default function NotreHistoirePage() {
       </section>
 
       {/* ── Stats ───────────────────────────────────────────────────── */}
-      <section className="bg-[#0D1117] px-6 md:px-12 py-24 md:py-32 relative overflow-hidden">
+      <section className="bg-[#16202a] px-6 md:px-12 py-24 md:py-32 relative overflow-hidden">
 
         <div aria-hidden className="pointer-events-none absolute inset-0 opacity-[0.025]" style={{
           backgroundImage: `linear-gradient(rgba(196,154,90,1) 1px, transparent 1px), linear-gradient(90deg, rgba(196,154,90,1) 1px, transparent 1px)`,
           backgroundSize: "80px 80px",
         }} />
         <div aria-hidden className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] opacity-[0.04]"
-          style={{ background: "radial-gradient(ellipse, #C49A5A 0%, transparent 70%)" }} />
+          style={{ background: "radial-gradient(ellipse, #ba873f 0%, transparent 70%)" }} />
 
         <div className="max-w-7xl mx-auto relative z-10">
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/5 rounded-[1.75rem] overflow-hidden">
             {STATS.map((s) => (
-              <div key={s.label} className="bg-[#0D1117] px-8 py-12 text-center group hover:bg-white/3 transition-colors duration-300">
+              <div key={s.label} className="bg-[#16202a] px-8 py-12 text-center group hover:bg-white/3 transition-colors duration-300">
                 <p
-                  className="font-display text-[#C49A5A] mb-2"
+                  className="font-display text-[#ba873f] mb-2"
                   style={{ fontSize: "clamp(2.5rem, 5vw, 5rem)", letterSpacing: "-0.04em", lineHeight: 1 }}
                 >
                   {s.value}
@@ -495,19 +495,19 @@ export default function NotreHistoirePage() {
       </section>
 
       {/* ── CTA ─────────────────────────────────────────────────────── */}
-      <div className="bg-[#0D1117] px-6 md:px-12 py-24 border-t border-white/5 relative overflow-hidden">
+      <div className="bg-[#16202a] px-6 md:px-12 py-24 border-t border-white/5 relative overflow-hidden">
         <div aria-hidden className="pointer-events-none absolute inset-0 opacity-[0.02]" style={{
           backgroundImage: `linear-gradient(rgba(196,154,90,1) 1px, transparent 1px), linear-gradient(90deg, rgba(196,154,90,1) 1px, transparent 1px)`,
           backgroundSize: "80px 80px",
         }} />
         <div className="relative max-w-3xl mx-auto text-center">
           <span className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/6 px-3 py-1.5 text-[10px] uppercase tracking-[0.2em] font-medium text-white/40 mb-8">
-            <span className="w-1 h-1 rounded-full bg-[#C49A5A]" />
+            <span className="w-1 h-1 rounded-full bg-[#ba873f]" />
             Votre projet
           </span>
           <h2 className="font-display text-white mb-5" style={{ fontSize: "clamp(2rem, 4.5vw, 4.5rem)", lineHeight: 1.0, letterSpacing: "-0.03em" }}>
             Construisons quelque chose<br />
-            <em className="not-italic" style={{ color: "#C49A5A" }}>ensemble.</em>
+            <em className="not-italic" style={{ color: "#ba873f" }}>ensemble.</em>
           </h2>
           <p className="text-white/40 text-base max-w-md mx-auto leading-relaxed mb-10">
             Premier rendez-vous gratuit et sans engagement.
