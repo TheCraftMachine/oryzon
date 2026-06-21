@@ -3,53 +3,56 @@
 import { useState } from "react";
 import Link from "next/link";
 
-// ── Endpoint ─────────────────────────────────────────────────────────────────
-// Le formulaire POST sur /contact.php (script PHP à la racine de l'hébergement OVH),
-// qui transmet via l'API Brevo (serveurs France, RGPD-natif).
-const CONTACT_ENDPOINT = "/contact.php";
+// ── Contact email ────────────────────────────────────────────────────────────
+// Pour le moment : ouverture du client mail du visiteur avec un mailto: pré-rempli.
+// (Plus tard : Brevo / serverless quand on aura l'intégration.)
+const CONTACT_EMAIL = "contact@maison-oryzon.fr";
 
 // ── Contact form ─────────────────────────────────────────────────────────────
 
 function ContactForm() {
-  const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitting(true);
-    setError(null);
-
     const formData = new FormData(e.currentTarget);
 
     // Honeypot — si rempli, c'est un bot.
     if (formData.get("botcheck")) {
       setSubmitted(true);
-      setSubmitting(false);
       return;
     }
 
-    try {
-      const res = await fetch(CONTACT_ENDPOINT, {
-        method: "POST",
-        body: formData,
-      });
-      const data = await res.json().catch(() => ({ success: false }));
-      if (res.ok && data.success) {
-        setSubmitted(true);
-      } else {
-        setError(data.error || "Une erreur est survenue. Merci de réessayer ou de nous appeler au 02 31 348 340.");
-      }
-    } catch {
-      setError("Impossible d'envoyer le message. Vérifiez votre connexion et réessayez.");
-    } finally {
-      setSubmitting(false);
-    }
+    const name = String(formData.get("name") ?? "").trim();
+    const email = String(formData.get("email") ?? "").trim();
+    const phone = String(formData.get("phone") ?? "").trim();
+    const projectType = String(formData.get("project_type") ?? "").trim();
+    const message = String(formData.get("message") ?? "").trim();
+
+    const subject = `Demande de contact — ${projectType} — ${name}`;
+    const body = [
+      "Bonjour,",
+      "",
+      `Je vous contacte au sujet d'un projet de ${projectType.toLowerCase()}.`,
+      "",
+      message,
+      "",
+      "— Mes coordonnées —",
+      `Nom : ${name}`,
+      `Email : ${email}`,
+      `Téléphone : ${phone}`,
+      "",
+      "Cordialement.",
+    ].join("\n");
+
+    const mailtoUrl = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailtoUrl;
+    setSubmitted(true);
   };
 
   if (submitted) {
     return (
-      <div className="flex flex-col items-center justify-center text-center py-16 px-8 gap-6">
+      <div className="flex flex-col items-center justify-center text-center py-14 px-6 gap-5">
         <div className="w-14 h-14 rounded-full bg-[#ba873f]/15 flex items-center justify-center">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
             <path d="M5 13l4 4L19 7" stroke="#ba873f" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -57,11 +60,18 @@ function ContactForm() {
         </div>
         <div>
           <p className="font-display text-[#111111] text-xl mb-2" style={{ letterSpacing: "-0.02em" }}>
-            Message envoyé
+            Email prêt à envoyer
+          </p>
+          <p className="text-sm text-[#6B6B6B] max-w-sm leading-relaxed">
+            Votre messagerie s'est ouverte avec votre demande pré-remplie. Cliquez sur <strong className="text-[#111111]">Envoyer</strong> pour finaliser.
           </p>
         </div>
-        <p className="text-xs text-[#6B6B6B]/60 max-w-xs">
-          Pour une réponse plus rapide, vous pouvez aussi nous appeler au 02 31 348 340.
+        <p className="text-xs text-[#6B6B6B]/60 max-w-xs leading-relaxed">
+          Si rien ne s'est ouvert, écrivez-nous directement à{" "}
+          <a href={`mailto:${CONTACT_EMAIL}`} className="text-[#ba873f] underline underline-offset-2">
+            {CONTACT_EMAIL}
+          </a>
+          {" "}ou appelez le 02 31 348 340.
         </p>
       </div>
     );
@@ -178,21 +188,18 @@ function ContactForm() {
         </label>
       </div>
 
-      {/* Erreur */}
-      {error && (
-        <div className="rounded-xl bg-red-50 border border-red-200 px-4 py-3 text-sm text-red-700">
-          {error}
-        </div>
-      )}
-
       {/* Submit */}
-      <button
-        type="submit"
-        disabled={submitting}
-        className="w-full rounded-full bg-[#ba873f] text-white px-6 py-3.5 text-sm font-medium tracking-wide hover:bg-[#a37535] disabled:opacity-50 disabled:cursor-wait transition-colors cursor-pointer"
-      >
-        {submitting ? "Envoi en cours…" : "Envoyer ma demande"}
-      </button>
+      <div className="space-y-2">
+        <button
+          type="submit"
+          className="w-full rounded-full bg-[#ba873f] text-white px-6 py-3.5 text-sm font-medium tracking-wide hover:bg-[#a37535] transition-colors cursor-pointer"
+        >
+          Envoyer ma demande
+        </button>
+        <p className="text-[11px] text-[#6B6B6B]/60 text-center">
+          Votre messagerie s'ouvrira avec votre demande pré-remplie.
+        </p>
+      </div>
     </form>
   );
 }
